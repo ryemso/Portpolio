@@ -1,10 +1,10 @@
 const profile = {
-  name: "전략가 렴",
+  name: "김동현",
   contacts: [
     { label: "GitHub", value: "https://github.com/ryemso" },
-    { label: "Portfolio PDF", value: "기존 PDF 포트폴리오와 함께 제출 가능" },
+    { label: "Portfolio PDF", value: "https://drive.google.com/file/d/1-jQsoKR6gl0ZuA4ZFbpL9QR9oC906t7P/view?usp=drive_link" },
     { label: "Versioned Link", value: "회사별로 ?ver=analyst / ?ver=strategy / ?ver=advanced 링크 분리 제출" },
-    { label: "Email", value: "실제 이메일 주소 확인 후 반영 필요" }
+    { label: "Email", value: "qt0177@gmail.com" }
   ],
   projects: [
     {
@@ -124,9 +124,9 @@ const versions = {
     ],
     experienceDesc: "실무형 데이터 분석 직무에 맞춰 해석력, 전달력, 비즈니스 연결성을 강조한 버전입니다.",
     submission: [
-      ["분석가 링크", "https://your-id.github.io/portfolio/?ver=analyst"],
-      ["활용 상황", "데이터 분석가, BA, 게임 데이터 분석 직무 지원 시 제출"],
-      ["추가 팁", "PDF 포트폴리오와 함께 보내면 신뢰도가 더 높아집니다."]
+      ["분석가 링크", "https://ryemso.github.io/Portpolio/?ver=analyst"],
+      ["키워드", "데이터 분석가, BA, 게임 데이터 분석 직무"],
+      ["슬로건", "목표가 있다면 도달합니다."]
     ],
     projectOrder: [
       "Olist 이커머스 셀러 유치 전략 분석",
@@ -161,9 +161,9 @@ const versions = {
     ],
     experienceDesc: "기획, 전략, BA 성격의 포지션에도 맞출 수 있도록 실행 제안과 사업 관점을 강조한 버전입니다.",
     submission: [
-      ["전략 링크", "https://your-id.github.io/portfolio/?ver=strategy"],
-      ["활용 상황", "기획, 전략, 비즈니스 분석, 마케팅 전략 직무 지원 시 제출"],
-      ["추가 팁", "회사명에 맞는 한 줄 소개만 바꿔도 맞춤형 링크처럼 활용할 수 있습니다."]
+      ["전략 링크", "https://ryemso.github.io/portfolio/?ver=strategy"],
+      ["키워드", "기획, 전략, 비즈니스 분석, 마케팅 전략 직무"],
+      ["슬로건", "목표가 있다면 도달합니다."]
     ],
     projectOrder: [
       "Olist 이커머스 셀러 유치 전략 분석",
@@ -189,19 +189,19 @@ const versions = {
       ["대표 프로젝트", "Heat Demand · Dementia · Olist", "성과 수치가 또렷한 프로젝트 중심 구성"],
       ["핵심 메시지", "실력과 정리력을 동시에 보여주는 사람", "화면 자체가 하나의 결과물처럼 읽히게 합니다."]
     ],
-    projectDesc: "성과가 강한 프로젝트를 중심으로, 톤과 시선 흐름까지 고려해 배치한 버전입니다.",
-    strengthDesc: "포트폴리오를 단순 자료가 아니라 브랜딩 자산처럼 활용하고 싶을 때 적합한 버전입니다.",
+    projectDesc: "성과가 강한 프로젝트 중심, 톤과 시선 흐름까지 고려해 배치한 버전입니다.",
+    strengthDesc: "브랜딩 자산 버전입니다.",
     skills: [
       ["정보 구조", "한 화면에서 핵심 메시지가 먼저 읽히는 배치"],
       ["성과 강조", "숫자와 키워드를 전면 배치해 기억에 남게 구성"],
       ["콘텐츠 재활용", "한 데이터로 여러 버전을 운영하는 구조"],
       ["배포 운영", "GitHub Pages 기반 링크 분기와 관리 용이성"]
     ],
-    experienceDesc: "지원 서류 중 포트폴리오의 인상과 완성도를 더 강하게 보여주고 싶을 때 활용하는 버전입니다.",
+    experienceDesc: "포트폴리오의 인상과 완성도를 더 강하게 보여주는 버전입니다.",
     submission: [
-      ["고급 링크", "https://your-id.github.io/portfolio/?ver=advanced"],
+      ["고급 링크", "https://ryemso.github.io/portfolio/?ver=advanced"],
       ["활용 상황", "스타트업, 감도 높은 조직, 포트폴리오 비중이 큰 지원처"],
-      ["추가 팁", "프로필 사진, 대표 문장, 컬러 톤까지 맞추면 브랜딩 효과가 더 커집니다."]
+      ["슬로건", "목표가 있다면 도달합니다."]
     ],
     projectOrder: [
       "날씨 데이터를 활용한 열수요 예측 모델 개발",
