@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>전략가 렴 | Portfolio</title>
+  <meta name="description" content="버전별 링크 공유가 가능한 전략가 렴의 포트폴리오 웹사이트" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="#top" class="brand">
+        <span class="brand-badge">렴</span>
+        <span>전략가 렴 포트폴리오</span>
+      </a>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="panel hero-main">
+          <div>
+            <div class="eyebrow" id="heroEyebrow">DATA ANALYST VERSION</div>
+            <h1 id="heroTitle">숫자를 읽고, 의미를 해석해, 실행 방향까지 연결하는 분석가</h1>
+            <p class="hero-desc" id="heroDesc"></p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
+              <a class="btn btn-secondary" href="#contact">연락처 보기</a>
+            </div>
+          </div>
+          <div class="chip-row" id="heroChips"></div>
+        </div>
+
+        <aside class="panel hero-side">
+          <div class="version-box">
+            <h3>버전 선택</h3>
+            <p class="version-meta">한 사이트 안에서 버전만 바꾸고, 링크는 직무별로 따로 공유할 수 있게 구성했습니다.</p>
+            <div class="version-tabs" id="versionTabs"></div>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-label">공유 링크</div>
+              <h3 id="shareTitle">데이터 분석가용 링크</h3>
+              <div class="version-links" id="versionLinks"></div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-label">포지셔닝</div>
+              <h3 id="positioningTitle">직무 맞춤형 소개</h3>
+              <p class="muted" id="positioningDesc"></p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>핵심 임팩트</h2>
+            <p id="impactDesc"></p>
+          </div>
+        </div>
+        <div class="stats" id="statsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Selected Projects</h2>
+            <p id="projectSectionDesc"></p>
+          </div>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="strengths">
+      <div class="wrap">
+        <div class="sub-card">
+          <h3>핵심 역량</h3>
+          <p class="muted" id="strengthDesc"></p>
+          <div class="skill-grid" id="skillGrid"></div>
+        </div>      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="sub-card">
+          <h3>경험 요약</h3>
+          <p class="muted" id="experienceDesc"></p>
+          <div class="timeline" id="experienceList"></div>
+        </div>      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <h3>Contact</h3>
+          <p class="muted">실제 배포 전에는 이메일, GitHub, 블로그 링크만 실제 주소로 바꿔서 사용하면 됩니다.</p>
+          <div class="contact-list" id="contactList"></div>
+        </div>      </div>
+    </section>
+  </main>
+
+  <footer>
+    전략가 렴 Portfolio · Single Page · Version Switch · GitHub Pages Ready
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
