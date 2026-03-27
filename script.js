@@ -1,8 +1,10 @@
 const profile = {
-  name: "김동현",
+  name: "전략가 렴",
   contacts: [
     { label: "GitHub", value: "https://github.com/ryemso" },
-    { label: "Email", value: "qt0177@gmail.com" }
+    { label: "Portfolio PDF", value: "기존 PDF 포트폴리오와 함께 제출 가능" },
+    { label: "Versioned Link", value: "회사별로 ?ver=analyst / ?ver=strategy / ?ver=advanced 링크 분리 제출" },
+    { label: "Email", value: "실제 이메일 주소 확인 후 반영 필요" }
   ],
   projects: [
     {
@@ -197,7 +199,7 @@ const versions = {
     ],
     experienceDesc: "지원 서류 중 포트폴리오의 인상과 완성도를 더 강하게 보여주고 싶을 때 활용하는 버전입니다.",
     submission: [
-      ["고급 링크", "https://github.com/ryemso?tab=repositories"],
+      ["고급 링크", "https://your-id.github.io/portfolio/?ver=advanced"],
       ["활용 상황", "스타트업, 감도 높은 조직, 포트폴리오 비중이 큰 지원처"],
       ["추가 팁", "프로필 사진, 대표 문장, 컬러 톤까지 맞추면 브랜딩 효과가 더 커집니다."]
     ],
