@@ -2,7 +2,6 @@ const profile = {
   name: "김동현",
   contacts: [
     { label: "GitHub", value: "https://github.com/ryemso" },
-    { label: "catchphrase", value: "목적지만 있으면 어떻게는 도달하리" },
     { label: "Email", value: "qt0177@gmail.com" }
   ],
   projects: [
@@ -198,7 +197,7 @@ const versions = {
     ],
     experienceDesc: "지원 서류 중 포트폴리오의 인상과 완성도를 더 강하게 보여주고 싶을 때 활용하는 버전입니다.",
     submission: [
-      ["고급 링크", "https://your-id.github.io/portfolio/?ver=advanced"],
+      ["고급 링크", "https://github.com/ryemso?tab=repositories"],
       ["활용 상황", "스타트업, 감도 높은 조직, 포트폴리오 비중이 큰 지원처"],
       ["추가 팁", "프로필 사진, 대표 문장, 컬러 톤까지 맞추면 브랜딩 효과가 더 커집니다."]
     ],
