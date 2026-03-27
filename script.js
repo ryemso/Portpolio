@@ -2,8 +2,8 @@ const profile = {
   name: "김동현",
   contacts: [
     { label: "GitHub", value: "https://github.com/ryemso" },
-    { label: "Portfolio PDF", value: "https://drive.google.com/file/d/1-jQsoKR6gl0ZuA4ZFbpL9QR9oC906t7P/view?usp=drive_link" },
-    { label: "Versioned Link", value: "회사별로 ?ver=analyst / ?ver=strategy / ?ver=advanced 링크 분리 제출" },
+    { label: "Portfolio PDF", value: "https://buly.kr/FhPXUCS" },
+    { label: "Versioned Link", value: "010-6501-0177" },
     { label: "Email", value: "qt0177@gmail.com" }
   ],
   projects: [
