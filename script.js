@@ -1,215 +1,135 @@
 const profile = {
-  name: "김동현",
   contacts: [
-    { label: "GitHub", value: "https://github.com/ryemso" },
-    { label: "Portfolio PDF", value: "https://buly.kr/FhPXUCS" },
-    { label: "Versioned Link", value: "010-6501-0177" },
-    { label: "Email", value: "qt0177@gmail.com" }
+    { label: "GitHub", text: "github.com/ryemso", href: "https://github.com/ryemso" },
+    { label: "Email", text: "your-email@example.com", href: "mailto:your-email@example.com" },
+    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "./portfolio.pdf" },
+    { label: "Versioned Link", text: "Share role-specific URLs", href: "?ver=analyst" }
   ],
-  projects: [
+  mainProject: {
+    ko: {
+      eyebrow: "대표 프로젝트",
+      title: "LSTM 기반 시계열 치매 예측 모델 개발",
+      short: "치매 예측 문제를 시계열 관점으로 풀어낸 LSTM 기반 프로젝트입니다.",
+      intro: "정적 분류 중심 접근으로는 시간 흐름 속 패턴을 충분히 반영하기 어렵다고 판단해, LSTM 기반 시계열 구조로 치매 예측 문제를 다시 설계한 프로젝트입니다.",
+      resultLabel: "핵심 결과",
+      resultValue: "Recall 0.72 → 0.78",
+      flow: [
+        ["Problem", "기존 방식은 시간 흐름을 충분히 반영하지 못해 변화 패턴을 놓칠 수 있었습니다."],
+        ["Data", "시계열 구조를 반영할 수 있도록 입력 구간과 관측 순서를 다시 정리했습니다."],
+        ["Approach", "LSTM 기반 구조를 중심으로 입력 시퀀스 설계와 모델 구성을 조정했습니다."],
+        ["Improvement", "하이퍼파라미터, 시퀀스 길이, 입력 구조를 반복 조정하며 성능을 개선했습니다."],
+        ["Outcome", "Recall을 0.72에서 0.78까지 끌어올리며 조기 선별 관점의 활용 가능성을 높였습니다."]
+      ]
+    },
+    en: {
+      eyebrow: "Main Project",
+      title: "LSTM-based Time-Series Dementia Prediction",
+      short: "A core project that reframed dementia prediction through a time-series LSTM approach.",
+      intro: "Instead of relying only on static classification logic, this project redesigned dementia prediction as a time-series task so that temporal patterns could be reflected more directly in the model.",
+      resultLabel: "Key Result",
+      resultValue: "Recall 0.72 → 0.78",
+      flow: [
+        ["Problem", "A static classification setup could miss meaningful patterns that unfold over time."],
+        ["Data", "The dataset was reorganized so that sequence order and temporal windows could be modeled explicitly."],
+        ["Approach", "An LSTM-based structure was used as the main backbone, with repeated tuning of sequence design and model setup."],
+        ["Improvement", "Performance was improved through iterative adjustments to sequence length, hyperparameters, and input structure."],
+        ["Outcome", "Recall improved from 0.72 to 0.78, increasing the project's value for early screening scenarios."]
+      ]
+    }
+  },
+  otherProjects: [
     {
-      title: "날씨 데이터를 활용한 열수요 예측 모델 개발",
-      summary: "기상 데이터와 시간 단위 열수요 데이터를 결합해 운영 효율 관점의 예측 모델을 설계한 개인 프로젝트입니다.",
-      metric: "핵심 성과",
-      metricValue: "RMSE 21% 개선",
-      tags: ["Python", "TensorFlow", "LSTM", "Bi-LSTM", "Attention", "Time Series"],
-      bullets: [
-        "단순 LSTM부터 CNN-LSTM, Bi-LSTM + Attention까지 비교하며 시계열 예측 성능을 단계적으로 개선했습니다.",
-        "시퀀스 손실과 데이터 단절 문제를 줄이기 위해 입력 구간과 패딩 방식을 다시 설계했습니다.",
-        "RMSE 21.7 → 17.2, R² 0.83까지 개선하며 운영비 절감과 자원 낭비 방어 가능성을 제시했습니다."
-      ],
-      focus: ["analyst", "strategy", "advanced"]
+      koTitle: "열수요 예측 모델 개발",
+      enTitle: "Heat Demand Forecasting",
+      koDesc: "기상 데이터와 열수요를 결합해 운영 효율 관점의 예측 모델을 설계했습니다.",
+      enDesc: "Built a forecasting model that linked weather variables with heat-demand records.",
+      resultKo: "RMSE 21% 개선",
+      resultEn: "21% RMSE improvement",
+      tags: ["Python", "LSTM", "Time Series"]
     },
     {
-      title: "머신러닝 스태킹 기반 인지장애 예측 모델 개발",
-      summary: "50세 이상 데이터를 대상으로 인지장애 경험 여부를 예측하고, recall 중심으로 성능을 최적화한 분류 프로젝트입니다.",
-      metric: "핵심 성과",
-      metricValue: "Recall 0.72 → 0.78",
-      tags: ["Scikit-learn", "Optuna", "XGBoost", "LightGBM", "CatBoost", "Stacking"],
-      bullets: [
-        "XGBoost, LightGBM, CatBoost, Lasso, Logistic Regression을 비교한 뒤 스태킹 구조로 확장했습니다.",
-        "Optuna 기반 하이퍼파라미터 튜닝과 메타 모델 입력 구성을 직접 설계했습니다.",
-        "단일 모델 F1 0.76에서 0.81, Recall 0.72에서 0.78까지 개선하며 조기 선별 활용 가능성을 높였습니다."
-      ],
-      focus: ["analyst", "strategy", "advanced"]
+      koTitle: "Olist 셀러 유치 전략 분석",
+      enTitle: "Olist Seller Strategy",
+      koDesc: "배송 병목과 지역 수요-공급 불균형을 분석해 셀러 유치 우선순위를 제안했습니다.",
+      enDesc: "Analyzed delivery bottlenecks and regional imbalance to prioritize seller acquisition.",
+      resultKo: "이탈률 20% 개선",
+      resultEn: "20% churn improvement",
+      tags: ["EDA", "SQL", "Tableau"]
     },
     {
-      title: "Olist 이커머스 셀러 유치 전략 분석",
-      summary: "브라질 이커머스 데이터를 바탕으로 배송 병목과 수요-공급 불균형을 분석해 판매자 유치 우선순위를 도출한 프로젝트입니다.",
-      metric: "핵심 성과",
-      metricValue: "이탈률 20% 개선",
-      tags: ["EDA", "Pandas", "SQL", "Tableau", "Marketplace", "Business Insight"],
-      bullets: [
-        "주문량, 판매자 수, 배송일, 리뷰 점수, 지역 밀도를 결합해 셀러 유치 우선 지역을 다시 정의했습니다.",
-        "Seller 1명 유입 시 주문 5.3건 증가 효과를 회귀 분석으로 확인하고 공급 병목 해소 전략을 제안했습니다.",
-        "북동부 지역 PA, MA를 물류 허브 증설 후보로 제시하며 재구매율과 churn 개선 관점으로 연결했습니다."
-      ],
-      focus: ["analyst", "strategy", "advanced"]
+      koTitle: "LendingClub 리스크 분류 분석",
+      enTitle: "LendingClub Risk Analysis",
+      koDesc: "부실 가능성이 높은 대출을 조기에 선별하는 분류 구조를 설계했습니다.",
+      enDesc: "Built an early-risk screening structure for potentially bad loans.",
+      resultKo: "잠재 손실 15% 방어",
+      resultEn: "15% potential loss defense",
+      tags: ["Classification", "Finance", "Python"]
     },
     {
-      title: "LendingClub 대출 리스크 분류 분석",
-      summary: "부실 가능성이 높은 대출을 조기에 선별해 금융 손실을 방어하는 분류 모델을 설계한 프로젝트입니다.",
-      metric: "핵심 성과",
-      metricValue: "잠재 손실 15% 방어",
-      tags: ["Classification", "Feature Engineering", "Finance", "Risk Analysis", "Python"],
-      bullets: [
-        "승인 전 활용 가능한 변수 중심으로 피처를 정제하고, 누수 가능성을 점검하며 모델링했습니다.",
-        "부실 고객 선별 구조를 통해 잠재 손실 약 15% 방어 가능성을 제시했습니다.",
-        "정확도보다 실제 리스크 감지에 가까운 기준으로 모델 성능을 비교하고 결과를 해석했습니다."
-      ],
-      focus: ["analyst", "strategy"]
-    },
-    {
-      title: "게임 데이터 기반 TFT 메타 분석",
-      summary: "단순 승률 비교를 넘어서 조합 효율과 메타 흐름을 읽는 방식으로 게임 데이터를 분석한 프로젝트입니다.",
-      metric: "핵심 성과",
-      metricValue: "메타 인사이트 도출",
-      tags: ["Game Analytics", "EDA", "Visualization", "Meta Analysis"],
-      bullets: [
-        "패치 환경에서 강한 조합과 약한 조합을 단순 나열이 아니라 구조적으로 해석했습니다.",
-        "유저 선택 흐름과 전략 효율 관점에서 메타를 설명하는 분석 문서를 구성했습니다.",
-        "게임 데이터 분석 포지션에 맞는 해석형 포트폴리오 사례로 활용할 수 있게 정리했습니다."
-      ],
-      focus: ["analyst", "strategy"]
-    },
-    {
-      title: "Money War 웹게임 기획 및 프로토타입",
-      summary: "경제 개념을 게임 시스템으로 번역해 웹에서 동작하는 프로토타입을 직접 설계하고 구현한 프로젝트입니다.",
-      metric: "핵심 성과",
-      metricValue: "웹 프로토타입 구현",
-      tags: ["HTML", "CSS", "JavaScript", "Game Design", "Prototype"],
-      bullets: [
-        "스테이지 구조, 보스 패턴, 환율 기믹, 장비·가챠 시스템 등 핵심 루프를 직접 설계했습니다.",
-        "게임 시스템을 사용자 경험 흐름과 수치 밸런스 관점에서 반복적으로 다듬었습니다.",
-        "분석가를 넘어 문제 구조화와 시스템 설계 역량을 보여주는 프로젝트로 배치했습니다."
-      ],
-      focus: ["strategy", "advanced"]
+      koTitle: "Money War 웹게임 프로토타입",
+      enTitle: "Money War Prototype",
+      koDesc: "경제 개념을 게임 시스템으로 번역해 웹 프로토타입을 직접 구현했습니다.",
+      enDesc: "Translated economic ideas into a playable web-game prototype.",
+      resultKo: "웹 프로토타입 구현",
+      resultEn: "Web prototype built",
+      tags: ["HTML", "CSS", "JavaScript"]
     }
   ],
-  workflow: [
-    ["Problem", "막연한 주제가 아니라 실제로 해결할 가치가 있는 문제를 먼저 정의합니다."],
-    ["Measure", "무엇을 개선이라고 볼지, 어떤 지표가 핵심인지 먼저 설계합니다."],
-    ["Analyze", "EDA, 피처 엔지니어링, 모델 비교, 시각화를 통해 원인과 패턴을 찾습니다."],
-    ["Action", "분석 결과를 끝내지 않고 실행 방향과 우선순위 제안으로 연결합니다."]
-  ],
-  experience: [
-    ["데이터 분석 프로젝트", "EDA, 분류, 시계열 예측, 비즈니스 문제 해결형 프로젝트를 개인 주도로 수행했습니다."],
-    ["모델링 역량", "머신러닝과 딥러닝을 직접 비교하고 튜닝하며 성능과 해석 가능성을 함께 검토했습니다."],
-    ["전략형 사고", "숫자를 읽는 데서 끝나지 않고, 의사결정과 실행 제안으로 연결하는 데 강점이 있습니다."]
-  ]
+  strengths: {
+    ko: [
+      ["Time Series Modeling", "시계열 입력 구조를 설계하고 LSTM 계열 모델을 개선하는 데 강점이 있습니다."],
+      ["Model Optimization", "하이퍼파라미터와 입력 구조를 조정하며 성능 개선 포인트를 찾습니다."],
+      ["EDA & Insight", "수치만 보는 것이 아니라 문제의 원인과 의미를 함께 정리합니다."],
+      ["Structured Reporting", "문제-접근-개선-결과 흐름으로 읽히는 결과물을 만듭니다."]
+    ],
+    en: [
+      ["Time Series Modeling", "Strong in designing sequence structures and improving LSTM-based models."],
+      ["Model Optimization", "Finds performance gains through iterative tuning of parameters and inputs."],
+      ["EDA & Insight", "Explains not just numbers, but the meaning and cause behind them."],
+      ["Structured Reporting", "Builds outputs that read clearly as problem, approach, improvement, and result."]
+    ]
+  },
+  experience: {
+    ko: [
+      ["데이터 분석 프로젝트", "EDA, 분류, 시계열 예측, 비즈니스 문제 해결형 프로젝트를 개인 주도로 수행했습니다."],
+      ["모델링 역량", "머신러닝과 딥러닝 모델을 비교하고 조정하며 성능과 해석 가능성을 함께 검토했습니다."],
+      ["전략형 사고", "숫자를 읽는 데서 끝나지 않고, 의사결정과 실행 제안으로 연결하는 데 강점이 있습니다."]
+    ],
+    en: [
+      ["Data Analysis Projects", "Led personal projects in EDA, classification, time-series forecasting, and business problem solving."],
+      ["Modeling Capability", "Compared and tuned machine learning and deep learning models with attention to both performance and interpretability."],
+      ["Strategic Thinking", "Connects numeric findings to decision-making and action proposals instead of stopping at analysis."]
+    ]
+  }
 };
 
 const versions = {
   analyst: {
-    label: "DATA ANALYST VERSION",
-    shareLabel: "데이터 분석가용 링크",
-    title: "비즈니스 문제를 데이터로 해석하고, 읽히는 인사이트로 정리하는 데이터 분석가",
-    desc: "분석 결과를 단순 수치로 끝내지 않고, 채용 담당자가 빠르게 이해할 수 있는 구조로 정리한 버전입니다. EDA, 시각화, 성과 해석, 지표 설계 역량을 전면에 배치했습니다.",
-    chips: ["EDA", "Visualization", "Insight", "Python / SQL", "Business Interpretation"],
-    positioningTitle: "분석가 포지셔닝",
-    positioningDesc: "데이터를 다루는 사람을 넘어, 문제를 읽고 의미를 해석해 전달 가능한 구조로 바꾸는 분석가라는 인상을 주는 데 초점을 맞춥니다.",
-    impactDesc: "핵심 수치와 프로젝트 결과를 빠르게 보여주고, 각 프로젝트가 어떤 문제를 해결했는지 한 줄로 읽히게 구성했습니다.",
-    stats: [
-      ["대표 포지션", "데이터 분석가", "EDA, 지표 해석, 시각화, 인사이트 정리에 강점"],
-      ["대표 프로젝트", "Olist · Heat Demand", "비즈니스 해석형 분석과 시계열 예측 사례를 함께 보유"],
-      ["핵심 메시지", "숫자를 읽고 의미를 말하는 사람", "결과를 의사결정 언어로 번역합니다."]
-    ],
-    projectDesc: "해석력과 가독성을 기준으로 프로젝트를 배치한 버전입니다.",
-    strengthDesc: "스크롤 몇 번만 내려도 무엇을 분석했고, 무엇을 바꿨는지 바로 읽히는 구조를 사용합니다.",
-    skills: [
-      ["EDA / 가설 수립", "데이터 분포 파악, 원인 탐색, 문제 재정의"],
-      ["데이터 처리", "Python, Pandas, SQL 기반 전처리와 분석"],
-      ["시각화", "Matplotlib, Tableau 기반 인사이트 전달"],
-      ["문서화", "문제-결과-액션 구조의 보고서형 정리"]
-    ],
-    experienceDesc: "실무형 데이터 분석 직무에 맞춰 해석력, 전달력, 비즈니스 연결성을 강조한 버전입니다.",
-    submission: [
-      ["분석가 링크", "https://ryemso.github.io/Portpolio/?ver=analyst"],
-      ["키워드", "데이터 분석가, BA, 게임 데이터 분석 직무"],
-      ["슬로건", "목표가 있다면 도달합니다."]
-    ],
-    projectOrder: [
-      "Olist 이커머스 셀러 유치 전략 분석",
-      "날씨 데이터를 활용한 열수요 예측 모델 개발",
-      "머신러닝 스태킹 기반 인지장애 예측 모델 개발",
-      "LendingClub 대출 리스크 분류 분석",
-      "게임 데이터 기반 TFT 메타 분석"
-    ],
-    theme: "analyst"
+    label: "DATA ANALYST",
+    title: "시계열 데이터를 해석해 예측 모델로 연결하는 데이터 분석가",
+    desc: "하나의 메인 프로젝트를 중심으로 문제 정의, 모델링 과정, 성능 개선 흐름이 바로 읽히도록 구성했습니다.",
+    summary: "분석, 모델링, 성능 개선이 한 흐름으로 읽히는 포트폴리오입니다.",
+    shareLabel: "데이터 분석가 링크",
+    theme: "analyst",
+    lang: "ko"
   },
   strategy: {
-    label: "BUSINESS / STRATEGY VERSION",
+    label: "BUSINESS / STRATEGY",
+    title: "분석 결과를 우선순위와 실행 방향으로 연결하는 전략형 분석가",
+    desc: "대표 프로젝트를 중심으로 문제 해결 과정이 보이게 정리하고, 나머지 프로젝트는 의사결정 관점의 카드로 압축했습니다.",
+    summary: "결과보다도 문제를 어떻게 구조화했는지가 보이도록 정리했습니다.",
     shareLabel: "전략형 링크",
-    title: "숫자를 넘어, 무엇을 해야 하는지 제안하는 전략형 분석가",
-    desc: "사업 관점, 우선순위 설정, 실행 방향 도출에 무게를 둔 버전입니다. 프로젝트를 성능 자랑이 아니라 문제 해결 스토리로 재배치해 전략 직무에도 읽히게 구성했습니다.",
-    chips: ["Strategy", "Prioritization", "Business Problem", "Insight to Action", "Decision Support"],
-    positioningTitle: "전략 포지셔닝",
-    positioningDesc: "프로젝트를 단순한 분석 결과가 아니라, 어떤 선택을 해야 하는지 제안하는 근거 자료처럼 읽히도록 구성합니다.",
-    impactDesc: "성과 수치보다도 왜 이 분석이 필요했고, 어떤 방향 제안으로 이어졌는지를 더 강하게 보여주는 버전입니다.",
-    stats: [
-      ["대표 포지션", "전략형 분석가", "비즈니스 목표와 데이터 해석을 함께 연결"],
-      ["대표 프로젝트", "Olist · LendingClub", "우선순위 도출과 리스크 대응 관점이 강한 사례"],
-      ["핵심 메시지", "문제를 구조화해 방향을 제안하는 사람", "숫자를 실행 언어로 바꿉니다."]
-    ],
-    projectDesc: "의사결정과 우선순위 제안이 잘 드러나는 프로젝트를 앞쪽에 배치한 버전입니다.",
-    strengthDesc: "채용 담당자가 이 사람은 분석을 넘어 방향까지 제시하는구나라고 느끼도록 메시지를 정리했습니다.",
-    skills: [
-      ["문제 구조화", "복잡한 현상을 실행 가능한 질문으로 재정리"],
-      ["의사결정 지원", "우선순위, 리스크, 기대효과 정리"],
-      ["비즈니스 해석", "모델 성능을 실무 맥락으로 번역"],
-      ["전략 커뮤니케이션", "결론이 읽히는 문장과 화면 구조 설계"]
-    ],
-    experienceDesc: "기획, 전략, BA 성격의 포지션에도 맞출 수 있도록 실행 제안과 사업 관점을 강조한 버전입니다.",
-    submission: [
-      ["전략 링크", "https://ryemso.github.io/portfolio/?ver=strategy"],
-      ["키워드", "기획, 전략, 비즈니스 분석, 마케팅 전략 직무"],
-      ["슬로건", "목표가 있다면 도달합니다."]
-    ],
-    projectOrder: [
-      "Olist 이커머스 셀러 유치 전략 분석",
-      "LendingClub 대출 리스크 분류 분석",
-      "머신러닝 스태킹 기반 인지장애 예측 모델 개발",
-      "날씨 데이터를 활용한 열수요 예측 모델 개발",
-      "Money War 웹게임 기획 및 프로토타입",
-      "게임 데이터 기반 TFT 메타 분석"
-    ],
-    theme: "strategy"
+    theme: "strategy",
+    lang: "ko"
   },
   advanced: {
-    label: "ADVANCED DARK VERSION",
-    shareLabel: "고급 다크 버전 링크",
-    title: "강한 첫인상과 구조적 전달력을 함께 담은 고급형 포트폴리오",
-    desc: "고급 PDF 포트폴리오의 톤을 웹으로 옮긴 버전입니다. 내용은 같지만, 화면 몰입도와 완성도, 인상을 더 강하게 느끼게 하는 다크 테마 중심 구성을 적용했습니다.",
-    chips: ["Dark Portfolio", "Premium Tone", "High Impact", "Focused Reading", "Structured Storytelling"],
-    positioningTitle: "고급형 포지셔닝",
-    positioningDesc: "읽는 사람에게 정돈된 실력과 강한 인상을 동시에 주는 방향으로 톤을 설계했습니다.",
-    impactDesc: "콘텐츠는 유지하되, 포트폴리오 자체의 완성도와 브랜딩 감도를 더 강하게 전달하는 버전입니다.",
-    stats: [
-      ["대표 포지션", "프리미엄 포트폴리오", "인상과 완성도를 중요하게 보는 상황에 적합"],
-      ["대표 프로젝트", "Heat Demand · Dementia · Olist", "성과 수치가 또렷한 프로젝트 중심 구성"],
-      ["핵심 메시지", "실력과 정리력을 동시에 보여주는 사람", "화면 자체가 하나의 결과물처럼 읽히게 합니다."]
-    ],
-    projectDesc: "성과가 강한 프로젝트 중심, 톤과 시선 흐름까지 고려해 배치한 버전입니다.",
-    strengthDesc: "브랜딩 자산 버전입니다.",
-    skills: [
-      ["정보 구조", "한 화면에서 핵심 메시지가 먼저 읽히는 배치"],
-      ["성과 강조", "숫자와 키워드를 전면 배치해 기억에 남게 구성"],
-      ["콘텐츠 재활용", "한 데이터로 여러 버전을 운영하는 구조"],
-      ["배포 운영", "GitHub Pages 기반 링크 분기와 관리 용이성"]
-    ],
-    experienceDesc: "포트폴리오의 인상과 완성도를 더 강하게 보여주는 버전입니다.",
-    submission: [
-      ["고급 링크", "https://ryemso.github.io/portfolio/?ver=advanced"],
-      ["활용 상황", "스타트업, 감도 높은 조직, 포트폴리오 비중이 큰 지원처"],
-      ["슬로건", "목표가 있다면 도달합니다."]
-    ],
-    projectOrder: [
-      "날씨 데이터를 활용한 열수요 예측 모델 개발",
-      "머신러닝 스태킹 기반 인지장애 예측 모델 개발",
-      "Olist 이커머스 셀러 유치 전략 분석",
-      "Money War 웹게임 기획 및 프로토타입"
-    ],
-    theme: "advanced"
+    label: "ENGLISH VERSION",
+    title: "A data analyst who turns time-series problems into clear, decision-ready insight",
+    desc: "This version focuses on one main project and presents the rest in compact card format for faster reading.",
+    summary: "A focused portfolio built around one flagship project and a clean supporting project set.",
+    shareLabel: "English Version Link",
+    theme: "advanced",
+    lang: "en"
   }
 };
 
@@ -234,9 +154,10 @@ function el(tag, className, html) {
 
 function renderVersionTabs(activeKey) {
   const tabs = document.getElementById("versionTabs");
+  if (!tabs) return;
   tabs.innerHTML = "";
   Object.entries(versions).forEach(([key, ver]) => {
-    const btn = el("button", `version-tab ${key === activeKey ? "active" : ""}`, ver.label.replace(" VERSION", ""));
+    const btn = el("button", `version-tab ${key === activeKey ? "active" : ""}`, ver.label);
     btn.addEventListener("click", () => {
       setVersionInUrl(key);
       render(key);
@@ -247,97 +168,113 @@ function renderVersionTabs(activeKey) {
 
 function renderLinks(activeKey) {
   const container = document.getElementById("versionLinks");
+  if (!container) return;
   container.innerHTML = "";
   Object.entries(versions).forEach(([key, ver]) => {
     const href = `${location.origin}${location.pathname}?ver=${key}`;
     const item = el("a", "version-link");
     item.href = href;
-    item.innerHTML = `<strong>${ver.label.replace(" VERSION", "")}</strong><span>${href}</span>`;
-    if (key === activeKey) item.style.outline = "2px solid var(--accent)";
+    item.innerHTML = `<strong>${ver.shareLabel}</strong><span>${href}</span>`;
     container.appendChild(item);
   });
-  const shareTitle = document.getElementById("shareTitle");
-  if (shareTitle) shareTitle.textContent = versions[activeKey].shareLabel;
 }
 
-function renderStats(stats) {
-  const grid = document.getElementById("statsGrid");
-  grid.innerHTML = "";
-  stats.forEach(([title, value, desc]) => {
-    const card = el("div", "card");
-    card.innerHTML = `
-      <div class="mini-label">${title}</div>
-      <div class="stat-number">${value}</div>
-      <div class="muted">${desc}</div>
-    `;
-    grid.appendChild(card);
+function renderMainProject(lang) {
+  const data = profile.mainProject[lang];
+  const heroMainLabel = document.getElementById("heroMainLabel");
+  if (heroMainLabel) heroMainLabel.textContent = data.eyebrow;
+  const heroMainTitle = document.getElementById("heroMainTitle");
+  if (heroMainTitle) heroMainTitle.textContent = data.title;
+  const heroMainDesc = document.getElementById("heroMainDesc");
+  if (heroMainDesc) heroMainDesc.textContent = data.short;
+  const mainProjectType = document.getElementById("mainProjectType");
+  if (mainProjectType) mainProjectType.textContent = data.eyebrow;
+  const mainProjectName = document.getElementById("mainProjectName");
+  if (mainProjectName) mainProjectName.textContent = data.title;
+  const mainProjectIntro = document.getElementById("mainProjectIntro");
+  if (mainProjectIntro) mainProjectIntro.textContent = data.intro;
+  const mainResultLabel = document.getElementById("mainResultLabel");
+  if (mainResultLabel) mainResultLabel.textContent = data.resultLabel;
+  const mainResultValue = document.getElementById("mainResultValue");
+  if (mainResultValue) mainResultValue.textContent = data.resultValue;
+
+  const flowWrap = document.getElementById("mainFlow");
+  if (!flowWrap) return;
+  flowWrap.innerHTML = "";
+  data.flow.forEach(([title, desc], idx) => {
+    const item = el("div", "flow-item");
+    item.innerHTML = `<div class="flow-number">${String(idx + 1).padStart(2, "0")}</div><h4>${title}</h4><p>${desc}</p>`;
+    flowWrap.appendChild(item);
   });
 }
 
-function renderProjects(key) {
+function renderOtherProjects(lang) {
   const grid = document.getElementById("projectGrid");
+  if (!grid) return;
   grid.innerHTML = "";
-  const filtered = profile.projects.filter(project => project.focus.includes(key));
-  const order = versions[key].projectOrder || [];
-  filtered.sort((a, b) => {
-    const ai = order.indexOf(a.title);
-    const bi = order.indexOf(b.title);
-    const aRank = ai === -1 ? 999 : ai;
-    const bRank = bi === -1 ? 999 : bi;
-    return aRank - bRank;
-  });
-  filtered.forEach(project => {
-    const card = el("article", "card");
-    const bullets = project.bullets.map(b => `<li>${b}</li>`).join("");
-    const tags = project.tags.map(tag => `<span class="chip">${tag}</span>`).join("");
-    card.innerHTML = `
-      <div class="project-header">
-        <div>
-          <h3>${project.title}</h3>
-          <p class="muted" style="margin: 8px 0 0;">${project.summary}</p>
-        </div>
-        <div class="metric-box">
-          <span class="mini-label">${project.metric}</span>
-          <strong>${project.metricValue}</strong>
-        </div>
-      </div>
-      <div class="chip-row">${tags}</div>
-      <ul class="project-list">${bullets}</ul>
-    `;
+  profile.otherProjects.forEach((project) => {
+    const title = lang === "en" ? project.enTitle : project.koTitle;
+    const desc = lang === "en" ? project.enDesc : project.koDesc;
+    const result = lang === "en" ? project.resultEn : project.resultKo;
+    const tags = project.tags.map(tag => `<span class="meta-chip">${tag}</span>`).join("");
+    const card = el("article", "project-card");
+    card.innerHTML = `<h3>${title}</h3><p>${desc}</p><div class="project-meta"><span class="meta-chip">${result}</span>${tags}</div>`;
     grid.appendChild(card);
   });
 }
 
-function renderSkillGrid(items) {
-  const grid = document.getElementById("skillGrid");
+function renderStrengths(lang) {
+  const grid = document.getElementById("strengthGrid");
+  if (!grid) return;
   grid.innerHTML = "";
-  items.forEach(([title, desc]) => {
-    const box = el("div", "skill-box", `<strong>${title}</strong><span class="muted">${desc}</span>`);
-    grid.appendChild(box);
+  profile.strengths[lang].forEach(([title, desc]) => {
+    const card = el("div", "strength-card");
+    card.innerHTML = `<h3>${title}</h3><p>${desc}</p>`;
+    grid.appendChild(card);
   });
 }
 
-function renderTimeline(targetId, items) {
-  const wrap = document.getElementById(targetId);
+function renderExperience(lang) {
+  const wrap = document.getElementById("experienceList");
   if (!wrap) return;
   wrap.innerHTML = "";
-  items.forEach(([title, desc]) => {
-    const item = el("div", "timeline-item", `<strong>${title}</strong><div>${desc}</div>`);
+  profile.experience[lang].forEach(([title, desc]) => {
+    const item = el("div", "summary-item");
+    item.innerHTML = `<strong>${title}</strong><p>${desc}</p>`;
     wrap.appendChild(item);
   });
 }
 
-function renderContacts() {
-  const list = document.getElementById("contactList");
-  list.innerHTML = "";
-  profile.contacts.forEach(({ label, value }) => {
-    const item = el("div", "contact-item", `<strong>${label}</strong><div class="muted">${value}</div>`);
-    list.appendChild(item);
+function renderContacts(lang) {
+  const wrap = document.getElementById("contactList");
+  if (!wrap) return;
+  wrap.innerHTML = "";
+  profile.contacts.forEach((item) => {
+    let text = item.text;
+    if (lang === "en") {
+      if (item.label === "Email") text = "Replace with your actual email";
+      if (item.label === "Versioned Link") text = "Open analyst link";
+    } else {
+      if (item.label === "Email") text = "실제 이메일로 교체 필요";
+      if (item.label === "Portfolio PDF") text = "PDF 포트폴리오 열기";
+      if (item.label === "Versioned Link") text = "분석가 버전 링크 열기";
+    }
+    const node = el("a", "contact-link");
+    node.href = item.href;
+    if (item.href.startsWith("http") || item.href.startsWith("./")) {
+      node.target = "_blank";
+      node.rel = "noopener noreferrer";
+    }
+    node.innerHTML = `<strong>${item.label}</strong><span>${text}</span>`;
+    wrap.appendChild(node);
   });
 }
 
 function render(key = currentVersion()) {
   const ver = versions[key];
+  const lang = ver.lang;
+  const isEnglish = lang === "en";
+
   document.body.classList.remove("theme-strategy", "theme-advanced");
   if (ver.theme === "strategy") document.body.classList.add("theme-strategy");
   if (ver.theme === "advanced") document.body.classList.add("theme-advanced");
@@ -348,31 +285,53 @@ function render(key = currentVersion()) {
   if (heroTitle) heroTitle.textContent = ver.title;
   const heroDesc = document.getElementById("heroDesc");
   if (heroDesc) heroDesc.textContent = ver.desc;
-  const positioningTitle = document.getElementById("positioningTitle");
-  if (positioningTitle) positioningTitle.textContent = ver.positioningTitle;
   const positioningDesc = document.getElementById("positioningDesc");
-  if (positioningDesc) positioningDesc.textContent = ver.positioningDesc;
-  const impactDesc = document.getElementById("impactDesc");
-  if (impactDesc) impactDesc.textContent = ver.impactDesc;
-  const projectSectionDesc = document.getElementById("projectSectionDesc");
-  if (projectSectionDesc) projectSectionDesc.textContent = ver.projectDesc;
-  const strengthDesc = document.getElementById("strengthDesc");
-  if (strengthDesc) strengthDesc.textContent = ver.strengthDesc;
-  const experienceDesc = document.getElementById("experienceDesc");
-  if (experienceDesc) experienceDesc.textContent = ver.experienceDesc;
+  if (positioningDesc) positioningDesc.textContent = ver.summary;
 
-  const chipWrap = document.getElementById("heroChips");
-  if (chipWrap) chipWrap.innerHTML = ver.chips.map(chip => `<span class="chip">${chip}</span>`).join("");
+  const mainProjectBtn = document.getElementById("mainProjectBtn");
+  if (mainProjectBtn) mainProjectBtn.textContent = isEnglish ? "View Main Project" : "메인 프로젝트 보기";
+  const contactBtn = document.getElementById("contactBtn");
+  if (contactBtn) contactBtn.textContent = isEnglish ? "View Contact" : "연락처 보기";
+
+  const versionLabel = document.getElementById("versionLabel");
+  if (versionLabel) versionLabel.textContent = isEnglish ? "Version" : "버전 선택";
+  const shareLabel = document.getElementById("shareLabel");
+  if (shareLabel) shareLabel.textContent = isEnglish ? "Shared Link" : "공유 링크";
+  const summaryLabel = document.getElementById("summaryLabel");
+  if (summaryLabel) summaryLabel.textContent = isEnglish ? "Summary" : "한 줄 요약";
+
+  const mainProjectSectionDesc = document.getElementById("mainProjectSectionDesc");
+  if (mainProjectSectionDesc) mainProjectSectionDesc.textContent = isEnglish
+    ? "The portfolio is centered on one flagship project so the problem-solving flow is easy to follow."
+    : "하나의 대표 프로젝트를 중심으로 문제 정의부터 결과까지 흐름이 보이도록 구성했습니다.";
+
+  const projectSectionDesc = document.getElementById("projectSectionDesc");
+  if (projectSectionDesc) projectSectionDesc.textContent = isEnglish
+    ? "The rest of the work is presented in compact cards for faster reading."
+    : "나머지 프로젝트는 카드 형태로 간결하게 정리했습니다.";
+
+  const strengthDesc = document.getElementById("strengthDesc");
+  if (strengthDesc) strengthDesc.textContent = isEnglish
+    ? "My current strengths are time-series modeling, optimization, and turning results into readable insight."
+    : "현재 저는 시계열 데이터 해석, 모델 최적화, 비즈니스 인사이트 정리에 강점이 있습니다.";
+
+  const experienceDesc = document.getElementById("experienceDesc");
+  if (experienceDesc) experienceDesc.textContent = isEnglish
+    ? "Most of my experience comes from personal projects built around analysis, modeling, performance improvement, and reporting."
+    : "개인 프로젝트 중심으로 분석, 모델링, 성능 개선, 보고서 정리 경험을 축적했습니다.";
+
+  const contactDesc = document.getElementById("contactDesc");
+  if (contactDesc) contactDesc.textContent = isEnglish
+    ? "Each contact item is clickable and opens directly."
+    : "연락처는 클릭하면 바로 이동하도록 구성했습니다.";
 
   renderVersionTabs(key);
   renderLinks(key);
-  renderStats(ver.stats);
-  renderProjects(key);
-  renderSkillGrid(ver.skills);
-  renderTimeline("workflowList", profile.workflow);
-  renderTimeline("experienceList", profile.experience);
-  renderTimeline("submissionList", ver.submission);
-  renderContacts();
+  renderMainProject(lang);
+  renderOtherProjects(lang);
+  renderStrengths(lang);
+  renderExperience(lang);
+  renderContacts(lang);
 }
 
 render();
