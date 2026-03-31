@@ -252,7 +252,7 @@ function renderContacts(lang) {
   profile.contacts.forEach((item) => {
     let text = item.text;
     if (lang === "en") {
-      if (item.label === "Email") text = "Replace with your actual email";
+      if (item.label === "Email") text = "qt0177@gmail.com";
       if (item.label === "Versioned Link") text = "Open analyst link";
     } else {
       if (item.label === "Email") text = "qt0177@gmail.com";
