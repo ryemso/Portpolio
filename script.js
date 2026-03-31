@@ -255,7 +255,7 @@ function renderContacts(lang) {
       if (item.label === "Email") text = "Replace with your actual email";
       if (item.label === "Versioned Link") text = "Open analyst link";
     } else {
-      if (item.label === "Email") text = "실제 이메일로 교체 필요";
+      if (item.label === "Email") text = "qt0177@gmail.com";
       if (item.label === "Portfolio PDF") text = "PDF 포트폴리오 열기";
       if (item.label === "Versioned Link") text = "분석가 버전 링크 열기";
     }
