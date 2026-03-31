@@ -2,7 +2,7 @@ const profile = {
   contacts: [
     { label: "GitHub", text: "github.com/ryemso", href: "https://github.com/ryemso" },
     { label: "Email", text: "qt0177@gmail.com", href: "mailto:qt0177@gmail.com" },
-    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "./portfolio.pdf" },
+    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "https://drive.google.com/file/d/1-jQsoKR6gl0ZuA4ZFbpL9QR9oC906t7P/view?usp=drive_link" },
     { label: "Phone number", text: "82)1065010177", href: "01065010177" }
   ],
   mainProject: {
