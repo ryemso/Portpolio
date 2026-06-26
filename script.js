@@ -367,6 +367,17 @@ function render(key = currentVersion()) {
   renderContacts(lang);
 }
 
-const initialVersion = currentVersion();
-render(initialVersion);
-trackPortfolioView(initialVersion);
+function initPortfolio() {
+  const initialVersion = currentVersion();
+  render(initialVersion);
+
+  if (typeof trackPortfolioView === "function") {
+    trackPortfolioView(initialVersion);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPortfolio);
+} else {
+  initPortfolio();
+}
