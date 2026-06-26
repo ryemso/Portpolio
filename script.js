@@ -148,6 +148,22 @@ function currentVersion() {
   return versions[requested] ? requested : "analyst";
 }
 
+function trackPortfolioView(versionKey) {
+  if (typeof gtag !== "function") return;
+
+  gtag("event", "page_view", {
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: window.location.pathname + window.location.search,
+    portfolio_version: versionKey
+  });
+
+  gtag("event", "portfolio_version_view", {
+    portfolio_version: versionKey,
+    page_url: window.location.href
+  });
+}
+
 function setVersionInUrl(key) {
   const url = new URL(location.href);
   url.searchParams.set("ver", key);
