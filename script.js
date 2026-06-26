@@ -186,9 +186,8 @@ function renderVersionTabs(activeKey) {
     btn.addEventListener("click", () => {
       setVersionInUrl(key);
       render(key);
-    });
-    tabs.appendChild(btn);
-  });
+      trackPortfolioView(key);
+});
 }
 
 function renderLinks(activeKey) {
@@ -286,6 +285,15 @@ function renderContacts(lang) {
     }
     const node = el("a", "contact-link");
     node.href = item.href;
+    node.addEventListener("click", () => {
+  if (typeof gtag !== "function") return;
+
+  gtag("event", "contact_click", {
+    contact_type: item.label,
+    contact_text: item.text,
+    portfolio_version: currentVersion()
+  });
+});
     if (item.href.startsWith("http") || item.href.startsWith("./")) {
       node.target = "_blank";
       node.rel = "noopener noreferrer";
@@ -359,4 +367,6 @@ function render(key = currentVersion()) {
   renderContacts(lang);
 }
 
-render();
+const initialVersion = currentVersion();
+render(initialVersion);
+trackPortfolioView(initialVersion);
