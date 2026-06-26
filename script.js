@@ -188,8 +188,9 @@ function renderVersionTabs(activeKey) {
       render(key);
       trackPortfolioView(key);
 });
+    tabs.appendChild(btn); // 화면에 버튼을 붙여주는 코드도 누락되어 있다면 이 타이밍에 넣어주어야 합니다.
+  });
 }
-                                   }
                                 
 
 function renderLinks(activeKey) {
