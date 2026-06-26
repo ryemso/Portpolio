@@ -189,6 +189,8 @@ function renderVersionTabs(activeKey) {
       trackPortfolioView(key);
 });
 }
+                                   }
+                                
 
 function renderLinks(activeKey) {
   const container = document.getElementById("versionLinks");
