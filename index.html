@@ -9,15 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPPX83WW05"></script>
-  <script>
+  <!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag(){ dataLayer.push(arguments); }
 
-  gtag('config', 'G-BPPX83WW05');
+  gtag("js", new Date());
+
+  gtag("config", "G-BPPX83WW05", {
+    send_page_view: false
+  });
 </script>
 </head>
 <body>
