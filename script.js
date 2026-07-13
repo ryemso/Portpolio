@@ -41,8 +41,7 @@ const profile = {
       {
       koTitle: "지역·기상·혈통 기반 한우 등급 예측",
       enTitle: "Hanwoo Grade Prediction with Regional, Weather, and Pedigree Data",
-      koDesc: "개체 정보, 도축 성적, 혈통 관계, 지역별 기상 데이터를 통합해 한우 등급 예측을 위한 피처 엔지니어링 및 분류 모델링을 수행했으며,
-              결과를 비교하면서 예측 문제는 도메인 결정 구조를 모델링하는 관점이 필요하다는 걸 배움.",
+      koDesc: "개체 정보, 도축 성적, 혈통 관계, 지역별 기상 데이터를 통합해 한우 등급 예측을 위한 피처 엔지니어링 및 분류 모델링을 수행했으며,결과를 비교하면서 예측 문제는 도메인 결정 구조를 모델링하는 관점이 필요하다는 걸 배움.",
       enDesc: "Integrated cattle records, slaughter outcomes, pedigree relationships, and regional weather data to build features and classification models for Hanwoo grade prediction.",
       resultKo: "이종 데이터 결합 및 제출 파이프라인 완성",
       resultEn: "Completed multi-source data integration and submission pipeline",
