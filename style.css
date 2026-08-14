@@ -65,7 +65,7 @@ button { font: inherit; }
 .nav a { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
 
 .hero { padding: 42px 0 26px; }
-.hero-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 20px; align-items: start; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
 .panel {
   background: rgba(255,255,255,0.92);
   border: 1px solid var(--line);
@@ -128,6 +128,30 @@ h1 {
 }
 .btn-primary { background: linear-gradient(135deg, var(--accent), #6eb4ff); color: #fff; }
 .btn-secondary { background: #fff; border-color: var(--line); }
+
+.hero-merged {
+  padding: 34px;
+}
+.hero-version-block {
+  margin-top: 22px;
+}
+.hero-combined-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 18px;
+}
+.hero-feature-card {
+  margin-top: 0;
+  min-height: 100%;
+}
+.hero-feature-card .hero-highlight-title {
+  font-size: 1.5rem;
+}
+.hero-feature-card .hero-highlight-desc {
+  font-size: 0.96rem;
+}
 
 .hero-side { padding: 18px; display: grid; gap: 14px; align-content: start; }
 .side-card {
@@ -210,11 +234,15 @@ h1 {
 .skill-bar-fill.level {
   background: linear-gradient(90deg, #7f93ad 0%, #afc4db 100%);
 }
+.skill-scale {
+  margin-top: 11px;
+}
 .skill-scale-note {
   width: 100%;
   color: #8190a3;
   font-size: 0.66rem;
   line-height: 1.4;
+  display: block;
 }
 .skill-chart {
   display: grid;
@@ -535,14 +563,15 @@ body.theme-strategy { --accent: #5d98ff; --accent-2: #89c4ff; }
 body.theme-advanced { --accent: #5b97ff; --accent-2: #8bc9ff; }
 
 @media (max-width: 1080px) {
-  .hero-grid, .main-flow, .compact-grid, .strength-grid, .experience-list, .contact-grid-simple { grid-template-columns: 1fr 1fr; }
+  .hero-combined-grid, .main-flow, .compact-grid, .strength-grid, .experience-list, .contact-grid-simple { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   .topbar-inner { flex-direction: column; align-items: stretch; padding: 12px 0; }
-  .hero-grid, .main-flow, .compact-grid, .strength-grid, .experience-list, .education-list, .contact-grid-simple { grid-template-columns: 1fr; }
+  .hero-combined-grid, .main-flow, .compact-grid, .strength-grid, .experience-list, .education-list, .contact-grid-simple { grid-template-columns: 1fr; }
   .education-card.featured { grid-column: auto; }
   .experience-head, .education-head { flex-direction: column; }
   .education-period { justify-content: flex-start; }
   .main-top { flex-direction: column; }
-  .hero-main, .hero-side, .main-project-card { padding: 18px; }
+  .hero-main, .main-project-card { padding: 18px; }
+  .hero-merged { padding: 20px; }
 }

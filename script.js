@@ -485,9 +485,11 @@ function renderSkillChart(lang) {
     legendEl.innerHTML = `
       <div class="legend-pill"><span class="legend-swatch exp"></span><span>${data.legend[0]}</span></div>
       <div class="legend-pill"><span class="legend-swatch level"></span><span>${data.legend[1]}</span></div>
-      <span class="skill-scale-note">${data.scale}</span>
     `;
   }
+
+  const scaleEl = document.getElementById("skillScale");
+  if (scaleEl) scaleEl.innerHTML = `<span class="skill-scale-note">${data.scale}</span>`;
 
   const chart = document.getElementById("skillChart");
   if (!chart) return;
