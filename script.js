@@ -38,7 +38,7 @@ const profile = {
     }
   },
   otherProjects: [
-      {
+    {
       koTitle: "지역·기상·혈통 기반 한우 등급 예측",
       enTitle: "Hanwoo Grade Prediction with Regional, Weather, and Pedigree Data",
       koDesc: "개체 정보, 도축 성적, 혈통 관계, 지역별 기상 데이터를 통합해 한우 등급 예측을 위한 피처 엔지니어링 및 분류 모델링을 수행했습니다.",
@@ -46,7 +46,7 @@ const profile = {
       resultKo: "이종 데이터 결합 및 제출 파이프라인 완성",
       resultEn: "Completed multi-source data integration and submission pipeline",
       tags: ["Python", "CatBoost", "XGBoost", "Data Preprocessing"]
-    },    
+    },
     {
       koTitle: "열수요 예측 모델 개발",
       enTitle: "Heat Demand Forecasting",
@@ -97,6 +97,36 @@ const profile = {
       ["EDA & Insight", "Explains not just numbers, but the meaning and cause behind them."],
       ["Structured Reporting", "Builds outputs that read clearly as problem, approach, improvement, and result."]
     ]
+  },
+  techStacks: {
+    ko: {
+      label: "기술 스택 스냅샷",
+      desc: "포트폴리오와 이력서 기준으로 자주 사용한 기술의 사용 경험과 실전 활용도를 시각화했습니다.",
+      legend: ["사용 경험", "활용 능력"],
+      items: [
+        { name: "Python", note: "EDA · 모델링 · 자동화", expValue: 96, expLabel: "5년+", levelValue: 92, levelLabel: "상" },
+        { name: "SQL", note: "추출 · 집계 · 분석", expValue: 82, expLabel: "4년", levelValue: 84, levelLabel: "상" },
+        { name: "ML / DL", note: "LSTM · CNN · Attention", expValue: 74, expLabel: "3년", levelValue: 88, levelLabel: "상" },
+        { name: "Tableau", note: "대시보드 · 시각화", expValue: 64, expLabel: "3년", levelValue: 76, levelLabel: "중상" },
+        { name: "Amplitude / GA4", note: "제품 분석 · 퍼널", expValue: 52, expLabel: "2년", levelValue: 68, levelLabel: "중상" },
+        { name: "MongoDB", note: "Aggregation Pipeline", expValue: 38, expLabel: "1년+", levelValue: 64, levelLabel: "중" },
+        { name: "HTML / CSS / JS", note: "포트폴리오 · 웹 프로토타입", expValue: 56, expLabel: "2년+", levelValue: 72, levelLabel: "중상" }
+      ]
+    },
+    en: {
+      label: "Tech Stack Snapshot",
+      desc: "A quick chart of frequently used tools, combining usage history and practical working proficiency.",
+      legend: ["Usage History", "Working Proficiency"],
+      items: [
+        { name: "Python", note: "EDA · Modeling · Automation", expValue: 96, expLabel: "5+ yrs", levelValue: 92, levelLabel: "High" },
+        { name: "SQL", note: "Querying · Aggregation · Analysis", expValue: 82, expLabel: "4 yrs", levelValue: 84, levelLabel: "High" },
+        { name: "ML / DL", note: "LSTM · CNN · Attention", expValue: 74, expLabel: "3 yrs", levelValue: 88, levelLabel: "High" },
+        { name: "Tableau", note: "Dashboard · Visualization", expValue: 64, expLabel: "3 yrs", levelValue: 76, levelLabel: "Mid-High" },
+        { name: "Amplitude / GA4", note: "Product Analytics · Funnel", expValue: 52, expLabel: "2 yrs", levelValue: 68, levelLabel: "Mid-High" },
+        { name: "MongoDB", note: "Aggregation Pipeline", expValue: 38, expLabel: "1+ yrs", levelValue: 64, levelLabel: "Mid" },
+        { name: "HTML / CSS / JS", note: "Portfolio · Web Prototype", expValue: 56, expLabel: "2+ yrs", levelValue: 72, levelLabel: "Mid-High" }
+      ]
+    }
   },
   internships: {
     ko: [
@@ -222,7 +252,7 @@ const profile = {
         provider: "Sparta Coding Club",
         period: "Feb 2025 — Jul 2025",
         paragraphs: [
-          "Completed an end-to-end curriculum from data preprocessing to deep-learning modeling, including a time-series forecasting project that achieved RMSE 17.2 and model interpretation with Attention visualization."
+          "Completed an end-to-end curriculum from data preprocessing to deep-learning modeling. In a time-series forecasting project, I achieved RMSE 17.2 and strengthened model interpretation through attention visualization."
         ],
         stack: ["Python", "Pandas", "Scikit-learn", "SQL", "Tableau", "LSTM/CNN", "Attention"]
       }
@@ -235,8 +265,6 @@ const versions = {
     label: "DATA ANALYST",
     title: "시계열 데이터를 해석해 예측 모델로 연결하는 데이터 분석가",
     desc: "하나의 메인 프로젝트를 중심으로 문제 정의, 모델링 과정, 성능 개선 흐름이 바로 읽히도록 구성했습니다.",
-    summary: "분석, 모델링, 성능 개선이 한 흐름으로 읽히는 포트폴리오입니다.",
-    shareLabel: "데이터 분석가 링크",
     theme: "analyst",
     lang: "ko"
   },
@@ -244,8 +272,6 @@ const versions = {
     label: "BUSINESS / STRATEGY",
     title: "분석 결과를 우선순위와 실행 방향으로 연결하는 전략형 분석가",
     desc: "대표 프로젝트를 중심으로 문제 해결 과정이 보이게 정리하고, 나머지 프로젝트는 의사결정 관점의 카드로 압축했습니다.",
-    summary: "결과보다도 문제를 어떻게 구조화했는지가 보이도록 정리했습니다.",
-    shareLabel: "전략형 링크",
     theme: "strategy",
     lang: "ko"
   },
@@ -253,8 +279,6 @@ const versions = {
     label: "ENGLISH VERSION",
     title: "A data analyst who turns time-series problems into clear, decision-ready insight",
     desc: "This version focuses on one main project and presents the rest in compact card format for faster reading.",
-    summary: "A focused portfolio built around one flagship project and a clean supporting project set.",
-    shareLabel: "English Version Link",
     theme: "advanced",
     lang: "en"
   }
@@ -290,19 +314,6 @@ function renderVersionTabs(activeKey) {
       render(key);
     });
     tabs.appendChild(btn);
-  });
-}
-
-function renderLinks(activeKey) {
-  const container = document.getElementById("versionLinks");
-  if (!container) return;
-  container.innerHTML = "";
-  Object.entries(versions).forEach(([key, ver]) => {
-    const href = `${location.origin}${location.pathname}?ver=${key}`;
-    const item = el("a", "version-link");
-    item.href = href;
-    item.innerHTML = `<strong>${ver.shareLabel}</strong><span>${href}</span>`;
-    container.appendChild(item);
   });
 }
 
@@ -361,11 +372,55 @@ function renderStrengths(lang) {
   });
 }
 
-function renderExperience(lang) {
+function renderSkillChart(lang) {
+  const data = profile.techStacks[lang];
+  const labelEl = document.getElementById("skillChartLabel");
+  if (labelEl) labelEl.textContent = data.label;
+  const descEl = document.getElementById("skillChartDesc");
+  if (descEl) descEl.textContent = data.desc;
+
+  const legendEl = document.getElementById("skillLegend");
+  if (legendEl) {
+    legendEl.innerHTML = "";
+    data.legend.forEach((text, idx) => {
+      const item = el("div", "legend-pill");
+      item.innerHTML = `<span class="legend-swatch ${idx === 0 ? "exp" : "level"}"></span><span>${text}</span>`;
+      legendEl.appendChild(item);
+    });
+  }
+
+  const chart = document.getElementById("skillChart");
+  if (!chart) return;
+  chart.innerHTML = "";
+
+  data.items.forEach((item) => {
+    const row = el("div", "skill-item");
+    row.innerHTML = `
+      <div class="skill-top">
+        <div>
+          <strong>${item.name}</strong>
+          <p>${item.note}</p>
+        </div>
+      </div>
+      <div class="skill-bar-row">
+        <span class="skill-bar-label">${data.legend[0]}</span>
+        <div class="skill-bar-track"><div class="skill-bar-fill exp" style="width:${item.expValue}%"></div></div>
+        <span class="skill-bar-value">${item.expLabel}</span>
+      </div>
+      <div class="skill-bar-row">
+        <span class="skill-bar-label">${data.legend[1]}</span>
+        <div class="skill-bar-track"><div class="skill-bar-fill level" style="width:${item.levelValue}%"></div></div>
+        <span class="skill-bar-value">${item.levelLabel}</span>
+      </div>
+    `;
+    chart.appendChild(row);
+  });
+}
+
+function renderInternships(lang) {
   const wrap = document.getElementById("experienceList");
   if (!wrap) return;
   wrap.innerHTML = "";
-
   profile.internships[lang].forEach((item) => {
     const tags = item.tags.map(tag => `<span class="meta-chip">${tag}</span>`).join("");
     const points = item.points.map(point => `<li>${point}</li>`).join("");
@@ -373,14 +428,15 @@ function renderExperience(lang) {
     card.innerHTML = `
       <div class="experience-head">
         <div>
-          <div class="mini-label">${lang === "en" ? "Internship" : "인턴"}</div>
+          <div class="mini-label">Internship</div>
           <h3>${item.company}</h3>
           <p class="experience-role">${item.role}</p>
         </div>
         <span class="period-chip">${item.period}</span>
       </div>
       <ul class="experience-points">${points}</ul>
-      <div class="project-meta">${tags}</div>`;
+      <div class="project-meta">${tags}</div>
+    `;
     wrap.appendChild(card);
   });
 }
@@ -389,16 +445,17 @@ function renderEducation(lang) {
   const wrap = document.getElementById("educationList");
   if (!wrap) return;
   wrap.innerHTML = "";
-
   profile.education[lang].forEach((item) => {
-    const card = el("article", `education-card ${item.featured ? "featured" : ""}`);
-    const paragraphs = item.paragraphs.map(text => `<p>${text}</p>`).join("");
-    const badge = item.badge ? `<span class="course-count">${item.badge}</span>` : "";
-    const path = item.learningPath
-      ? `<div class="learning-label">Learning Path</div><div class="learning-path">${item.learningPath.map((step, idx) => `${idx ? '<span class="learning-arrow">→</span>' : ''}<span class="learning-step">${step}</span>`).join("")}</div>`
-      : "";
-    const stack = item.stack
-      ? `<div class="education-stack">${item.stack.map(tag => `<span class="meta-chip">${tag}</span>`).join("")}</div>`
+    const card = el("article", `education-card ${item.featured ? "featured" : ""}`.trim());
+    const paragraphs = item.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("");
+    const stack = item.stack ? `<div class="education-stack">${item.stack.map(tag => `<span class="meta-chip">${tag}</span>`).join("")}</div>` : "";
+    const learningPath = item.learningPath
+      ? `
+        <div class="learning-label">Learning Path</div>
+        <div class="learning-path">
+          ${item.learningPath.map((step, idx) => `${idx > 0 ? `<span class="learning-arrow">→</span>` : ""}<span class="learning-step">${step}</span>`).join("")}
+        </div>
+      `
       : "";
 
     card.innerHTML = `
@@ -409,13 +466,13 @@ function renderEducation(lang) {
         </div>
         <div class="education-period">
           <span class="period-chip">${item.period}</span>
-          ${badge}
+          ${item.badge ? `<span class="course-count">${item.badge}</span>` : ""}
         </div>
       </div>
       <div class="education-copy">${paragraphs}</div>
-      ${path}
-      ${stack}`;
-
+      ${learningPath}
+      ${stack}
+    `;
     wrap.appendChild(card);
   });
 }
@@ -428,17 +485,19 @@ function renderContacts(lang) {
     let text = item.text;
     if (lang === "en") {
       if (item.label === "Email") text = "qt0177@gmail.com";
-      if (item.label === "Versioned Link") text = "Open analyst link";
+      if (item.label === "Portfolio PDF") text = "Open PDF Portfolio";
     } else {
       if (item.label === "Email") text = "qt0177@gmail.com";
       if (item.label === "Portfolio PDF") text = "PDF 포트폴리오 열기";
-      if (item.label === "Versioned Link") text = "분석가 버전 링크 열기";
+      if (item.label === "Phone number") text = "82)1065010177";
     }
     const node = el("a", "contact-link");
     node.href = item.href;
-    if (item.href.startsWith("http") || item.href.startsWith("./")) {
-      node.target = "_blank";
-      node.rel = "noopener noreferrer";
+    if (item.href.startsWith("http") || item.href.startsWith("./") || item.href.startsWith("mailto:")) {
+      if (item.href.startsWith("http") || item.href.startsWith("./")) {
+        node.target = "_blank";
+        node.rel = "noopener noreferrer";
+      }
     }
     node.innerHTML = `<strong>${item.label}</strong><span>${text}</span>`;
     wrap.appendChild(node);
@@ -460,8 +519,6 @@ function render(key = currentVersion()) {
   if (heroTitle) heroTitle.textContent = ver.title;
   const heroDesc = document.getElementById("heroDesc");
   if (heroDesc) heroDesc.textContent = ver.desc;
-  const positioningDesc = document.getElementById("positioningDesc");
-  if (positioningDesc) positioningDesc.textContent = ver.summary;
 
   const mainProjectBtn = document.getElementById("mainProjectBtn");
   if (mainProjectBtn) mainProjectBtn.textContent = isEnglish ? "View Main Project" : "메인 프로젝트 보기";
@@ -470,21 +527,23 @@ function render(key = currentVersion()) {
 
   const versionLabel = document.getElementById("versionLabel");
   if (versionLabel) versionLabel.textContent = isEnglish ? "Version" : "버전 선택";
-  const shareLabel = document.getElementById("shareLabel");
-  if (shareLabel) shareLabel.textContent = isEnglish ? "Shared Link" : "공유 링크";
-  const summaryLabel = document.getElementById("summaryLabel");
-  if (summaryLabel) summaryLabel.textContent = isEnglish ? "Summary" : "한 줄 요약";
 
+  const mainProjectSectionTitle = document.getElementById("mainProjectSectionTitle");
+  if (mainProjectSectionTitle) mainProjectSectionTitle.textContent = isEnglish ? "Main Project" : "Main Project";
   const mainProjectSectionDesc = document.getElementById("mainProjectSectionDesc");
   if (mainProjectSectionDesc) mainProjectSectionDesc.textContent = isEnglish
     ? "The portfolio is centered on one flagship project so the problem-solving flow is easy to follow."
     : "하나의 대표 프로젝트를 중심으로 문제 정의부터 결과까지 흐름이 보이도록 구성했습니다.";
 
+  const projectsTitle = document.getElementById("projectsTitle");
+  if (projectsTitle) projectsTitle.textContent = isEnglish ? "Other Projects" : "Other Projects";
   const projectSectionDesc = document.getElementById("projectSectionDesc");
   if (projectSectionDesc) projectSectionDesc.textContent = isEnglish
     ? "The rest of the work is presented in compact cards for faster reading."
     : "나머지 프로젝트는 카드 형태로 간결하게 정리했습니다.";
 
+  const strengthsTitle = document.getElementById("strengthsTitle");
+  if (strengthsTitle) strengthsTitle.textContent = isEnglish ? "Core Strengths" : "Core Strengths";
   const strengthDesc = document.getElementById("strengthDesc");
   if (strengthDesc) strengthDesc.textContent = isEnglish
     ? "My current strengths are time-series modeling, optimization, and turning results into readable insight."
@@ -494,27 +553,29 @@ function render(key = currentVersion()) {
   if (experienceTitle) experienceTitle.textContent = isEnglish ? "Internship Experience" : "Internship Experience";
   const experienceDesc = document.getElementById("experienceDesc");
   if (experienceDesc) experienceDesc.textContent = isEnglish
-    ? "Worked with real service and operational data to support analytics pipelines and business decisions."
+    ? "Hands-on internship work where analysis pipelines and business-support tasks were applied to real service and operations data."
     : "실제 서비스와 운영 데이터 안에서 분석 파이프라인과 의사결정 지원 업무를 경험했습니다.";
 
   const educationTitle = document.getElementById("educationTitle");
   if (educationTitle) educationTitle.textContent = isEnglish ? "Education & Training" : "Education & Training";
   const educationDesc = document.getElementById("educationDesc");
   if (educationDesc) educationDesc.textContent = isEnglish
-    ? "Expanded from programming fundamentals into data analysis, modeling, and product analytics."
+    ? "Expanded from programming fundamentals to data analysis, modeling, and product analytics."
     : "프로그래밍 기초에서 데이터 분석·모델링·제품 분석까지 학습 범위를 확장해 왔습니다.";
 
+  const contactTitle = document.getElementById("contactTitle");
+  if (contactTitle) contactTitle.textContent = isEnglish ? "Contact" : "Contact";
   const contactDesc = document.getElementById("contactDesc");
   if (contactDesc) contactDesc.textContent = isEnglish
     ? "Each contact item is clickable and opens directly."
     : "연락처는 클릭하면 바로 이동하도록 구성했습니다.";
 
   renderVersionTabs(key);
-  renderLinks(key);
   renderMainProject(lang);
   renderOtherProjects(lang);
   renderStrengths(lang);
-  renderExperience(lang);
+  renderSkillChart(lang);
+  renderInternships(lang);
   renderEducation(lang);
   renderContacts(lang);
 }
