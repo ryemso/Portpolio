@@ -8,32 +8,32 @@ const profile = {
   mainProject: {
     ko: {
       eyebrow: "대표 프로젝트",
-      title: "LSTM 기반 시계열 치매 예측 모델 개발",
-      short: "치매 예측 문제를 시계열 관점으로 풀어낸 LSTM 기반 프로젝트입니다.",
-      intro: "정적 분류 중심 접근으로는 시간 흐름 속 패턴을 충분히 반영하기 어렵다고 판단해, LSTM 기반 시계열 구조로 치매 예측 문제를 다시 설계한 프로젝트입니다.",
+      title: "50세 이상 인지장애 경험 여부 예측 모델",
+      short: "Accuracy보다 고위험군 Recall을 우선해 평가 기준과 모델 선택을 다시 설계한 분류 프로젝트입니다.",
+      intro: "50세 이상 인구의 수면·스트레스·우울감·생활습관 데이터를 바탕으로 인지장애 경험 여부를 분류하고, 양성 집단을 놓치는 False Negative의 비용을 고려해 Recall 중심으로 평가 기준을 설계한 프로젝트입니다.",
       resultLabel: "핵심 결과",
       resultValue: "Recall 0.72 → 0.78",
       flow: [
-        ["Problem", "기존 방식은 시간 흐름을 충분히 반영하지 못해 변화 패턴을 놓칠 수 있었습니다."],
-        ["Data", "시계열 구조를 반영할 수 있도록 입력 구간과 관측 순서를 다시 정리했습니다."],
-        ["Approach", "LSTM 기반 구조를 중심으로 입력 시퀀스 설계와 모델 구성을 조정했습니다."],
-        ["Improvement", "하이퍼파라미터, 시퀀스 길이, 입력 구조를 반복 조정하며 성능을 개선했습니다."],
-        ["Outcome", "Recall을 0.72에서 0.78까지 끌어올리며 조기 선별 관점의 활용 가능성을 높였습니다."]
+        ["Problem", "Accuracy만으로는 인지장애 경험 양성 집단을 놓치는 False Negative의 비용을 충분히 반영하기 어렵다고 판단했습니다."],
+        ["Data", "50세 이상 데이터를 대상으로 수면·스트레스·우울감·생활습관 변수를 정제하고 수면장애·우울·인지 관련 파생변수를 설계했습니다."],
+        ["Approach", "Logistic Regression, KNN, SVM, RandomForest, LightGBM, CatBoost, XGBoost, MLP를 비교하고 Recall 중심으로 모델을 평가했습니다."],
+        ["Improvement", "SMOTE, Soft Voting·Stacking, Optuna 튜닝과 임계값 조정을 적용해 양성 집단 탐지 성능을 개선했습니다."],
+        ["Outcome", "Recall을 0.72에서 0.78로 높였고, Precision 저하와의 trade-off를 확인해 이후 F1 중심의 균형 평가로 분석 관점을 확장했습니다."]
       ]
     },
     en: {
       eyebrow: "Main Project",
-      title: "LSTM-based Time-Series Dementia Prediction",
-      short: "A core project that reframed dementia prediction through a time-series LSTM approach.",
-      intro: "Instead of relying only on static classification logic, this project redesigned dementia prediction as a time-series task so that temporal patterns could be reflected more directly in the model.",
+      title: "Cognitive Impairment Experience Prediction for Adults 50+",
+      short: "A classification project that prioritized positive-class recall over accuracy and redesigned the evaluation strategy around false-negative cost.",
+      intro: "Using sleep, stress, depression, and lifestyle variables for adults aged 50+, this project predicted whether respondents had experienced cognitive impairment and selected recall as a key metric because missing positive cases carried a higher cost.",
       resultLabel: "Key Result",
       resultValue: "Recall 0.72 → 0.78",
       flow: [
-        ["Problem", "A static classification setup could miss meaningful patterns that unfold over time."],
-        ["Data", "The dataset was reorganized so that sequence order and temporal windows could be modeled explicitly."],
-        ["Approach", "An LSTM-based structure was used as the main backbone, with repeated tuning of sequence design and model setup."],
-        ["Improvement", "Performance was improved through iterative adjustments to sequence length, hyperparameters, and input structure."],
-        ["Outcome", "Recall improved from 0.72 to 0.78, increasing the project's value for early screening scenarios."]
+        ["Problem", "Accuracy alone did not adequately reflect the cost of false negatives in the positive cognitive-impairment group."],
+        ["Data", "Cleaned sleep, stress, depression, and lifestyle variables and engineered features related to sleep disorder, depression, and cognitive indicators."],
+        ["Approach", "Compared Logistic Regression, KNN, SVM, Random Forest, LightGBM, CatBoost, XGBoost, and MLP with recall-centered evaluation."],
+        ["Improvement", "Applied SMOTE, soft voting and stacking, Optuna tuning, and threshold adjustment to improve positive-class detection."],
+        ["Outcome", "Improved recall from 0.72 to 0.78, then expanded the evaluation toward F1 after identifying the precision trade-off."]
       ]
     }
   },
@@ -59,19 +59,19 @@ const profile = {
     {
       koTitle: "Olist 셀러 유치 전략 분석",
       enTitle: "Olist Seller Strategy",
-      koDesc: "배송 병목과 지역 수요-공급 불균형을 분석해 셀러 유치 우선순위를 제안했습니다.",
-      enDesc: "Analyzed delivery bottlenecks and regional imbalance to prioritize seller acquisition.",
-      resultKo: "이탈률 20% 개선",
-      resultEn: "20% churn improvement",
+      koDesc: "배송 병목과 지역별 수요-공급 불균형을 분석해 셀러 유치 우선지역과 운영 개선 방향을 제안했습니다.",
+      enDesc: "Analyzed delivery bottlenecks and regional demand-supply imbalance to prioritize seller-acquisition regions and operational actions.",
+      resultKo: "셀러 유치 우선지역 도출",
+      resultEn: "Prioritized seller-acquisition regions",
       tags: ["EDA", "SQL", "Tableau"]
     },
     {
       koTitle: "LendingClub 리스크 분류 분석",
       enTitle: "LendingClub Risk Analysis",
-      koDesc: "부실 가능성이 높은 대출을 조기에 선별하는 분류 구조를 설계했습니다.",
-      enDesc: "Built an early-risk screening structure for potentially bad loans.",
-      resultKo: "잠재 손실 15% 방어",
-      resultEn: "15% potential loss defense",
+      koDesc: "부실 가능성이 높은 대출을 조기에 선별하는 분류 구조를 설계하고, 위험군 선별 기준에 따른 잠재 손실 방어 시나리오를 분석했습니다.",
+      enDesc: "Built an early-risk screening model for potentially bad loans and evaluated a potential-loss avoidance scenario based on the screening threshold.",
+      resultKo: "잠재 손실 약 15% 방어 시나리오",
+      resultEn: "Scenario: ~15% potential loss avoidance",
       tags: ["Classification", "Finance", "Python"]
     },
     {
@@ -364,8 +364,8 @@ const profile = {
 const versions = {
   analyst: {
     label: "DATA ANALYST",
-    title: "시계열 데이터를 해석해 예측 모델로 연결하는 데이터 분석가",
-    desc: "하나의 메인 프로젝트를 중심으로 문제 정의, 모델링 과정, 성능 개선 흐름이 바로 읽히도록 구성했습니다.",
+    title: "문제를 정의하고, 지표와 분석을 다음 행동으로 연결하는 데이터 분석가",
+    desc: "문제 정의와 평가 기준 설정부터 모델 비교, 성능 개선, trade-off 검토까지 분석의 판단 과정이 읽히도록 구성했습니다.",
     theme: "analyst",
     lang: "ko"
   },
@@ -378,8 +378,8 @@ const versions = {
   },
   advanced: {
     label: "ENGLISH VERSION",
-    title: "A data analyst who turns time-series problems into clear, decision-ready insight",
-    desc: "This version focuses on one main project and presents the rest in compact card format for faster reading.",
+    title: "A data analyst who defines the right metric and turns analysis into action",
+    desc: "This version highlights how the problem, evaluation metric, model comparison, improvement, and trade-offs were translated into decision-ready analysis.",
     theme: "advanced",
     lang: "en"
   }
@@ -652,8 +652,8 @@ function render(key = currentVersion()) {
   if (mainProjectSectionTitle) mainProjectSectionTitle.textContent = isEnglish ? "Main Project" : "Main Project";
   const mainProjectSectionDesc = document.getElementById("mainProjectSectionDesc");
   if (mainProjectSectionDesc) mainProjectSectionDesc.textContent = isEnglish
-    ? "The portfolio is centered on one flagship project so the problem-solving flow is easy to follow."
-    : "하나의 대표 프로젝트를 중심으로 문제 정의부터 결과까지 흐름이 보이도록 구성했습니다.";
+    ? "The flagship project shows how the evaluation metric was defined, models were compared, performance was improved, and trade-offs were reviewed."
+    : "평가 기준을 어떻게 정의하고, 모델 비교와 개선을 거쳐 결과의 trade-off까지 검토했는지 5단계로 정리했습니다.";
 
   const projectsTitle = document.getElementById("projectsTitle");
   if (projectsTitle) projectsTitle.textContent = isEnglish ? "Other Projects" : "Other Projects";
