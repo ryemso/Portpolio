@@ -100,34 +100,135 @@ const profile = {
   },
   techStacks: {
     ko: {
-      label: "기술 스택 스냅샷",
-      desc: "포트폴리오와 이력서 기준으로 자주 사용한 기술의 사용 경험과 실전 활용도를 시각화했습니다.",
-      legend: ["사용 경험", "활용 능력"],
+      label: "Tech Stack · Evidence",
+      desc: "단순 숙련도 표시가 아니라, 실제 사용 기간과 프로젝트·인턴에서 확인 가능한 활용 근거를 함께 보여줍니다.",
+      legend: ["활용 이력", "실전 활용도"],
+      scale: "막대 길이는 최초 학습·프로젝트 시작 시점부터의 활용 이력 기준이며, 연속 실무 경력을 의미하지 않습니다.",
+      additionalLabel: "Additional Stack",
+      additional: ["HTML/CSS/JavaScript", "R", "SPSS", "Excel", "Git"],
       items: [
-        { name: "Python", note: "EDA · 모델링 · 자동화", expValue: 96, expLabel: "5년+", levelValue: 92, levelLabel: "상" },
-        { name: "SQL", note: "추출 · 집계 · 분석", expValue: 82, expLabel: "4년", levelValue: 84, levelLabel: "상" },
-        { name: "ML / DL", note: "LSTM · CNN · Attention", expValue: 74, expLabel: "3년", levelValue: 88, levelLabel: "상" },
-        { name: "Tableau", note: "대시보드 · 시각화", expValue: 64, expLabel: "3년", levelValue: 76, levelLabel: "중상" },
-        { name: "Amplitude / GA4", note: "제품 분석 · 퍼널", expValue: 52, expLabel: "2년", levelValue: 68, levelLabel: "중상" },
-        { name: "MongoDB", note: "Aggregation Pipeline", expValue: 38, expLabel: "1년+", levelValue: 64, levelLabel: "중" },
-        { name: "HTML / CSS / JS", note: "포트폴리오 · 웹 프로토타입", expValue: 56, expLabel: "2년+", levelValue: 72, levelLabel: "중상" }
+        {
+          name: "Python",
+          note: "분석 · 모델링 · 자동화",
+          expValue: 100,
+          expLabel: "2021~현재",
+          levelValue: 92,
+          levelLabel: "상급",
+          evidence: ["데어 실무", "Pandas", "모델링/자동화"]
+        },
+        {
+          name: "SQL",
+          note: "추출 · 집계 · 분석 쿼리",
+          expValue: 64,
+          expLabel: "2023~현재",
+          levelValue: 82,
+          levelLabel: "중상",
+          evidence: ["Olist 분석", "지표 집계", "교육·프로젝트"]
+        },
+        {
+          name: "MongoDB",
+          note: "NoSQL · Aggregation Pipeline",
+          expValue: 30,
+          expLabel: "2025~현재",
+          levelValue: 78,
+          levelLabel: "중상",
+          evidence: ["데어 실무", "로그 정규화", "Aggregation"]
+        },
+        {
+          name: "Tableau",
+          note: "BI · 대시보드 · 시각화",
+          expValue: 62,
+          expLabel: "2023~현재",
+          levelValue: 78,
+          levelLabel: "중상",
+          evidence: ["Olist", "전략 시각화", "대시보드"]
+        },
+        {
+          name: "Amplitude / GA4",
+          note: "제품 분석 · 이벤트 · 퍼널",
+          expValue: 58,
+          expLabel: "2023~현재",
+          levelValue: 72,
+          levelLabel: "중상",
+          evidence: ["제품 분석", "퍼널/이벤트", "Fastcampus"]
+        },
+        {
+          name: "ML / DL",
+          note: "예측 · 분류 · 시계열 모델링",
+          expValue: 40,
+          expLabel: "2025~현재",
+          levelValue: 88,
+          levelLabel: "상급",
+          evidence: ["LSTM/CNN", "Attention", "XGB/CatBoost"]
+        }
       ]
     },
     en: {
-      label: "Tech Stack Snapshot",
-      desc: "A quick chart of frequently used tools, combining usage history and practical working proficiency.",
+      label: "Tech Stack · Evidence",
+      desc: "Usage history and working proficiency are shown together with evidence from internships and projects.",
       legend: ["Usage History", "Working Proficiency"],
+      scale: "Bar length reflects history since first learning/project use; it does not represent continuous full-time experience.",
+      additionalLabel: "Additional Stack",
+      additional: ["HTML/CSS/JavaScript", "R", "SPSS", "Excel", "Git"],
       items: [
-        { name: "Python", note: "EDA · Modeling · Automation", expValue: 96, expLabel: "5+ yrs", levelValue: 92, levelLabel: "High" },
-        { name: "SQL", note: "Querying · Aggregation · Analysis", expValue: 82, expLabel: "4 yrs", levelValue: 84, levelLabel: "High" },
-        { name: "ML / DL", note: "LSTM · CNN · Attention", expValue: 74, expLabel: "3 yrs", levelValue: 88, levelLabel: "High" },
-        { name: "Tableau", note: "Dashboard · Visualization", expValue: 64, expLabel: "3 yrs", levelValue: 76, levelLabel: "Mid-High" },
-        { name: "Amplitude / GA4", note: "Product Analytics · Funnel", expValue: 52, expLabel: "2 yrs", levelValue: 68, levelLabel: "Mid-High" },
-        { name: "MongoDB", note: "Aggregation Pipeline", expValue: 38, expLabel: "1+ yrs", levelValue: 64, levelLabel: "Mid" },
-        { name: "HTML / CSS / JS", note: "Portfolio · Web Prototype", expValue: 56, expLabel: "2+ yrs", levelValue: 72, levelLabel: "Mid-High" }
+        {
+          name: "Python",
+          note: "Analysis · Modeling · Automation",
+          expValue: 100,
+          expLabel: "2021~Now",
+          levelValue: 92,
+          levelLabel: "Advanced",
+          evidence: ["Internship", "Pandas", "Modeling/Automation"]
+        },
+        {
+          name: "SQL",
+          note: "Querying · Aggregation · Analysis",
+          expValue: 64,
+          expLabel: "2023~Now",
+          levelValue: 82,
+          levelLabel: "Proficient",
+          evidence: ["Olist", "Metric Aggregation", "Projects"]
+        },
+        {
+          name: "MongoDB",
+          note: "NoSQL · Aggregation Pipeline",
+          expValue: 30,
+          expLabel: "2025~Now",
+          levelValue: 78,
+          levelLabel: "Proficient",
+          evidence: ["Internship", "Log Normalization", "Aggregation"]
+        },
+        {
+          name: "Tableau",
+          note: "BI · Dashboard · Visualization",
+          expValue: 62,
+          expLabel: "2023~Now",
+          levelValue: 78,
+          levelLabel: "Proficient",
+          evidence: ["Olist", "Strategy Viz", "Dashboard"]
+        },
+        {
+          name: "Amplitude / GA4",
+          note: "Product Analytics · Events · Funnel",
+          expValue: 58,
+          expLabel: "2023~Now",
+          levelValue: 72,
+          levelLabel: "Working+",
+          evidence: ["Product Analytics", "Funnel/Events", "Fastcampus"]
+        },
+        {
+          name: "ML / DL",
+          note: "Forecasting · Classification · Time Series",
+          expValue: 40,
+          expLabel: "2025~Now",
+          levelValue: 88,
+          levelLabel: "Advanced",
+          evidence: ["LSTM/CNN", "Attention", "XGB/CatBoost"]
+        }
       ]
     }
   },
+
   internships: {
     ko: [
       {
@@ -381,40 +482,57 @@ function renderSkillChart(lang) {
 
   const legendEl = document.getElementById("skillLegend");
   if (legendEl) {
-    legendEl.innerHTML = "";
-    data.legend.forEach((text, idx) => {
-      const item = el("div", "legend-pill");
-      item.innerHTML = `<span class="legend-swatch ${idx === 0 ? "exp" : "level"}"></span><span>${text}</span>`;
-      legendEl.appendChild(item);
-    });
+    legendEl.innerHTML = `
+      <div class="legend-pill"><span class="legend-swatch exp"></span><span>${data.legend[0]}</span></div>
+      <div class="legend-pill"><span class="legend-swatch level"></span><span>${data.legend[1]}</span></div>
+      <span class="skill-scale-note">${data.scale}</span>
+    `;
   }
 
   const chart = document.getElementById("skillChart");
   if (!chart) return;
   chart.innerHTML = "";
 
-  data.items.forEach((item) => {
+  data.items.forEach((item, idx) => {
     const row = el("div", "skill-item");
+    const evidence = item.evidence.map(text => `<span class="skill-evidence-chip">${text}</span>`).join("");
     row.innerHTML = `
       <div class="skill-top">
-        <div>
+        <div class="skill-rank">${String(idx + 1).padStart(2, "0")}</div>
+        <div class="skill-name-block">
           <strong>${item.name}</strong>
           <p>${item.note}</p>
         </div>
       </div>
-      <div class="skill-bar-row">
-        <span class="skill-bar-label">${data.legend[0]}</span>
-        <div class="skill-bar-track"><div class="skill-bar-fill exp" style="width:${item.expValue}%"></div></div>
-        <span class="skill-bar-value">${item.expLabel}</span>
+      <div class="skill-bars">
+        <div class="skill-bar-row">
+          <span class="skill-bar-label">${data.legend[0]}</span>
+          <div class="skill-bar-track experience-track">
+            <div class="skill-bar-fill exp" style="width:${item.expValue}%"></div>
+          </div>
+          <span class="skill-bar-value">${item.expLabel}</span>
+        </div>
+        <div class="skill-bar-row">
+          <span class="skill-bar-label">${data.legend[1]}</span>
+          <div class="skill-bar-track level-track">
+            <div class="skill-bar-fill level" style="width:${item.levelValue}%"></div>
+          </div>
+          <span class="skill-bar-value">${item.levelLabel}</span>
+        </div>
       </div>
-      <div class="skill-bar-row">
-        <span class="skill-bar-label">${data.legend[1]}</span>
-        <div class="skill-bar-track"><div class="skill-bar-fill level" style="width:${item.levelValue}%"></div></div>
-        <span class="skill-bar-value">${item.levelLabel}</span>
-      </div>
+      <div class="skill-evidence">${evidence}</div>
     `;
     chart.appendChild(row);
   });
+
+  const additional = el("div", "skill-additional");
+  additional.innerHTML = `
+    <span class="skill-additional-label">${data.additionalLabel}</span>
+    <div class="skill-additional-chips">
+      ${data.additional.map(text => `<span>${text}</span>`).join("")}
+    </div>
+  `;
+  chart.appendChild(additional);
 }
 
 function renderInternships(lang) {
