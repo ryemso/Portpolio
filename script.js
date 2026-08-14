@@ -2,7 +2,7 @@ const profile = {
   contacts: [
     { label: "GitHub", text: "github.com/ryemso", href: "https://github.com/ryemso" },
     { label: "Email", text: "qt0177@gmail.com", href: "mailto:qt0177@gmail.com" },
-    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "https://drive.google.com/file/d/1gge7kkFEB79rmX1LrmvKvDwKKnBhYCBM/view?usp=drive_link" },
+    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "https://drive.google.com/file/d/1-jQsoKR6gl0ZuA4ZFbpL9QR9oC906t7P/view?usp=drive_link" },
     { label: "Phone number", text: "82)1065010177", href: "01065010177" }
   ],
   mainProject: {
@@ -18,7 +18,7 @@ const profile = {
         ["Data", "시계열 구조를 반영할 수 있도록 입력 구간과 관측 순서를 다시 정리했습니다."],
         ["Approach", "LSTM 기반 구조를 중심으로 입력 시퀀스 설계와 모델 구성을 조정했습니다."],
         ["Improvement", "하이퍼파라미터, 시퀀스 길이, 입력 구조를 반복 조정하며 성능을 개선했습니다."],
-        ["Outcome", "Recall을 0.72에서 0.78까지 끌어올리며 조기 선별 관점의 활용 가능성을 높였으며, 시계열 데이터의 결측, 계절성, 초기 예측 공백 문제를 다루며, 시간 흐름을 고려한 전처리와 검증 방식의 중요성을 배웠습니다."]
+        ["Outcome", "Recall을 0.72에서 0.78까지 끌어올리며 조기 선별 관점의 활용 가능성을 높였습니다."]
       ]
     },
     en: {
@@ -41,7 +41,7 @@ const profile = {
       {
       koTitle: "지역·기상·혈통 기반 한우 등급 예측",
       enTitle: "Hanwoo Grade Prediction with Regional, Weather, and Pedigree Data",
-      koDesc: "개체 정보, 도축 성적, 혈통 관계, 지역별 기상 데이터를 통합해 한우 등급 예측을 위한 피처 엔지니어링 및 분류 모델링을 수행했으며,결과를 비교하면서 예측 문제는 도메인 결정 구조를 모델링하는 관점이 필요하다는 걸 배움.",
+      koDesc: "개체 정보, 도축 성적, 혈통 관계, 지역별 기상 데이터를 통합해 한우 등급 예측을 위한 피처 엔지니어링 및 분류 모델링을 수행했습니다.",
       enDesc: "Integrated cattle records, slaughter outcomes, pedigree relationships, and regional weather data to build features and classification models for Hanwoo grade prediction.",
       resultKo: "이종 데이터 결합 및 제출 파이프라인 완성",
       resultEn: "Completed multi-source data integration and submission pipeline",
@@ -50,7 +50,7 @@ const profile = {
     {
       koTitle: "열수요 예측 모델 개발",
       enTitle: "Heat Demand Forecasting",
-      koDesc: "기상 데이터와 열수요를 결합해 운영 효율 관점의 예측 모델을 설계하며, 모델간 앙상블을 통한 고도화를 몸소 채험함.",
+      koDesc: "기상 데이터와 열수요를 결합해 운영 효율 관점의 예측 모델을 설계했습니다.",
       enDesc: "Built a forecasting model that linked weather variables with heat-demand records.",
       resultKo: "RMSE 21% 개선",
       resultEn: "21% RMSE improvement",
@@ -98,16 +98,134 @@ const profile = {
       ["Structured Reporting", "Builds outputs that read clearly as problem, approach, improvement, and result."]
     ]
   },
-  experience: {
+  internships: {
     ko: [
-      ["데이터 분석 프로젝트", "EDA, 분류, 시계열 예측, 비즈니스 문제 해결형 프로젝트를 개인 주도로 수행했습니다."],
-      ["모델링 역량", "머신러닝과 딥러닝 모델을 비교하고 조정하며 성능과 해석 가능성을 함께 검토했습니다."],
-      ["전략형 사고", "숫자를 읽는 데서 끝나지 않고, 의사결정과 실행 제안으로 연결하는 데 강점이 있습니다."]
+      {
+        company: "데어",
+        role: "데이터 분석 인턴",
+        period: "2025.09 — 2025.10",
+        points: [
+          "MongoDB 기반 사용자 행동 로그를 정규화하고 Python 분석 데이터셋을 구축했습니다.",
+          "사용자 이탈·노출·응시 패턴을 분석해 서비스 의사결정을 지원했습니다."
+        ],
+        tags: ["MongoDB", "Python", "User Analytics"]
+      },
+      {
+        company: "잘큼",
+        role: "데이터 분석 인턴",
+        period: "2024.09 — 2024.11",
+        points: [
+          "지점별 구매 데이터를 전처리하고 수요 집중일 분석을 지원했습니다.",
+          "분석 보고서 자동화와 인구통계 기반 지역 수요 조사를 수행했습니다."
+        ],
+        tags: ["Data Preprocessing", "Reporting", "Demand Analysis"]
+      }
     ],
     en: [
-      ["Data Analysis Projects", "Led personal projects in EDA, classification, time-series forecasting, and business problem solving."],
-      ["Modeling Capability", "Compared and tuned machine learning and deep learning models with attention to both performance and interpretability."],
-      ["Strategic Thinking", "Connects numeric findings to decision-making and action proposals instead of stopping at analysis."]
+      {
+        company: "DARE",
+        role: "Data Analysis Intern",
+        period: "Sep 2025 — Oct 2025",
+        points: [
+          "Normalized MongoDB-based user behavior logs and built Python analysis datasets.",
+          "Analyzed churn, exposure, and profile-view patterns to support service decisions."
+        ],
+        tags: ["MongoDB", "Python", "User Analytics"]
+      },
+      {
+        company: "Jalkum",
+        role: "Data Analysis Intern",
+        period: "Sep 2024 — Nov 2024",
+        points: [
+          "Preprocessed branch-level purchase data and supported peak-demand analysis.",
+          "Automated analysis reports and conducted regional demand research using demographic data."
+        ],
+        tags: ["Data Preprocessing", "Reporting", "Demand Analysis"]
+      }
+    ]
+  },
+  education: {
+    ko: [
+      {
+        title: "Codeit Programming & Data Science Track",
+        provider: "Codeit",
+        period: "2021.03 — 2021.05",
+        badge: "18 Courses Completed",
+        featured: true,
+        paragraphs: [
+          "데이터를 공부하기 위해 분석 도구부터 배우기보다 프로그래밍의 원리에서 출발해 데이터가 만들어지고 활용되는 과정까지 순차적으로 학습했습니다.",
+          "첫 단계에서는 프로그래밍 언어와 소프트웨어의 기본 개념을 익히고 Python과 JavaScript를 학습했습니다. 이후 객체지향 프로그래밍 관련 과정을 통해 프로그램을 구조적으로 바라보는 관점을 확장했습니다.",
+          "다음으로 학습의 중심을 데이터로 옮겨 DataFrame 기반 데이터 처리, 데이터 사이언스, 데이터 분석과 시각화 과정을 이수했습니다. 마지막으로 데이터 퀄리티와 데이터 생성까지 학습 범위를 넓히며 단순 분석을 넘어 데이터 자체의 신뢰성과 활용 가능성을 고려하는 관점을 형성했습니다."
+        ],
+        learningPath: [
+          "Programming Fundamentals",
+          "Python & JavaScript",
+          "Object-Oriented Programming",
+          "DataFrame & Data Processing",
+          "Data Science",
+          "Data Analysis & Visualization",
+          "Data Quality & Data Creation"
+        ]
+      },
+      {
+        title: "데이터 분석 및 마케팅 교육",
+        provider: "패스트캠프",
+        period: "2023.08 — 2023.11",
+        paragraphs: [
+          "AARRR 프레임워크 기반 비즈니스 지표 설계와 회귀분석을 활용한 마케팅 성과 검증 프로세스를 학습했습니다."
+        ],
+        stack: ["Amplitude", "GA4", "SQL", "A/B Test", "CRM Marketing"]
+      },
+      {
+        title: "내일배움캠프 데이터 6기",
+        provider: "스파르타코딩",
+        period: "2025.02 — 2025.07",
+        paragraphs: [
+          "데이터 전처리부터 딥러닝 모델링까지 End-to-End 프로세스를 학습했습니다. 시계열 예측 프로젝트에서 RMSE 17.2를 달성하고 Attention 시각화를 통해 모델 해석 경험을 확장했습니다."
+        ],
+        stack: ["Python", "Pandas", "Scikit-learn", "SQL", "Tableau", "LSTM/CNN", "Attention"]
+      }
+    ],
+    en: [
+      {
+        title: "Codeit Programming & Data Science Track",
+        provider: "Codeit",
+        period: "Mar 2021 — May 2021",
+        badge: "18 Courses Completed",
+        featured: true,
+        paragraphs: [
+          "Rather than starting with analytics tools alone, I began with programming fundamentals and followed the full path from how software works to how data is created and used.",
+          "I studied Python and JavaScript after learning core programming concepts, then expanded into object-oriented programming to build a more structured view of software.",
+          "From there, I moved into DataFrame-based processing, data science, analysis and visualization, and finally data quality and data creation, developing an early focus on the reliability of data itself."
+        ],
+        learningPath: [
+          "Programming Fundamentals",
+          "Python & JavaScript",
+          "Object-Oriented Programming",
+          "DataFrame & Data Processing",
+          "Data Science",
+          "Data Analysis & Visualization",
+          "Data Quality & Data Creation"
+        ]
+      },
+      {
+        title: "Data Analysis & Marketing Program",
+        provider: "Fastcampus",
+        period: "Aug 2023 — Nov 2023",
+        paragraphs: [
+          "Studied AARRR-based business metric design and marketing performance validation using regression analysis."
+        ],
+        stack: ["Amplitude", "GA4", "SQL", "A/B Test", "CRM Marketing"]
+      },
+      {
+        title: "Naeilbaeum Camp Data Cohort 6",
+        provider: "Sparta Coding Club",
+        period: "Feb 2025 — Jul 2025",
+        paragraphs: [
+          "Completed an end-to-end curriculum from data preprocessing to deep-learning modeling, including a time-series forecasting project that achieved RMSE 17.2 and model interpretation with Attention visualization."
+        ],
+        stack: ["Python", "Pandas", "Scikit-learn", "SQL", "Tableau", "LSTM/CNN", "Attention"]
+      }
     ]
   }
 };
@@ -148,22 +266,6 @@ function currentVersion() {
   return versions[requested] ? requested : "analyst";
 }
 
-function trackPortfolioView(versionKey) {
-  if (typeof gtag !== "function") return;
-
-  gtag("event", "page_view", {
-    page_title: document.title,
-    page_location: window.location.href,
-    page_path: window.location.pathname + window.location.search,
-    portfolio_version: versionKey
-  });
-
-  gtag("event", "portfolio_version_view", {
-    portfolio_version: versionKey,
-    page_url: window.location.href
-  });
-}
-
 function setVersionInUrl(key) {
   const url = new URL(location.href);
   url.searchParams.set("ver", key);
@@ -186,12 +288,10 @@ function renderVersionTabs(activeKey) {
     btn.addEventListener("click", () => {
       setVersionInUrl(key);
       render(key);
-      trackPortfolioView(key);
-});
-    tabs.appendChild(btn); // 화면에 버튼을 붙여주는 코드도 누락되어 있다면 이 타이밍에 넣어주어야 합니다.
+    });
+    tabs.appendChild(btn);
   });
 }
-                                
 
 function renderLinks(activeKey) {
   const container = document.getElementById("versionLinks");
@@ -265,10 +365,58 @@ function renderExperience(lang) {
   const wrap = document.getElementById("experienceList");
   if (!wrap) return;
   wrap.innerHTML = "";
-  profile.experience[lang].forEach(([title, desc]) => {
-    const item = el("div", "summary-item");
-    item.innerHTML = `<strong>${title}</strong><p>${desc}</p>`;
-    wrap.appendChild(item);
+
+  profile.internships[lang].forEach((item) => {
+    const tags = item.tags.map(tag => `<span class="meta-chip">${tag}</span>`).join("");
+    const points = item.points.map(point => `<li>${point}</li>`).join("");
+    const card = el("article", "experience-card");
+    card.innerHTML = `
+      <div class="experience-head">
+        <div>
+          <div class="mini-label">${lang === "en" ? "Internship" : "인턴"}</div>
+          <h3>${item.company}</h3>
+          <p class="experience-role">${item.role}</p>
+        </div>
+        <span class="period-chip">${item.period}</span>
+      </div>
+      <ul class="experience-points">${points}</ul>
+      <div class="project-meta">${tags}</div>`;
+    wrap.appendChild(card);
+  });
+}
+
+function renderEducation(lang) {
+  const wrap = document.getElementById("educationList");
+  if (!wrap) return;
+  wrap.innerHTML = "";
+
+  profile.education[lang].forEach((item) => {
+    const card = el("article", `education-card ${item.featured ? "featured" : ""}`);
+    const paragraphs = item.paragraphs.map(text => `<p>${text}</p>`).join("");
+    const badge = item.badge ? `<span class="course-count">${item.badge}</span>` : "";
+    const path = item.learningPath
+      ? `<div class="learning-label">Learning Path</div><div class="learning-path">${item.learningPath.map((step, idx) => `${idx ? '<span class="learning-arrow">→</span>' : ''}<span class="learning-step">${step}</span>`).join("")}</div>`
+      : "";
+    const stack = item.stack
+      ? `<div class="education-stack">${item.stack.map(tag => `<span class="meta-chip">${tag}</span>`).join("")}</div>`
+      : "";
+
+    card.innerHTML = `
+      <div class="education-head">
+        <div>
+          <div class="mini-label">${item.provider}</div>
+          <h3>${item.title}</h3>
+        </div>
+        <div class="education-period">
+          <span class="period-chip">${item.period}</span>
+          ${badge}
+        </div>
+      </div>
+      <div class="education-copy">${paragraphs}</div>
+      ${path}
+      ${stack}`;
+
+    wrap.appendChild(card);
   });
 }
 
@@ -288,15 +436,6 @@ function renderContacts(lang) {
     }
     const node = el("a", "contact-link");
     node.href = item.href;
-    node.addEventListener("click", () => {
-  if (typeof gtag !== "function") return;
-
-  gtag("event", "contact_click", {
-    contact_type: item.label,
-    contact_text: item.text,
-    portfolio_version: currentVersion()
-  });
-});
     if (item.href.startsWith("http") || item.href.startsWith("./")) {
       node.target = "_blank";
       node.rel = "noopener noreferrer";
@@ -351,10 +490,19 @@ function render(key = currentVersion()) {
     ? "My current strengths are time-series modeling, optimization, and turning results into readable insight."
     : "현재 저는 시계열 데이터 해석, 모델 최적화, 비즈니스 인사이트 정리에 강점이 있습니다.";
 
+  const experienceTitle = document.getElementById("experienceTitle");
+  if (experienceTitle) experienceTitle.textContent = isEnglish ? "Internship Experience" : "Internship Experience";
   const experienceDesc = document.getElementById("experienceDesc");
   if (experienceDesc) experienceDesc.textContent = isEnglish
-    ? "Most of my experience comes from personal projects built around analysis, modeling, performance improvement, and reporting."
-    : "개인 프로젝트 중심으로 분석, 모델링, 성능 개선, 보고서 정리 경험을 축적했습니다.";
+    ? "Worked with real service and operational data to support analytics pipelines and business decisions."
+    : "실제 서비스와 운영 데이터 안에서 분석 파이프라인과 의사결정 지원 업무를 경험했습니다.";
+
+  const educationTitle = document.getElementById("educationTitle");
+  if (educationTitle) educationTitle.textContent = isEnglish ? "Education & Training" : "Education & Training";
+  const educationDesc = document.getElementById("educationDesc");
+  if (educationDesc) educationDesc.textContent = isEnglish
+    ? "Expanded from programming fundamentals into data analysis, modeling, and product analytics."
+    : "프로그래밍 기초에서 데이터 분석·모델링·제품 분석까지 학습 범위를 확장해 왔습니다.";
 
   const contactDesc = document.getElementById("contactDesc");
   if (contactDesc) contactDesc.textContent = isEnglish
@@ -367,20 +515,8 @@ function render(key = currentVersion()) {
   renderOtherProjects(lang);
   renderStrengths(lang);
   renderExperience(lang);
+  renderEducation(lang);
   renderContacts(lang);
 }
 
-function initPortfolio() {
-  const initialVersion = currentVersion();
-  render(initialVersion);
-
-  if (typeof trackPortfolioView === "function") {
-    trackPortfolioView(initialVersion);
-  }
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initPortfolio);
-} else {
-  initPortfolio();
-}
+render();
