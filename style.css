@@ -137,22 +137,11 @@ h1 {
 }
 .hero-combined-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: 1fr;
   gap: 18px;
   align-items: start;
   margin-top: 18px;
 }
-.hero-feature-card {
-  margin-top: 0;
-  min-height: 100%;
-}
-.hero-feature-card .hero-highlight-title {
-  font-size: 1.5rem;
-}
-.hero-feature-card .hero-highlight-desc {
-  font-size: 0.96rem;
-}
-
 .hero-side { padding: 18px; display: grid; gap: 14px; align-content: start; }
 .side-card {
   padding: 16px;
@@ -246,10 +235,12 @@ h1 {
 }
 .skill-chart {
   display: grid;
-  gap: 9px;
-  margin-top: 13px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
 }
 .skill-item {
+  height: 100%;
   padding: 11px 11px 10px;
   border-radius: 14px;
   background: rgba(255,255,255,0.92);
@@ -292,8 +283,8 @@ h1 {
 }
 .skill-bar-row {
   display: grid;
-  grid-template-columns: 60px minmax(70px, 1fr) 48px;
-  gap: 7px;
+  grid-template-columns: 54px minmax(44px, 1fr) 54px;
+  gap: 6px;
   align-items: center;
 }
 .skill-bar-label {
@@ -345,6 +336,7 @@ h1 {
   line-height: 1.25;
 }
 .skill-additional {
+  grid-column: 1 / -1;
   padding: 10px 11px;
   border-radius: 13px;
   background: rgba(237,245,255,0.72);
@@ -563,11 +555,19 @@ body.theme-strategy { --accent: #5d98ff; --accent-2: #89c4ff; }
 body.theme-advanced { --accent: #5b97ff; --accent-2: #8bc9ff; }
 
 @media (max-width: 1080px) {
-  .hero-combined-grid, .main-flow, .compact-grid, .strength-grid, .experience-list, .contact-grid-simple { grid-template-columns: 1fr 1fr; }
+  .skill-chart { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .skill-chart { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1080px) {
+  .main-flow, .compact-grid, .strength-grid, .experience-list, .contact-grid-simple { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   .topbar-inner { flex-direction: column; align-items: stretch; padding: 12px 0; }
-  .hero-combined-grid, .main-flow, .compact-grid, .strength-grid, .experience-list, .education-list, .contact-grid-simple { grid-template-columns: 1fr; }
+  .main-flow, .compact-grid, .strength-grid, .experience-list, .education-list, .contact-grid-simple { grid-template-columns: 1fr; }
   .education-card.featured { grid-column: auto; }
   .experience-head, .education-head { flex-direction: column; }
   .education-period { justify-content: flex-start; }
