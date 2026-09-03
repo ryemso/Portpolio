@@ -2,7 +2,7 @@ const profile = {
   contacts: [
     { label: "GitHub", text: "github.com/ryemso", href: "https://github.com/ryemso" },
     { label: "Email", text: "qt0177@gmail.com", href: "mailto:qt0177@gmail.com" },
-    { label: "Linkedin", text: "My Linkedin", href: "www.linkedin.com/in/동현-김-898ba4348" },
+    { label: "Linkedin", text: "My Linkedin", href: "https://www.linkedin.com/in/%EB%8F%99%ED%98%84-%EA%B9%80-898ba4348" },
     { label: "Phone number", text: "82)1065010177", href: "01065010177" }
   ],
 
