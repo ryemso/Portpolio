@@ -178,131 +178,250 @@ h1 {
 
 .section { padding: 18px 0 22px; }
 
-.skill-card {
-  padding: 20px;
-  background:
-    radial-gradient(circle at top right, rgba(77, 146, 255, 0.08), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+
+.hero-core-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
 }
-.skill-chart-desc {
-  margin: 9px 0 0;
+.hero-core-stack span {
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: #42617f;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.metric-tile {
+  padding: 16px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.metric-tile strong {
+  display: block;
+  font-size: 1.45rem;
+  letter-spacing: -.03em;
+}
+.metric-tile span {
+  display: block;
+  margin-top: 3px;
+  font-size: .82rem;
+  font-weight: 800;
+}
+.metric-tile small {
+  display: block;
+  margin-top: 3px;
   color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.55;
+  font-size: .68rem;
 }
-.skill-chart.evidence-grid {
+
+.case-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+.case-grid.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.case-card {
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.case-card h3 {
+  margin: 7px 0 8px;
+  font-size: 1.02rem;
+  letter-spacing: -.02em;
+}
+.case-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .86rem;
+}
+.validation-number {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin: 14px 0 12px;
+}
+.validation-number .before {
+  color: #9aa8b6;
+  text-decoration: line-through;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+.validation-number .arrow {
+  color: var(--accent);
+  font-weight: 900;
+}
+.validation-number .after {
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -.04em;
+}
+.validation-number small {
+  color: var(--muted);
+  font-size: .7rem;
+}
+
+.mini-bar-chart {
+  height: 190px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+  margin-top: 18px;
+  padding-top: 10px;
+}
+.mini-bar-item {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 22px 1fr 20px;
+  align-items: end;
+  text-align: center;
+}
+.mini-bar-value {
+  font-size: .66rem;
+  font-weight: 800;
+  color: #42617f;
+}
+.mini-bar-track {
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 4px;
+  border-bottom: 1px solid rgba(100,145,205,.2);
+}
+.mini-bar-fill {
+  width: 100%;
+  border-radius: 7px 7px 2px 2px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  min-height: 10px;
+}
+.mini-bar-label {
+  padding-top: 4px;
+  color: var(--muted);
+  font-size: .62rem;
+  font-weight: 700;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 14px 0;
+}
+.stat-block {
+  padding: 12px;
+  border-radius: 13px;
+  background: #f5f9ff;
+  border: 1px solid rgba(100,145,205,.14);
+}
+.stat-block strong {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+.stat-block span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: .67rem;
+  line-height: 1.35;
+}
+
+.amplitude-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+.amplitude-tags span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #edf5ff;
+  border: 1px solid rgba(77,146,255,.14);
+  color: #42617f;
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+.work-card {
+  margin-top: 12px;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.work-item {
+  padding: 13px 14px;
+  border-left: 3px solid var(--accent);
+  background: #f8fbff;
+  border-radius: 0 12px 12px 0;
+}
+.work-item strong {
+  display: block;
+  font-size: .8rem;
+}
+.work-item p {
+  margin-top: 4px;
+  font-size: .76rem;
+}
+
+.strategy-evidence {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 16px;
 }
-.skill-item.evidence-card {
-  height: 100%;
-  padding: 14px;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.96);
-  border: 1px solid rgba(100,145,205,0.17);
-  box-shadow: 0 8px 20px rgba(63, 101, 152, 0.035);
+
+.skill-summary-card strong {
+  display: block;
+  color: #42617f;
+  font-size: .76rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
 }
-.skill-top {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 10px;
+
+.training-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
   align-items: start;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.9);
+  border: 1px solid var(--line);
 }
-.skill-rank {
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  background: #edf5ff;
-  color: var(--accent);
-  font-size: 0.69rem;
-  font-weight: 900;
+.training-row + .training-row {
+  margin-top: 8px;
 }
-.skill-name-block strong {
-  display: block;
-  font-size: 0.93rem;
-  letter-spacing: -0.02em;
+.training-row h3 {
+  margin: 4px 0 2px;
+  font-size: .94rem;
 }
-.skill-name-block p {
-  margin: 2px 0 0;
+.training-row p {
+  margin: 0;
   color: var(--muted);
-  font-size: 0.73rem;
-}
-.skill-methods {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 11px;
-}
-.skill-method-chip {
-  display: inline-flex;
-  padding: 5px 7px;
-  border-radius: 8px;
-  background: #edf5ff;
-  border: 1px solid rgba(77,146,255,.12);
-  color: #38628d;
-  font-size: 0.65rem;
-  font-weight: 800;
-}
-.evidence-label {
-  margin-top: 12px;
-  padding-top: 9px;
-  border-top: 1px dashed rgba(100,145,205,0.18);
-  color: #8798aa;
-  font-size: 0.61rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-}
-.skill-evidence {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 6px;
-}
-.skill-evidence-chip {
-  display: inline-flex;
-  padding: 4px 7px;
-  border-radius: 7px;
-  background: #f8fafc;
-  border: 1px solid rgba(100,145,205,0.13);
-  color: #5b7087;
-  font-size: 0.63rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.skill-additional {
-  grid-column: 1 / -1;
-  padding: 11px 12px;
-  border-radius: 13px;
-  background: rgba(237,245,255,0.72);
-  border: 1px solid rgba(100,145,205,0.14);
-}
-.skill-additional-label {
-  display: block;
-  margin-bottom: 7px;
-  color: var(--muted);
-  font-size: 0.65rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-}
-.skill-additional-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.skill-additional-chips span {
-  display: inline-flex;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid rgba(100,145,205,0.14);
-  color: #526c87;
-  font-size: 0.64rem;
-  font-weight: 800;
+  font-size: .76rem;
 }
 
 .main-project-card {
@@ -334,7 +453,7 @@ h1 {
 .flow-item {
   padding: 16px;
   border-radius: 16px;
-  background: linear-gradient(180deg, #f5faff, #eaf4ff);
+  background: #f8fbff;
   border: 1px solid var(--line);
 }
 .flow-item h4 { margin: 8px 0 8px; font-size: 0.98rem; letter-spacing: -0.02em; }
@@ -353,7 +472,6 @@ h1 {
 
 .section-blue .project-grid,
 .section-blue .strength-grid,
-.section-blue .education-list,
 .section-blue .contact-grid-simple {
   padding: 18px;
   background: linear-gradient(180deg, #eaf4ff, #dfeeff);
@@ -384,7 +502,7 @@ h1 {
 .result-chip { background: #eef7ff; color: var(--accent); border-color: rgba(77,146,255,.16); }
 
 
-.strength-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.strength-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .strength-card {
   padding: 16px;
   border-radius: 16px;
@@ -432,41 +550,10 @@ h1 {
 .experience-points { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.89rem; }
 .experience-points li + li { margin-top: 6px; }
 
-/* Education & training */
-.education-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.education-card {
-  padding: 20px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid var(--line);
+/* Training */
+.education-list {
+  display: block;
 }
-.education-card.featured { grid-column: 1 / -1; padding: 22px; }
-.education-period { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
-.education-copy { margin-top: 14px; }
-.education-copy p { margin: 0; color: var(--muted); font-size: 0.89rem; }
-.education-copy p + p { margin-top: 9px; }
-.learning-label {
-  margin-top: 17px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-.learning-path { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 9px; }
-.learning-step {
-  display: inline-flex;
-  padding: 7px 9px;
-  border-radius: 10px;
-  background: #fff;
-  border: 1px solid rgba(100,145,205,0.18);
-  color: #42617f;
-  font-size: 0.76rem;
-  font-weight: 700;
-}
-.learning-arrow { color: var(--accent); font-weight: 800; }
-.education-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-
 .summary-list { display: grid; gap: 10px; }
 .summary-item {
   padding: 15px 16px;
@@ -520,4 +607,18 @@ body.theme-advanced { --accent: #5b97ff; --accent-2: #8bc9ff; }
 @media (max-width: 760px) {
   .skill-chart.evidence-grid { grid-template-columns: 1fr; }
   .main-result-box { min-width: 0; width: 100%; text-align: left; }
+}
+
+
+@media (max-width: 1080px) {
+  .metric-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-grid.two-col, .work-grid { grid-template-columns: 1fr; }
+  .strategy-evidence { grid-template-columns: 1fr; }
+  .strength-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .metric-strip, .strength-grid { grid-template-columns: 1fr; }
+  .mini-bar-chart { gap: 4px; height: 170px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .training-row { flex-direction: column; }
 }

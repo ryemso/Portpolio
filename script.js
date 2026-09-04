@@ -1,270 +1,214 @@
 const profile = {
   contacts: [
     { label: "GitHub", text: "github.com/ryemso", href: "https://github.com/ryemso" },
+    { label: "LinkedIn", text: "linkedin.com/in/동현-김-898ba4348", href: "https://www.linkedin.com/in/%EB%8F%99%ED%98%84-%EA%B9%80-898ba4348" },
     { label: "Email", text: "qt0177@gmail.com", href: "mailto:qt0177@gmail.com" },
-    { label: "Linkedin", text: "My Linkedin", href: "https://www.linkedin.com/in/%EB%8F%99%ED%98%84-%EA%B9%80-898ba4348" },
-    { label: "Phone number", text: "82)1065010177", href: "01065010177" }
+    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "https://drive.google.com/file/d/1-jQsoKR6gl0ZuA4ZFbpL9QR9oC906t7P/view?usp=drive_link" }
   ],
+
+  versions: {
+    analyst: {
+      label: "PRODUCT DATA ANALYST",
+      title: "사용자 행동 데이터를 구조화하고, 지표로 서비스 문제를 찾는 데이터 분석가",
+      desc: "실제 서비스 로그를 MongoDB·Python으로 분석하고, Amplitude의 Retention/Cohort와 추천 노출 지표를 통해 제품·운영 의사결정을 지원했습니다.",
+      theme: "analyst",
+      lang: "ko",
+      heroStack: ["SQL", "Python", "MongoDB", "Amplitude", "Tableau"]
+    },
+    strategy: {
+      label: "BUSINESS / GROWTH ANALYTICS",
+      title: "고객·운영 데이터를 실행 우선순위로 연결하는 분석가",
+      desc: "사용자 행동, 수요·공급, 전환과 운영 지표를 비교해 비즈니스 문제를 구조화하고 다음 Action을 제안합니다.",
+      theme: "strategy",
+      lang: "ko",
+      heroStack: ["SQL", "Python", "Tableau", "GA4", "Amplitude"]
+    },
+    advanced: {
+      label: "PRODUCT DATA ANALYST · EN",
+      title: "A Product Data Analyst who turns user behavior into product decisions",
+      desc: "I structure behavior logs, define product metrics, validate data quality, and connect findings to product and operational actions.",
+      theme: "advanced",
+      lang: "en",
+      heroStack: ["SQL", "Python", "MongoDB", "Amplitude", "Tableau"]
+    }
+  },
 
   mainProjects: {
     analyst: {
-      eyebrow: "실무 대표 분석 · 데어",
-      title: "사용자 행동 로그 기반 서비스 분석",
-      intro: "MongoDB 기반 사용자 행동 로그를 정규화해 Python 분석 데이터셋을 구축하고, Amplitude의 Retention·Cohort와 추천 노출·후보군 구조를 함께 분석해 서비스 의사결정을 지원했습니다.",
-      resultLabel: "핵심 산출",
-      resultValue: "행동 로그 → 지표 → 서비스 의사결정",
-      tags: ["MongoDB", "Python", "Amplitude", "User Behavior", "Recommendation Analytics"],
+      eyebrow: "DARE · DATA ANALYSIS INTERNSHIP",
+      title: "실제 서비스 사용자 행동 로그 분석",
+      intro: "MongoDB의 사용자·방문·노출·추천·결제·초대 로그를 직접 확인해 분석 기준을 정의하고, 잘못된 데이터 원천을 검증·수정하며 서비스 지표를 산출했습니다.",
+      resultLabel: "ROLE",
+      resultValue: "Raw Logs → Metric Definition → Validation → Decision Support",
+      tags: ["MongoDB Aggregation", "Python", "Amplitude", "Product Metrics", "Data Validation"],
       flow: [
-        ["Problem", "사용자 이탈·노출·응시 흐름과 추천 후보군의 실제 상태를 한 번에 파악하기 어려운 문제를 분석 대상으로 잡았습니다."],
-        ["Data", "MongoDB 행동 로그를 Aggregation Pipeline으로 정규화하고 Python에서 분석 가능한 데이터셋으로 구성했습니다."],
-        ["Behavior", "Amplitude에서 Retention·Cohort를 확인하고 사용자군별 재방문과 행동 차이를 비교했습니다."],
-        ["Exposure", "피노출 횟수·unique viewer·후보군 규모와 사용자 특성의 관계를 분석해 노출 편중과 후보군 소진 가능성을 점검했습니다."],
-        ["Action", "분석 결과를 추천 구조와 운영 판단에 연결하고, 분석에 필요한 로그가 부족한 구간은 추가 수집 요구사항으로 정리했습니다."]
+        ["01 · Define", "활동 로그별 사용자 수를 비교해 최근 30일 Active 기준을 profilevisithistories로 정리했습니다."],
+        ["02 · Validate", "취향 등록량 0.16개라는 비정상 값을 발견하고 원천 데이터를 재검증해 users.taste/coreTaste로 수정했습니다."],
+        ["03 · Measure", "Active 프로필 완성도, 친구 초대율, 결제·재결제 유저, Like/Chat Request Rate 등 서비스 지표를 정의·산출했습니다."],
+        ["04 · Diagnose", "매력도와 프로필 피노출의 관계, 추천 후보군과 runway를 분석해 노출 편중·추천 커버리지 이슈를 점검했습니다."],
+        ["05 · Operate", "Amplitude 상시 대시보드의 한계를 확인하고 MongoDB→Python 기반 자동 리포트 구조를 설계했습니다."]
       ]
     },
     strategy: {
-      eyebrow: "대표 전략 분석 · Olist",
-      title: "배송 병목과 수요·공급 불균형 기반 셀러 유치 전략",
-      intro: "주문·배송·판매자·지역 데이터를 결합해 배송 병목과 지역별 수요·공급 불균형을 분석하고, 셀러 유치가 필요한 우선지역과 운영 개선 방향을 제안했습니다.",
-      resultLabel: "핵심 산출",
-      resultValue: "셀러 유치 우선지역 도출",
+      eyebrow: "OLIST · BUSINESS ANALYTICS",
+      title: "배송 병목과 지역 수요·공급 불균형 기반 셀러 유치 전략",
+      intro: "주문·배송·판매자·지역 데이터를 결합해 배송 병목과 지역별 공급 부족을 분석하고 셀러 유치 우선지역을 제안했습니다.",
+      resultLabel: "OUTPUT",
+      resultValue: "Seller Acquisition Priority",
       tags: ["SQL", "Tableau", "E-commerce", "Demand-Supply", "Strategy"],
       flow: [
-        ["Problem", "배송 지연과 지역별 판매자 분포 차이가 고객 경험과 운영 효율에 어떤 영향을 주는지 확인했습니다."],
-        ["Data", "주문·고객·판매자·상품·배송 관련 테이블을 결합해 지역과 주문 흐름을 분석할 수 있는 데이터셋을 구성했습니다."],
-        ["Analysis", "배송시간, 주문량, 판매자 분포를 비교해 수요는 높지만 공급이 상대적으로 부족한 지역을 찾았습니다."],
-        ["Insight", "배송 병목과 공급 부족이 동시에 나타나는 지역을 셀러 유치 관점의 우선 후보로 정리했습니다."],
-        ["Action", "분석 결과를 셀러 확보와 지역 운영 전략의 우선순위 제안으로 연결했습니다."]
+        ["01 · Problem", "배송 지연과 지역별 판매자 분포 차이를 운영 문제로 정의했습니다."],
+        ["02 · Data", "주문·고객·판매자·배송 테이블을 결합해 분석 데이터셋을 구성했습니다."],
+        ["03 · Analysis", "주문 수요와 판매자 공급, 배송 시간을 지역 단위로 비교했습니다."],
+        ["04 · Insight", "수요는 높지만 공급이 부족하고 배송 병목이 겹치는 지역을 도출했습니다."],
+        ["05 · Action", "셀러 유치와 운영 개선의 우선지역으로 연결했습니다."]
       ]
     },
     advanced: {
-      eyebrow: "MAIN CASE · DARE INTERNSHIP",
-      title: "Service Analytics with User Behavior Logs",
-      intro: "Normalized MongoDB-based user behavior logs into Python analysis datasets, reviewed retention and cohort behavior in Amplitude, and analyzed recommendation exposure and candidate-pool structure to support service decisions.",
-      resultLabel: "Key Output",
-      resultValue: "Behavior Logs → Metrics → Product Decisions",
-      tags: ["MongoDB", "Python", "Amplitude", "User Behavior", "Recommendation Analytics"],
+      eyebrow: "DARE · DATA ANALYSIS INTERNSHIP",
+      title: "Product Analytics with Real User Behavior Logs",
+      intro: "Inspected MongoDB collections, defined metric logic, validated data sources, and analyzed activity, referrals, recommendation exposure, payments, and retention/cohort behavior.",
+      resultLabel: "ROLE",
+      resultValue: "Raw Logs → Metric Definition → Validation → Decision Support",
+      tags: ["MongoDB Aggregation", "Python", "Amplitude", "Product Metrics", "Data Validation"],
       flow: [
-        ["Problem", "The team needed clearer visibility into user drop-off, exposure patterns, response behavior, and the effective recommendation candidate pool."],
-        ["Data", "Normalized MongoDB behavior logs with aggregation pipelines and built analysis-ready datasets in Python."],
-        ["Behavior", "Reviewed retention and cohort behavior in Amplitude and compared revisit and behavioral differences across user groups."],
-        ["Exposure", "Analyzed exposure counts, unique viewers, candidate-pool size, and user attributes to inspect concentration and candidate depletion risk."],
-        ["Action", "Connected findings to recommendation and operational decisions and documented additional logging requirements where analysis coverage was insufficient."]
+        ["01 · Define", "Compared activity logs and selected profile visit history as the consistent 30-day active-user basis."],
+        ["02 · Validate", "Detected an implausible taste-count metric, traced the wrong source, and corrected the metric using user profile fields."],
+        ["03 · Measure", "Defined and calculated profile completeness, referral rate, payment behavior, and recommendation performance metrics."],
+        ["04 · Diagnose", "Analyzed attractiveness vs. exposure and recommendation runway to inspect concentration and coverage issues."],
+        ["05 · Operate", "Reviewed dashboard limitations and designed a MongoDB-to-Python automated reporting workflow."]
       ]
     }
   },
 
-  otherProjects: [
-    {
-      koTitle: "Olist 셀러 유치 전략 분석",
-      enTitle: "Olist Seller Acquisition Strategy",
-      koDesc: "배송 병목과 지역별 수요·공급 불균형을 분석해 셀러 유치 우선지역과 운영 개선 방향을 제안했습니다.",
-      enDesc: "Analyzed delivery bottlenecks and regional demand-supply imbalance to prioritize seller-acquisition regions and operational actions.",
-      resultKo: "셀러 유치 우선지역 도출",
-      resultEn: "Prioritized seller-acquisition regions",
-      tags: ["SQL", "Tableau", "E-commerce", "Strategy"]
+  dareEvidence: {
+    ko: {
+      metrics: [
+        { label: "30일 Active 유저", value: "989명", note: "profilevisithistories 기준" },
+        { label: "평균 사진", value: "1.59개", note: "Active 유저 1인당" },
+        { label: "평균 프롬프트", value: "4.73개", note: "Active 유저 1인당" },
+        { label: "평균 취향", value: "22.99개", note: "원천 검증 후 수정" }
+      ],
+      validation: {
+        eyebrow: "DATA VALIDATION",
+        title: "직관적으로 이상한 숫자를 그대로 쓰지 않았습니다.",
+        before: "0.16",
+        after: "22.99",
+        unit: "개 / 유저",
+        text: "처음에는 tastelikes를 취향 등록 원천으로 사용해 평균 0.16개가 나왔습니다. 실제 어드민과 맞지 않는 값을 재검증해 users.taste + coreTaste로 변경했고, 최종 평균을 22.99개로 수정했습니다."
+      },
+      referral: {
+        eyebrow: "PRODUCT METRIC",
+        title: "주간 친구 초대율",
+        text: "피초대자 수가 아니라 ‘해당 주 초대한 Unique User / 해당 주 전체 User’로 지표를 다시 정의했습니다.",
+        values: [
+          ["7/26", 26.5], ["8/02", 11.3], ["8/09", 21.6], ["8/16", 11.7],
+          ["8/23", 10.3], ["8/30", 19.7], ["9/06", 25.1]
+        ]
+      },
+      recommendation: {
+        eyebrow: "RECOMMENDATION ANALYTICS",
+        title: "노출 편중과 추천 커버리지 점검",
+        stats: [
+          { value: "0.293", label: "Pearson · 매력도↔피노출" },
+          { value: "0.436", label: "Spearman · 매력도↔피노출" },
+          { value: "0.93", label: "평균 Runway" }
+        ],
+        text: "showprofiles의 shownProfileIds를 피노출 유저 기준으로 풀어 노출량을 집계하고, 매력도와의 관계 및 후보군 runway를 분석했습니다. 매력도 구간별 평균 노출은 약 8.39에서 28.25까지 증가하는 경향을 보였습니다."
+      },
+      query: {
+        eyebrow: "MONGODB / DATA WORK",
+        title: "실제로 사용한 데이터 작업",
+        items: [
+          ["Collection Discovery", "transactions에서 userId가 없음을 확인하고 transactionhistories를 실제 결제 원천으로 찾아냈습니다."],
+          ["Join & Aggregation", "$lookup, $group, $match, $project, $map, $dateTrunc, $unwind를 활용해 사용자·결제·초대·노출 데이터를 결합했습니다."],
+          ["User-level Metrics", "Unique User, 결제 유저, 2회 이상 재결제, Active Device, 초대 유저 등 사용자 단위 지표를 추출했습니다."],
+          ["Dashboard / Reporting", "Amplitude/GA에서 정의가 맞지 않는 비율 지표는 MongoDB→PyMongo→Pandas 기반 정기 리포트 방식으로 대안을 설계했습니다."]
+        ]
+      },
+      amplitude: {
+        eyebrow: "AMPLITUDE",
+        title: "Retention / Cohort도 코드가 아니라 제품 분석 도구에서 수행했습니다.",
+        text: "Amplitude에서 Cohort Filter와 Rolling Window를 활용해 Retention·재방문 관점의 사용자 행동을 확인했습니다. 지표 정의가 UI 기본 Aggregation과 맞지 않는 경우에는 MongoDB 계산과 병행하는 방향을 검토했습니다."
+      }
     },
-    {
-      koTitle: "50세 이상 인지장애 경험 여부 예측",
-      enTitle: "Cognitive Impairment Experience Prediction for Adults 50+",
-      koDesc: "양성 집단의 False Negative 비용을 고려해 Accuracy보다 Recall을 우선하고, 모델 비교·앙상블·임계값 조정으로 탐지 성능을 개선했습니다.",
-      enDesc: "Prioritized positive-class recall over accuracy, then improved detection through model comparison, ensemble methods, and threshold adjustment.",
-      resultKo: "Recall 0.72 → 0.78",
-      resultEn: "Recall 0.72 → 0.78",
-      tags: ["Python", "Classification", "Threshold", "Model Evaluation"]
-    },
-    {
-      koTitle: "LendingClub 리스크 분류 분석",
-      enTitle: "LendingClub Risk Analysis",
-      koDesc: "부실 가능성이 높은 대출을 조기에 선별하고, 위험군 선별 기준에 따른 잠재 손실 방어 시나리오를 분석했습니다.",
-      enDesc: "Built an early-risk screening model and evaluated a potential-loss avoidance scenario based on the screening threshold.",
-      resultKo: "잠재 손실 약 15% 방어 시나리오",
-      resultEn: "Scenario: ~15% potential loss avoidance",
-      tags: ["Python", "Classification", "Finance", "Decision Threshold"]
-    },
-    {
-      koTitle: "열수요 예측 모델 개발",
-      enTitle: "Heat Demand Forecasting",
-      koDesc: "기상 데이터와 열수요를 결합해 LSTM·BiLSTM·CNN 계열 모델을 비교하고 시계열 예측 성능을 개선했습니다.",
-      enDesc: "Combined weather and heat-demand data and compared LSTM, BiLSTM, and CNN-based models for time-series forecasting.",
-      resultKo: "검증 RMSE 17.2",
-      resultEn: "Validation RMSE 17.2",
-      tags: ["Python", "LSTM", "Time Series", "Attention"]
-    },
-    {
-      koTitle: "지역·기상·혈통 기반 한우 등급 예측",
-      enTitle: "Hanwoo Grade Prediction with Regional, Weather, and Pedigree Data",
-      koDesc: "개체·도축·혈통·기상 데이터를 통합해 피처 엔지니어링과 분류 모델링을 수행했습니다.",
-      enDesc: "Integrated cattle, slaughter, pedigree, and regional weather data for feature engineering and classification modeling.",
-      resultKo: "이종 데이터 통합·분류 파이프라인",
-      resultEn: "Multi-source integration and classification pipeline",
-      tags: ["Python", "CatBoost", "XGBoost", "Feature Engineering"]
-    },
-    {
-      koTitle: "Money War 웹게임 프로토타입",
-      enTitle: "Money War Web Prototype",
-      koDesc: "경제 개념을 게임 시스템으로 번역해 웹 프로토타입을 직접 구현한 프로젝트입니다.",
-      enDesc: "Translated economic concepts into a playable web prototype.",
-      resultKo: "구현 역량 보조 프로젝트",
-      resultEn: "Supporting implementation project",
-      tags: ["HTML", "CSS", "JavaScript"]
+    en: {
+      metrics: [
+        { label: "30-day Active Users", value: "989", note: "profile visit history basis" },
+        { label: "Avg. Photos", value: "1.59", note: "per active user" },
+        { label: "Avg. Prompts", value: "4.73", note: "per active user" },
+        { label: "Avg. Tastes", value: "22.99", note: "after source validation" }
+      ],
+      validation: {
+        eyebrow: "DATA VALIDATION",
+        title: "I did not keep a metric that looked implausible.",
+        before: "0.16",
+        after: "22.99",
+        unit: "items / user",
+        text: "The first calculation used tastelikes and produced an implausible 0.16 tastes per user. After checking the admin view and data semantics, I corrected the source to users.taste + coreTaste and recalculated the metric."
+      },
+      referral: {
+        eyebrow: "PRODUCT METRIC",
+        title: "Weekly Referral Rate",
+        text: "Redefined the metric as unique inviters in each week divided by total users in that week, rather than using invitee counts.",
+        values: [
+          ["7/26", 26.5], ["8/02", 11.3], ["8/09", 21.6], ["8/16", 11.7],
+          ["8/23", 10.3], ["8/30", 19.7], ["9/06", 25.1]
+        ]
+      },
+      recommendation: {
+        eyebrow: "RECOMMENDATION ANALYTICS",
+        title: "Exposure Concentration & Recommendation Coverage",
+        stats: [
+          { value: "0.293", label: "Pearson · attractiveness vs exposure" },
+          { value: "0.436", label: "Spearman · attractiveness vs exposure" },
+          { value: "0.93", label: "Average runway" }
+        ],
+        text: "Expanded shownProfileIds by exposed user, calculated exposure counts, and compared exposure against attractiveness and candidate-pool runway. Average exposure increased from about 8.39 to 28.25 across attractiveness buckets."
+      },
+      query: {
+        eyebrow: "MONGODB / DATA WORK",
+        title: "What I actually did with the data",
+        items: [
+          ["Collection Discovery", "Found that transactions lacked userId and traced payment analysis to transactionhistories."],
+          ["Join & Aggregation", "Used $lookup, $group, $match, $project, $map, $dateTrunc, and $unwind across user, payment, referral, and exposure logs."],
+          ["User-level Metrics", "Extracted paying users, repeat payers, active-device users, inviters, and other unique-user metrics."],
+          ["Dashboard / Reporting", "For ratio metrics that did not map cleanly to Amplitude/GA aggregation, designed a MongoDB → PyMongo → Pandas reporting alternative."]
+        ]
+      },
+      amplitude: {
+        eyebrow: "AMPLITUDE",
+        title: "Retention and cohort analysis was done in a product analytics tool.",
+        text: "Used cohort filters and rolling windows in Amplitude to review retention and revisit behavior. When UI aggregation did not match the desired metric definition, I compared it with MongoDB-based calculations."
+      }
     }
-  ],
+  },
 
-  strengths: {
+  skills: {
     analyst: [
-      ["Product Analytics", "Funnel·Retention·Cohort 관점으로 사용자 행동을 읽고 서비스 지표와 문제를 연결합니다."],
-      ["SQL & Data Extraction", "JOIN, Subquery, CTE, Window Function을 활용해 분석용 쿼리와 지표 집계를 구성합니다."],
-      ["Behavior Log Analysis", "MongoDB Aggregation Pipeline과 Python으로 실제 사용자 행동 로그를 정규화하고 분석합니다."],
-      ["Advanced Analysis", "분류·예측·ML/DL 경험을 핵심 정체성이 아닌 고급 분석 수단으로 활용합니다."]
+      { name: "SQL", detail: "JOIN · Subquery · CTE/WITH · Window Function", evidence: "분석 데이터셋 구성과 지표 집계" },
+      { name: "MongoDB", detail: "Aggregation Pipeline · $lookup · $group · $dateTrunc", evidence: "실제 서비스 행동·결제·추천 로그 분석" },
+      { name: "Product Analytics", detail: "Amplitude · Retention · Cohort · AARRR", evidence: "재방문·사용자군·서비스 지표 분석" },
+      { name: "Python", detail: "Pandas · Scikit-learn · 분석 자동화", evidence: "전처리·리포팅·고급 분석" },
+      { name: "BI", detail: "Tableau · Excel · GA4", evidence: "시각화·보고서·마케팅/제품 분석" },
+      { name: "Advanced Analysis", detail: "Classification · Forecasting · ML/DL", evidence: "필요할 때 확장 가능한 보조 분석 역량" }
     ],
     strategy: [
-      ["Business Metric Design", "운영·고객·매출 데이터를 의사결정에 필요한 지표와 우선순위로 번역합니다."],
-      ["Market & Operations", "지역·수요·공급·배송 구조를 비교해 실행 가능한 운영 전략을 도출합니다."],
-      ["Structured Analysis", "문제 정의 → 데이터 → 분석 → 인사이트 → Action의 흐름으로 결과를 구성합니다."],
-      ["Quantitative Validation", "분류·회귀·통계 분석 경험을 활용해 전략 가설을 정량적으로 검토합니다."]
+      { name: "SQL", detail: "JOIN · CTE · Window Function", evidence: "지표 집계와 E-commerce 분석" },
+      { name: "Business Analytics", detail: "Demand · Conversion · Segmentation", evidence: "수요·운영·고객 문제 분석" },
+      { name: "Python", detail: "Pandas · Scikit-learn", evidence: "정량 검증과 자동화" },
+      { name: "BI", detail: "Tableau · Excel · GA4", evidence: "의사결정용 시각화와 보고" },
+      { name: "Product Data", detail: "MongoDB · Amplitude", evidence: "사용자 행동 로그와 Retention/Cohort" },
+      { name: "Advanced Analysis", detail: "Classification · Forecasting", evidence: "리스크·수요 예측 검증" }
     ],
     advanced: [
-      ["Product Analytics", "Connects user behavior to product metrics through funnel, retention, and cohort thinking."],
-      ["SQL & Data Extraction", "Builds analytical queries with joins, subqueries, CTEs, and window functions."],
-      ["Behavior Log Analysis", "Normalizes and analyzes real user behavior logs with MongoDB aggregation and Python."],
-      ["Advanced Analysis", "Uses classification, forecasting, and ML/DL as supporting analytical tools rather than the core identity."]
+      { name: "SQL", detail: "JOIN · Subquery · CTE/WITH · Window Functions", evidence: "Analytical datasets and metric aggregation" },
+      { name: "MongoDB", detail: "Aggregation Pipeline · $lookup · $group · $dateTrunc", evidence: "Real service behavior, payment, and recommendation logs" },
+      { name: "Product Analytics", detail: "Amplitude · Retention · Cohort · AARRR", evidence: "Revisit, segmentation, and product metrics" },
+      { name: "Python", detail: "Pandas · Scikit-learn · Automation", evidence: "Preprocessing, reporting, advanced analysis" },
+      { name: "BI", detail: "Tableau · Excel · GA4", evidence: "Visualization and reporting" },
+      { name: "Advanced Analysis", detail: "Classification · Forecasting · ML/DL", evidence: "Supporting analytical capability" }
     ]
-  },
-
-  techStacks: {
-    analyst: {
-      label: "Product Analytics Stack · Evidence",
-      desc: "숙련도 자기평가 대신 실제 사용 방식과 프로젝트·인턴 근거를 중심으로 정리했습니다.",
-      additionalLabel: "Additional Stack",
-      additional: ["Git", "HTML/CSS/JavaScript", "R", "SPSS", "Excel"],
-      items: [
-        {
-          name: "SQL",
-          note: "Product Query · Aggregation",
-          skills: ["JOIN", "Subquery", "CTE / WITH", "Window Function"],
-          evidence: ["다중 테이블 결합", "지표 집계", "분석 데이터셋 구성"]
-        },
-        {
-          name: "Product Analytics",
-          note: "User Behavior · Retention · Cohort",
-          skills: ["Amplitude", "GA4", "AARRR"],
-          evidence: ["Amplitude Retention/Cohort", "사용자 행동 분석", "전환·재방문 관점"]
-        },
-        {
-          name: "Python",
-          note: "Analysis · Automation",
-          skills: ["Pandas", "Scikit-learn"],
-          evidence: ["데어 분석 데이터셋", "EDA·전처리", "분석 자동화"]
-        },
-        {
-          name: "Behavior Data",
-          note: "Service Log · NoSQL",
-          skills: ["MongoDB", "Aggregation Pipeline"],
-          evidence: ["데어 실무 로그", "피노출·후보군 집계", "로그 정규화"]
-        },
-        {
-          name: "BI / Visualization",
-          note: "Dashboard · Reporting",
-          skills: ["Tableau", "Excel"],
-          evidence: ["Olist 시각화", "분석 보고서", "의사결정 전달"]
-        },
-        {
-          name: "Advanced Analysis",
-          note: "Classification · Forecasting",
-          skills: ["XGBoost", "CatBoost", "LSTM/CNN"],
-          evidence: ["인지장애 분류", "열수요 예측", "한우 등급 예측"]
-        }
-      ]
-    },
-    strategy: {
-      label: "Business Analytics Stack · Evidence",
-      desc: "전략형 버전에서는 기술 이름보다 비즈니스 문제를 어떻게 분석하고 전달했는지에 초점을 둡니다.",
-      additionalLabel: "Additional Stack",
-      additional: ["Amplitude", "GA4", "MongoDB", "Git", "HTML/CSS/JavaScript"],
-      items: [
-        {
-          name: "SQL",
-          note: "Data Extraction · KPI",
-          skills: ["JOIN", "CTE", "Window Function"],
-          evidence: ["E-commerce 분석", "지표 집계", "분석 데이터 구성"]
-        },
-        {
-          name: "Python",
-          note: "Analysis · Validation",
-          skills: ["Pandas", "Scikit-learn"],
-          evidence: ["데이터 전처리", "정량 검증", "자동화"]
-        },
-        {
-          name: "Tableau",
-          note: "BI · Decision Support",
-          skills: ["Dashboard", "Visualization"],
-          evidence: ["Olist", "운영 비교", "결과 전달"]
-        },
-        {
-          name: "Customer Analytics",
-          note: "Behavior · Demand",
-          skills: ["AARRR", "Segmentation", "Demand Analysis"],
-          evidence: ["구매 데이터", "사용자 행동", "지역 수요"]
-        },
-        {
-          name: "Product Data",
-          note: "Logs · Retention",
-          skills: ["MongoDB", "Amplitude"],
-          evidence: ["데어 사용자 로그", "Retention/Cohort", "추천 노출"]
-        },
-        {
-          name: "Advanced Analysis",
-          note: "Model-based Validation",
-          skills: ["Classification", "Forecasting"],
-          evidence: ["리스크 분류", "수요 예측", "Threshold"]
-        }
-      ]
-    },
-    advanced: {
-      label: "Product Analytics Stack · Evidence",
-      desc: "Evidence-first view of the tools and analytical methods used in internships and projects.",
-      additionalLabel: "Additional Stack",
-      additional: ["Git", "HTML/CSS/JavaScript", "R", "SPSS", "Excel"],
-      items: [
-        {
-          name: "SQL",
-          note: "Product Query · Aggregation",
-          skills: ["JOIN", "Subquery", "CTE / WITH", "Window Functions"],
-          evidence: ["Multi-table analysis", "Metric aggregation", "Analysis datasets"]
-        },
-        {
-          name: "Product Analytics",
-          note: "User Behavior · Retention · Cohort",
-          skills: ["Amplitude", "GA4", "AARRR"],
-          evidence: ["Amplitude retention/cohort", "User behavior analysis", "Conversion & revisit"]
-        },
-        {
-          name: "Python",
-          note: "Analysis · Automation",
-          skills: ["Pandas", "Scikit-learn"],
-          evidence: ["Internship datasets", "EDA & preprocessing", "Automation"]
-        },
-        {
-          name: "Behavior Data",
-          note: "Service Log · NoSQL",
-          skills: ["MongoDB", "Aggregation Pipeline"],
-          evidence: ["Production user logs", "Exposure & candidate metrics", "Log normalization"]
-        },
-        {
-          name: "BI / Visualization",
-          note: "Dashboard · Reporting",
-          skills: ["Tableau", "Excel"],
-          evidence: ["Olist visualization", "Analysis reports", "Decision support"]
-        },
-        {
-          name: "Advanced Analysis",
-          note: "Classification · Forecasting",
-          skills: ["XGBoost", "CatBoost", "LSTM/CNN"],
-          evidence: ["Classification", "Time-series forecasting", "Feature engineering"]
-        }
-      ]
-    }
   },
 
   internships: {
@@ -274,11 +218,11 @@ const profile = {
         role: "데이터 분석 인턴",
         period: "2025.09 — 2025.10",
         points: [
-          "MongoDB 기반 사용자 행동 로그를 정규화하고 Python 분석 데이터셋을 구축했습니다.",
-          "사용자 이탈·노출·응시 패턴과 추천 후보군 구조를 분석해 서비스 의사결정을 지원했습니다.",
-          "Amplitude에서 Retention·Cohort를 확인하고 사용자군별 재방문·행동 차이를 분석했습니다."
+          "MongoDB 컬렉션 구조를 직접 검증하고 사용자 행동·결제·초대·추천 로그 기반 지표를 산출했습니다.",
+          "잘못된 데이터 원천과 지표 정의를 재검증하고 Active·친구 초대율·추천 노출·Runway 등 서비스 지표를 정리했습니다.",
+          "Amplitude에서 Retention·Cohort를 확인하고, 상시 대시보드가 어려운 지표는 Python 자동 리포트 구조를 검토했습니다."
         ],
-        tags: ["MongoDB", "Python", "Amplitude", "User Analytics"]
+        tags: ["MongoDB", "Product Analytics", "Amplitude", "Python"]
       },
       {
         company: "잘큼",
@@ -297,11 +241,11 @@ const profile = {
         role: "Data Analysis Intern",
         period: "Sep 2025 — Oct 2025",
         points: [
-          "Normalized MongoDB-based user behavior logs and built Python analysis datasets.",
-          "Analyzed user drop-off, exposure, response patterns, and recommendation candidate-pool structure to support service decisions.",
-          "Reviewed retention and cohort behavior in Amplitude and compared revisit and behavioral differences across user groups."
+          "Inspected MongoDB collection structures and calculated product metrics from behavior, payment, referral, and recommendation logs.",
+          "Revalidated incorrect data sources and metric definitions and analyzed active users, referral rate, recommendation exposure, and runway.",
+          "Reviewed retention/cohort behavior in Amplitude and explored Python-based automated reporting for custom metrics."
         ],
-        tags: ["MongoDB", "Python", "Amplitude", "User Analytics"]
+        tags: ["MongoDB", "Product Analytics", "Amplitude", "Python"]
       },
       {
         company: "Jalkum",
@@ -316,118 +260,63 @@ const profile = {
     ]
   },
 
-  education: {
+  projects: [
+    {
+      koTitle: "Olist 셀러 유치 전략 분석",
+      enTitle: "Olist Seller Acquisition Strategy",
+      koDesc: "배송 병목과 지역별 수요·공급 불균형을 분석해 셀러 유치 우선지역과 운영 개선 방향을 제안했습니다.",
+      enDesc: "Analyzed delivery bottlenecks and regional demand-supply imbalance to prioritize seller-acquisition regions.",
+      resultKo: "셀러 유치 우선지역 도출",
+      resultEn: "Seller-acquisition priorities",
+      tags: ["SQL", "Tableau", "E-commerce"]
+    },
+    {
+      koTitle: "50세 이상 인지장애 경험 여부 예측",
+      enTitle: "Cognitive Impairment Experience Prediction",
+      koDesc: "False Negative 비용을 고려해 Recall 중심으로 모델을 비교하고 임계값 조정으로 탐지 성능을 개선했습니다.",
+      enDesc: "Prioritized recall because of false-negative cost and improved detection through model comparison and threshold adjustment.",
+      resultKo: "Recall 0.72 → 0.78",
+      resultEn: "Recall 0.72 → 0.78",
+      tags: ["Python", "Classification", "Threshold"]
+    },
+    {
+      koTitle: "열수요 예측",
+      enTitle: "Heat Demand Forecasting",
+      koDesc: "기상 데이터와 열수요를 결합해 시계열 모델을 비교하고 예측 성능을 개선했습니다.",
+      enDesc: "Combined weather and heat-demand data and compared time-series models.",
+      resultKo: "검증 RMSE 17.2",
+      resultEn: "Validation RMSE 17.2",
+      tags: ["Python", "LSTM", "Time Series"]
+    },
+    {
+      koTitle: "LendingClub 리스크 분류",
+      enTitle: "LendingClub Risk Analysis",
+      koDesc: "부실 위험군을 선별하고 임계값에 따른 잠재 손실 방어 시나리오를 분석했습니다.",
+      enDesc: "Screened high-risk loans and evaluated a threshold-based potential-loss avoidance scenario.",
+      resultKo: "잠재 손실 약 15% 방어 시나리오",
+      resultEn: "Scenario: ~15% potential loss avoidance",
+      tags: ["Python", "Finance", "Classification"]
+    }
+  ],
+
+  training: {
     ko: [
-      {
-        title: "Codeit Programming & Data Science Track",
-        provider: "Codeit",
-        period: "2021.03 — 2021.05",
-        badge: "18 Courses Completed",
-        featured: true,
-        paragraphs: [
-          "분석 도구부터 시작하기보다 프로그래밍 원리에서 출발해 데이터가 만들어지고 활용되는 과정까지 순차적으로 학습했습니다.",
-          "Python과 JavaScript, 객체지향 프로그래밍을 거쳐 DataFrame 기반 데이터 처리, 데이터 사이언스, 분석과 시각화, 데이터 퀄리티와 데이터 생성까지 학습 범위를 확장했습니다."
-        ],
-        learningPath: [
-          "Programming Fundamentals",
-          "Python & JavaScript",
-          "Object-Oriented Programming",
-          "DataFrame & Data Processing",
-          "Data Science",
-          "Data Analysis & Visualization",
-          "Data Quality & Data Creation"
-        ]
-      },
-      {
-        title: "데이터 분석 및 마케팅 교육",
-        provider: "패스트캠프",
-        period: "2023.08 — 2023.11",
-        paragraphs: [
-          "AARRR 프레임워크 기반 비즈니스 지표 설계와 Amplitude·GA4, A/B Test, 회귀분석을 활용한 마케팅·제품 분석 프로세스를 학습했습니다."
-        ],
-        stack: ["Amplitude", "GA4", "SQL", "A/B Test", "AARRR", "CRM Marketing"]
-      },
-      {
-        title: "내일배움캠프 데이터 6기",
-        provider: "스파르타코딩",
-        period: "2025.02 — 2025.07",
-        paragraphs: [
-          "데이터 전처리부터 머신러닝·딥러닝 모델링까지 End-to-End 프로세스를 학습했습니다. 시계열 예측 프로젝트에서 검증 RMSE 17.2를 기록하고 Attention 기반 모델 해석 경험을 확장했습니다."
-        ],
-        stack: ["Python", "Pandas", "Scikit-learn", "SQL", "Tableau", "LSTM/CNN", "Attention"]
-      }
+      ["스파르타코딩", "내일배움캠프 데이터 6기", "2025.02 — 2025.07", "Python · SQL · Tableau · ML/DL"],
+      ["패스트캠프", "데이터 분석 및 마케팅", "2023.08 — 2023.11", "Amplitude · GA4 · AARRR · A/B Test"],
+      ["Codeit", "Programming & Data Science Track", "2021.03 — 2021.05", "Python · JavaScript · DataFrame · Visualization"]
     ],
     en: [
-      {
-        title: "Codeit Programming & Data Science Track",
-        provider: "Codeit",
-        period: "Mar 2021 — May 2021",
-        badge: "18 Courses Completed",
-        featured: true,
-        paragraphs: [
-          "Started from programming fundamentals and followed the path from software principles to how data is created, processed, analyzed, visualized, and validated.",
-          "Covered Python, JavaScript, object-oriented programming, DataFrame-based processing, data science, visualization, data quality, and data creation."
-        ],
-        learningPath: [
-          "Programming Fundamentals",
-          "Python & JavaScript",
-          "Object-Oriented Programming",
-          "DataFrame & Data Processing",
-          "Data Science",
-          "Data Analysis & Visualization",
-          "Data Quality & Data Creation"
-        ]
-      },
-      {
-        title: "Data Analysis & Marketing Program",
-        provider: "Fastcampus",
-        period: "Aug 2023 — Nov 2023",
-        paragraphs: [
-          "Studied AARRR-based metric design and product/marketing analytics using Amplitude, GA4, A/B testing concepts, and regression analysis."
-        ],
-        stack: ["Amplitude", "GA4", "SQL", "A/B Test", "AARRR", "CRM Marketing"]
-      },
-      {
-        title: "Naeilbaeum Camp Data Cohort 6",
-        provider: "Sparta Coding Club",
-        period: "Feb 2025 — Jul 2025",
-        paragraphs: [
-          "Completed an end-to-end curriculum from preprocessing to machine learning and deep-learning modeling. Recorded validation RMSE 17.2 in a time-series forecasting project and expanded model interpretation through attention visualization."
-        ],
-        stack: ["Python", "Pandas", "Scikit-learn", "SQL", "Tableau", "LSTM/CNN", "Attention"]
-      }
+      ["Sparta Coding Club", "Data Cohort 6", "Feb 2025 — Jul 2025", "Python · SQL · Tableau · ML/DL"],
+      ["Fastcampus", "Data Analysis & Marketing", "Aug 2023 — Nov 2023", "Amplitude · GA4 · AARRR · A/B Test"],
+      ["Codeit", "Programming & Data Science Track", "Mar 2021 — May 2021", "Python · JavaScript · DataFrame · Visualization"]
     ]
-  }
-};
-
-const versions = {
-  analyst: {
-    label: "PRODUCT DATA ANALYST",
-    title: "사용자 행동과 서비스 데이터를 분석해 제품·사업 의사결정으로 연결하는 데이터 분석가",
-    desc: "SQL·Python·MongoDB·Amplitude를 활용해 행동 데이터를 구조화하고, Retention·Cohort·추천 노출 지표를 해석해 서비스 문제와 다음 Action을 찾습니다.",
-    theme: "analyst",
-    lang: "ko"
-  },
-  strategy: {
-    label: "BUSINESS / GROWTH ANALYTICS",
-    title: "사용자·매출·운영 데이터를 우선순위와 실행 방향으로 연결하는 분석가",
-    desc: "고객 행동과 수요·공급·운영 지표를 함께 보고, 분석 결과가 실제 전략과 실행 우선순위로 이어지도록 구조화합니다.",
-    theme: "strategy",
-    lang: "ko"
-  },
-  advanced: {
-    label: "PRODUCT DATA ANALYST · EN",
-    title: "A Product Data Analyst who turns user behavior into product decisions",
-    desc: "I structure user behavior data, define and interpret product metrics, and connect findings to product and operational actions.",
-    theme: "advanced",
-    lang: "en"
   }
 };
 
 function currentVersion() {
   const params = new URLSearchParams(location.search);
   const requested = params.get("ver");
-  return versions[requested] ? requested : "analyst";
+  return profile.versions[requested] ? requested : "analyst";
 }
 
 function setVersionInUrl(key) {
@@ -447,7 +336,7 @@ function renderVersionTabs(activeKey) {
   const tabs = document.getElementById("versionTabs");
   if (!tabs) return;
   tabs.innerHTML = "";
-  Object.entries(versions).forEach(([key, ver]) => {
+  Object.entries(profile.versions).forEach(([key, ver]) => {
     const btn = el("button", `version-tab ${key === activeKey ? "active" : ""}`, ver.label);
     btn.addEventListener("click", () => {
       setVersionInUrl(key);
@@ -457,188 +346,223 @@ function renderVersionTabs(activeKey) {
   });
 }
 
+function renderHero(key) {
+  const ver = profile.versions[key];
+  document.getElementById("heroEyebrow").textContent = ver.label;
+  document.getElementById("heroTitle").textContent = ver.title;
+  document.getElementById("heroDesc").textContent = ver.desc;
+  document.getElementById("versionLabel").textContent = ver.lang === "en" ? "Version" : "버전 선택";
+
+  const stack = document.getElementById("heroCoreStack");
+  stack.innerHTML = ver.heroStack.map(item => `<span>${item}</span>`).join("");
+
+  document.getElementById("mainProjectBtn").textContent = ver.lang === "en" ? "View Main Case" : "메인 분석 보기";
+  document.getElementById("contactBtn").textContent = ver.lang === "en" ? "View Contact" : "연락처 보기";
+}
+
 function renderMainProject(key) {
   const data = profile.mainProjects[key];
+  document.getElementById("mainProjectType").textContent = data.eyebrow;
+  document.getElementById("mainProjectName").textContent = data.title;
+  document.getElementById("mainProjectIntro").textContent = data.intro;
+  document.getElementById("mainResultLabel").textContent = data.resultLabel;
+  document.getElementById("mainResultValue").textContent = data.resultValue;
+  document.getElementById("mainProjectTags").innerHTML =
+    data.tags.map(t => `<span class="meta-chip">${t}</span>`).join("");
 
-  const mainProjectType = document.getElementById("mainProjectType");
-  if (mainProjectType) mainProjectType.textContent = data.eyebrow;
-
-  const mainProjectName = document.getElementById("mainProjectName");
-  if (mainProjectName) mainProjectName.textContent = data.title;
-
-  const mainProjectIntro = document.getElementById("mainProjectIntro");
-  if (mainProjectIntro) mainProjectIntro.textContent = data.intro;
-
-  const mainResultLabel = document.getElementById("mainResultLabel");
-  if (mainResultLabel) mainResultLabel.textContent = data.resultLabel;
-
-  const mainResultValue = document.getElementById("mainResultValue");
-  if (mainResultValue) mainResultValue.textContent = data.resultValue;
-
-  const tagWrap = document.getElementById("mainProjectTags");
-  if (tagWrap) {
-    tagWrap.innerHTML = data.tags.map(tag => `<span class="meta-chip">${tag}</span>`).join("");
-  }
-
-  const flowWrap = document.getElementById("mainFlow");
-  if (!flowWrap) return;
-  flowWrap.innerHTML = "";
-  data.flow.forEach(([title, desc], idx) => {
-    const item = el("div", "flow-item");
-    item.innerHTML = `
-      <div class="flow-number">${String(idx + 1).padStart(2, "0")}</div>
-      <h4>${title}</h4>
-      <p>${desc}</p>
-    `;
-    flowWrap.appendChild(item);
+  const flow = document.getElementById("mainFlow");
+  flow.innerHTML = "";
+  data.flow.forEach(([title, desc]) => {
+    const item = el("article", "flow-item");
+    item.innerHTML = `<h4>${title}</h4><p>${desc}</p>`;
+    flow.appendChild(item);
   });
 }
 
-function renderOtherProjects(lang, key) {
-  const grid = document.getElementById("projectGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
-
-  let projects = [...profile.otherProjects];
-  if (key === "strategy") {
-    projects = projects.filter(p => p.koTitle !== "Olist 셀러 유치 전략 분석");
-  }
-
-  projects.forEach((project) => {
-    const title = lang === "en" ? project.enTitle : project.koTitle;
-    const desc = lang === "en" ? project.enDesc : project.koDesc;
-    const result = lang === "en" ? project.resultEn : project.resultKo;
-    const tags = project.tags.map(tag => `<span class="meta-chip">${tag}</span>`).join("");
-    const card = el("article", "project-card");
-    card.innerHTML = `
-      <h3>${title}</h3>
-      <p>${desc}</p>
-      <div class="project-meta">
-        <span class="meta-chip result-chip">${result}</span>
-        ${tags}
-      </div>
-    `;
-    grid.appendChild(card);
-  });
+function barsMarkup(values) {
+  return values.map(([label, value]) => `
+    <div class="mini-bar-item">
+      <div class="mini-bar-value">${value}%</div>
+      <div class="mini-bar-track"><div class="mini-bar-fill" style="height:${Math.max(12, value / 30 * 100)}%"></div></div>
+      <div class="mini-bar-label">${label}</div>
+    </div>
+  `).join("");
 }
 
-function renderStrengths(key) {
-  const grid = document.getElementById("strengthGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
+function renderDareEvidence(lang) {
+  const data = profile.dareEvidence[lang];
+  const wrap = document.getElementById("caseEvidence");
 
-  profile.strengths[key].forEach(([title, desc]) => {
-    const card = el("div", "strength-card");
-    card.innerHTML = `<h3>${title}</h3><p>${desc}</p>`;
-    grid.appendChild(card);
-  });
-}
+  const metrics = data.metrics.map(m => `
+    <div class="metric-tile">
+      <strong>${m.value}</strong>
+      <span>${m.label}</span>
+      <small>${m.note}</small>
+    </div>`).join("");
 
-function renderSkillChart(key) {
-  const data = profile.techStacks[key];
+  const recStats = data.recommendation.stats.map(s => `
+    <div class="stat-block"><strong>${s.value}</strong><span>${s.label}</span></div>
+  `).join("");
 
-  const labelEl = document.getElementById("skillChartLabel");
-  if (labelEl) labelEl.textContent = data.label;
+  const queryItems = data.query.items.map(([title, desc]) => `
+    <div class="work-item"><strong>${title}</strong><p>${desc}</p></div>
+  `).join("");
 
-  const descEl = document.getElementById("skillChartDesc");
-  if (descEl) descEl.textContent = data.desc;
+  wrap.innerHTML = `
+    <div class="metric-strip">${metrics}</div>
 
-  const chart = document.getElementById("skillChart");
-  if (!chart) return;
-  chart.innerHTML = "";
-
-  data.items.forEach((item, idx) => {
-    const card = el("article", "skill-item evidence-card");
-    const skills = item.skills.map(text => `<span class="skill-method-chip">${text}</span>`).join("");
-    const evidence = item.evidence.map(text => `<span class="skill-evidence-chip">${text}</span>`).join("");
-
-    card.innerHTML = `
-      <div class="skill-top">
-        <div class="skill-rank">${String(idx + 1).padStart(2, "0")}</div>
-        <div class="skill-name-block">
-          <strong>${item.name}</strong>
-          <p>${item.note}</p>
+    <div class="case-grid two-col">
+      <article class="case-card validation-card">
+        <div class="mini-label">${data.validation.eyebrow}</div>
+        <h3>${data.validation.title}</h3>
+        <div class="validation-number">
+          <span class="before">${data.validation.before}</span>
+          <span class="arrow">→</span>
+          <span class="after">${data.validation.after}</span>
+          <small>${data.validation.unit}</small>
         </div>
-      </div>
-      <div class="skill-methods">${skills}</div>
-      <div class="evidence-label">EVIDENCE</div>
-      <div class="skill-evidence">${evidence}</div>
-    `;
-    chart.appendChild(card);
-  });
+        <p>${data.validation.text}</p>
+      </article>
 
-  const additional = el("div", "skill-additional");
-  additional.innerHTML = `
-    <span class="skill-additional-label">${data.additionalLabel}</span>
-    <div class="skill-additional-chips">
-      ${data.additional.map(text => `<span>${text}</span>`).join("")}
+      <article class="case-card">
+        <div class="mini-label">${data.referral.eyebrow}</div>
+        <h3>${data.referral.title}</h3>
+        <p>${data.referral.text}</p>
+        <div class="mini-bar-chart">${barsMarkup(data.referral.values)}</div>
+      </article>
+    </div>
+
+    <div class="case-grid two-col">
+      <article class="case-card">
+        <div class="mini-label">${data.recommendation.eyebrow}</div>
+        <h3>${data.recommendation.title}</h3>
+        <div class="stat-row">${recStats}</div>
+        <p>${data.recommendation.text}</p>
+      </article>
+
+      <article class="case-card">
+        <div class="mini-label">${data.amplitude.eyebrow}</div>
+        <h3>${data.amplitude.title}</h3>
+        <p>${data.amplitude.text}</p>
+        <div class="amplitude-tags">
+          <span>Retention</span><span>Cohort</span><span>Rolling Window</span><span>Segmentation</span>
+        </div>
+      </article>
+    </div>
+
+    <article class="case-card work-card">
+      <div class="mini-label">${data.query.eyebrow}</div>
+      <h3>${data.query.title}</h3>
+      <div class="work-grid">${queryItems}</div>
+    </article>
+  `;
+}
+
+function renderStrategyEvidence() {
+  const wrap = document.getElementById("caseEvidence");
+  wrap.innerHTML = `
+    <div class="strategy-evidence">
+      <article class="case-card">
+        <div class="mini-label">DATA STRUCTURE</div>
+        <h3>주문·고객·판매자·배송 데이터를 하나의 분석 흐름으로 결합</h3>
+        <p>지역별 주문 수요와 판매자 공급, 배송 지연을 함께 비교할 수 있도록 분석 단위를 정리했습니다.</p>
+      </article>
+      <article class="case-card">
+        <div class="mini-label">BUSINESS QUESTION</div>
+        <h3>“어디에 셀러를 더 유치해야 배송 구조가 좋아지는가?”</h3>
+        <p>수요는 높지만 판매자 공급이 부족하고 배송 병목이 나타나는 지역을 우선순위로 정리했습니다.</p>
+      </article>
+      <article class="case-card">
+        <div class="mini-label">OUTPUT</div>
+        <h3>분석 결과를 운영 우선순위로 변환</h3>
+        <p>단순 EDA가 아니라 셀러 확보와 지역 운영 전략에 사용할 수 있는 방향으로 결과를 압축했습니다.</p>
+      </article>
     </div>
   `;
-  chart.appendChild(additional);
 }
 
-function renderInternships(lang) {
+function renderEvidence(key) {
+  const isEnglish = profile.versions[key].lang === "en";
+  document.getElementById("caseEvidenceTitle").textContent =
+    key === "strategy" ? "How the Analysis Became a Decision" : isEnglish ? "What I Actually Analyzed" : "실제로 분석한 것";
+  document.getElementById("caseEvidenceDesc").textContent =
+    key === "strategy"
+      ? "결과물을 많이 나열하기보다 실제 비즈니스 질문과 분석 흐름을 보여줍니다."
+      : isEnglish
+        ? "No original chart images were available, so the verified analysis numbers are visualized directly on the page."
+        : "원본 차트 이미지는 없지만, 당시 확정한 지표와 검증 과정을 그대로 웹에서 다시 시각화했습니다.";
+
+  if (key === "strategy") renderStrategyEvidence();
+  else renderDareEvidence(isEnglish ? "en" : "ko");
+}
+
+function renderExperience(lang) {
   const wrap = document.getElementById("experienceList");
-  if (!wrap) return;
   wrap.innerHTML = "";
-
-  profile.internships[lang].forEach((item) => {
-    const tags = item.tags.map(tag => `<span class="meta-chip">${tag}</span>`).join("");
-    const points = item.points.map(point => `<li>${point}</li>`).join("");
+  profile.internships[lang].forEach(item => {
     const card = el("article", "experience-card");
-
     card.innerHTML = `
       <div class="experience-head">
         <div>
-          <div class="mini-label">Internship</div>
+          <div class="mini-label">INTERNSHIP</div>
           <h3>${item.company}</h3>
           <p class="experience-role">${item.role}</p>
         </div>
         <span class="period-chip">${item.period}</span>
       </div>
-      <ul class="experience-points">${points}</ul>
-      <div class="project-meta">${tags}</div>
+      <ul class="experience-points">${item.points.map(p => `<li>${p}</li>`).join("")}</ul>
+      <div class="project-meta">${item.tags.map(t => `<span class="meta-chip">${t}</span>`).join("")}</div>
     `;
     wrap.appendChild(card);
   });
 }
 
-function renderEducation(lang) {
-  const wrap = document.getElementById("educationList");
-  if (!wrap) return;
-  wrap.innerHTML = "";
-
-  profile.education[lang].forEach((item) => {
-    const card = el("article", `education-card ${item.featured ? "featured" : ""}`.trim());
-    const paragraphs = item.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("");
-    const stack = item.stack
-      ? `<div class="education-stack">${item.stack.map(tag => `<span class="meta-chip">${tag}</span>`).join("")}</div>`
-      : "";
-    const learningPath = item.learningPath
-      ? `
-        <div class="learning-label">Learning Path</div>
-        <div class="learning-path">
-          ${item.learningPath.map((step, idx) =>
-            `${idx > 0 ? `<span class="learning-arrow">→</span>` : ""}<span class="learning-step">${step}</span>`
-          ).join("")}
-        </div>
-      `
-      : "";
-
+function renderProjects(lang) {
+  const grid = document.getElementById("projectGrid");
+  grid.innerHTML = "";
+  profile.projects.forEach(p => {
+    const card = el("article", "project-card");
+    const title = lang === "en" ? p.enTitle : p.koTitle;
+    const desc = lang === "en" ? p.enDesc : p.koDesc;
+    const result = lang === "en" ? p.resultEn : p.resultKo;
     card.innerHTML = `
-      <div class="education-head">
-        <div>
-          <div class="mini-label">${item.provider}</div>
-          <h3>${item.title}</h3>
-        </div>
-        <div class="education-period">
-          <span class="period-chip">${item.period}</span>
-          ${item.badge ? `<span class="course-count">${item.badge}</span>` : ""}
-        </div>
+      <h3>${title}</h3>
+      <p>${desc}</p>
+      <div class="project-meta">
+        <span class="meta-chip result-chip">${result}</span>
+        ${p.tags.map(t => `<span class="meta-chip">${t}</span>`).join("")}
       </div>
-      <div class="education-copy">${paragraphs}</div>
-      ${learningPath}
-      ${stack}
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderSkills(key) {
+  const grid = document.getElementById("strengthGrid");
+  grid.innerHTML = "";
+  profile.skills[key].forEach(item => {
+    const card = el("article", "strength-card skill-summary-card");
+    card.innerHTML = `
+      <h3>${item.name}</h3>
+      <strong>${item.detail}</strong>
+      <p>${item.evidence}</p>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderTraining(lang) {
+  const wrap = document.getElementById("educationList");
+  wrap.innerHTML = "";
+  profile.training[lang].forEach(([provider, title, period, stack]) => {
+    const card = el("article", "training-row");
+    card.innerHTML = `
+      <div>
+        <div class="mini-label">${provider}</div>
+        <h3>${title}</h3>
+        <p>${stack}</p>
+      </div>
+      <span class="period-chip">${period}</span>
     `;
     wrap.appendChild(card);
   });
@@ -646,98 +570,75 @@ function renderEducation(lang) {
 
 function renderContacts(lang) {
   const wrap = document.getElementById("contactList");
-  if (!wrap) return;
   wrap.innerHTML = "";
-
-  profile.contacts.forEach((item) => {
-    let text = item.text;
-    if (lang === "ko" && item.label === "Portfolio PDF") text = "PDF 포트폴리오 열기";
-
+  profile.contacts.forEach(item => {
     const node = el("a", "contact-link");
     node.href = item.href;
-
     if (item.href.startsWith("http")) {
       node.target = "_blank";
       node.rel = "noopener noreferrer";
     }
-
+    const text = lang === "ko" && item.label === "Portfolio PDF" ? "PDF 포트폴리오 열기" : item.text;
     node.innerHTML = `<strong>${item.label}</strong><span>${text}</span>`;
     wrap.appendChild(node);
   });
 }
 
-function renderSectionCopy(key) {
-  const isEnglish = key === "advanced";
-  const isStrategy = key === "strategy";
+function renderCopy(key) {
+  const en = profile.versions[key].lang === "en";
+  const strategy = key === "strategy";
 
   document.getElementById("mainProjectSectionTitle").textContent =
-    isEnglish ? "Main Case" : isStrategy ? "Main Strategy Case" : "Main Product Analytics Case";
-
+    strategy ? "Main Business Analytics Case" : en ? "Main Product Analytics Case" : "Main Product Analytics Case";
   document.getElementById("mainProjectSectionDesc").textContent =
-    isEnglish
-      ? "A real-service case showing how behavior logs were structured, analyzed, and connected to product decisions."
-      : isStrategy
-        ? "분석 결과를 실행 우선순위와 전략 제안으로 연결한 대표 사례입니다."
-        : "실제 서비스 행동 로그를 구조화하고, 사용자 행동·추천 노출·Retention/Cohort를 분석해 의사결정으로 연결한 경험입니다.";
+    strategy
+      ? "프로젝트 목록보다 실제 비즈니스 질문과 분석 흐름을 먼저 보여줍니다."
+      : en
+        ? "A real-service case focused on metric definition, data validation, and product decision support."
+        : "프로젝트 이름보다 실제 서비스에서 무엇을 정의하고, 검증하고, 분석했는지를 먼저 보여줍니다.";
 
-  document.getElementById("projectsTitle").textContent = isEnglish ? "Selected Projects" : "Selected Projects";
-  document.getElementById("projectSectionDesc").textContent =
-    isEnglish
-      ? "Modeling projects are kept as supporting analytical capabilities rather than the primary identity."
-      : "모델링 프로젝트는 핵심 정체성이 아니라 분석 범위를 확장하는 보조 역량으로 배치했습니다.";
-
-  document.getElementById("strengthsTitle").textContent =
-    isEnglish ? "Product Analytics Capability" : isStrategy ? "Business Analytics Capability" : "Product Analytics Capability";
-
-  document.getElementById("strengthDesc").textContent =
-    isEnglish
-      ? "Product analytics, SQL-based extraction, behavior-log analysis, and advanced analytical methods."
-      : isStrategy
-        ? "데이터를 지표·인사이트·우선순위로 연결하는 비즈니스 분석 역량을 정리했습니다."
-        : "사용자 행동 분석, SQL 기반 데이터 추출, 서비스 로그 구조화, 고급 분석을 Product Analytics 관점으로 연결합니다.";
-
-  document.getElementById("experienceTitle").textContent = isEnglish ? "Hands-on Experience" : "Hands-on Experience";
+  document.getElementById("experienceTitle").textContent = en ? "Work Experience" : "Work Experience";
   document.getElementById("experienceDesc").textContent =
-    isEnglish
-      ? "Internship experience with real user logs, customer data, reporting, and decision support."
-      : "실제 사용자 로그와 고객·운영 데이터를 다룬 인턴 경험을 정리했습니다.";
+    en ? "Hands-on analysis experience with real service and customer data." : "학습 이력보다 실제 데이터로 무엇을 했는지 먼저 배치했습니다.";
 
-  document.getElementById("educationTitle").textContent = isEnglish ? "Education & Training" : "Education & Training";
+  document.getElementById("projectsTitle").textContent = en ? "Selected Projects" : "Selected Projects";
+  document.getElementById("projectSectionDesc").textContent =
+    en ? "Supporting projects that show breadth without diluting the main product-analytics identity."
+       : "대표 경험을 흐리지 않도록, 다른 프로젝트는 분석 역량의 폭을 보여주는 정도로 압축했습니다.";
+
+  document.getElementById("strengthsTitle").textContent = en ? "Skills I Use" : "Skills I Use";
+  document.getElementById("strengthDesc").textContent =
+    en ? "Tools and methods are shown with what they were actually used for."
+       : "상급/중상 같은 자기평가 대신 실제로 무엇을 할 수 있는지만 적었습니다.";
+
+  document.getElementById("educationTitle").textContent = en ? "Training" : "Training";
   document.getElementById("educationDesc").textContent =
-    isEnglish
-      ? "Training from programming fundamentals to product analytics and advanced modeling."
-      : "프로그래밍 기초에서 Product Analytics와 고급 모델링까지 이어진 학습 이력입니다.";
+    en ? "Kept compact so that training does not compete with work evidence."
+       : "교육은 경력과 프로젝트보다 앞에 나오지 않도록 최소한으로 줄였습니다.";
 
   document.getElementById("contactTitle").textContent = "Contact";
   document.getElementById("contactDesc").textContent =
-    isEnglish ? "GitHub, email, portfolio PDF, and phone." : "GitHub, 이메일, PDF 포트폴리오와 연락처입니다.";
+    en ? "GitHub, LinkedIn, email, and portfolio PDF." : "GitHub, LinkedIn, 이메일, PDF 포트폴리오입니다.";
 }
 
 function render(key = currentVersion()) {
-  const ver = versions[key];
+  const ver = profile.versions[key];
   const lang = ver.lang;
-  const isEnglish = lang === "en";
 
   document.body.classList.remove("theme-strategy", "theme-advanced");
   if (ver.theme === "strategy") document.body.classList.add("theme-strategy");
   if (ver.theme === "advanced") document.body.classList.add("theme-advanced");
 
-  document.getElementById("heroEyebrow").textContent = ver.label;
-  document.getElementById("heroTitle").textContent = ver.title;
-  document.getElementById("heroDesc").textContent = ver.desc;
-  document.getElementById("versionLabel").textContent = isEnglish ? "Version" : "버전 선택";
-  document.getElementById("mainProjectBtn").textContent = isEnglish ? "View Main Case" : "메인 분석 보기";
-  document.getElementById("contactBtn").textContent = isEnglish ? "View Contact" : "연락처 보기";
-
   renderVersionTabs(key);
-  renderSkillChart(key);
+  renderHero(key);
   renderMainProject(key);
-  renderOtherProjects(lang, key);
-  renderStrengths(key);
-  renderInternships(lang);
-  renderEducation(lang);
+  renderEvidence(key);
+  renderExperience(lang);
+  renderProjects(lang);
+  renderSkills(key);
+  renderTraining(lang);
   renderContacts(lang);
-  renderSectionCopy(key);
+  renderCopy(key);
 }
 
 render();
