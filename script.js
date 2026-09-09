@@ -3,7 +3,7 @@ const profile = {
     { label: "GitHub", text: "github.com/ryemso", href: "https://github.com/ryemso" },
     { label: "LinkedIn", text: "linkedin.com/in/동현-김-898ba4348", href: "https://www.linkedin.com/in/%EB%8F%99%ED%98%84-%EA%B9%80-898ba4348" },
     { label: "Email", text: "qt0177@gmail.com", href: "mailto:qt0177@gmail.com" },
-    { label: "Portfolio PDF", text: "Open PDF Portfolio", href: "https://drive.google.com/file/d/1-jQsoKR6gl0ZuA4ZFbpL9QR9oC906t7P/view?usp=drive_link" }
+    { label: "The Liquidation of Penny", text: "Play Live Game", href: "https://ryemso.github.io/The-Liquidation-of-Penny/" }
   ],
 
   versions: {
@@ -296,6 +296,15 @@ const profile = {
       resultKo: "잠재 손실 약 15% 방어 시나리오",
       resultEn: "Scenario: ~15% potential loss avoidance",
       tags: ["Python", "Finance", "Classification"]
+    },
+    {
+      koTitle: "The Liquidation of Penny",
+      enTitle: "The Liquidation of Penny",
+      koDesc: "경제·시장 개념을 전투·스테이지·보상 시스템으로 번역하고, 실제 플레이 가능한 웹 게임 프로토타입으로 구현했습니다. 이동·전투·맵 전환·보상 선택과 게임 상태를 직접 설계하고 디버깅했습니다.",
+      enDesc: "Translated economic and market concepts into combat, stage, and reward systems and implemented them as a playable web game prototype, including movement, combat, stage transitions, rewards, and game-state logic.",
+      resultKo: "Playable Web Prototype",
+      resultEn: "Playable Web Prototype",
+      tags: ["Side Project", "Godot", "Game Design", "AI-assisted Prototyping"]
     }
   ],
 
@@ -578,7 +587,7 @@ function renderContacts(lang) {
       node.target = "_blank";
       node.rel = "noopener noreferrer";
     }
-    const text = lang === "ko" && item.label === "Portfolio PDF" ? "PDF 포트폴리오 열기" : item.text;
+    const text = lang === "ko" && item.label === "The Liquidation of Penny" ? "게임 플레이" : item.text;
     node.innerHTML = `<strong>${item.label}</strong><span>${text}</span>`;
     wrap.appendChild(node);
   });
@@ -604,7 +613,7 @@ function renderCopy(key) {
   document.getElementById("projectsTitle").textContent = en ? "Selected Projects" : "Selected Projects";
   document.getElementById("projectSectionDesc").textContent =
     en ? "Supporting projects that show breadth without diluting the main product-analytics identity."
-       : "대표 경험을 흐리지 않도록, 다른 프로젝트는 분석 역량의 폭을 보여주는 정도로 압축했습니다.";
+       : "대표 Product Analytics 경험을 중심에 두고, 분석·모델링·구현 역량을 보여주는 프로젝트는 보조 사례로 압축했습니다.";
 
   document.getElementById("strengthsTitle").textContent = en ? "Skills I Use" : "Skills I Use";
   document.getElementById("strengthDesc").textContent =
@@ -618,7 +627,7 @@ function renderCopy(key) {
 
   document.getElementById("contactTitle").textContent = "Contact";
   document.getElementById("contactDesc").textContent =
-    en ? "GitHub, LinkedIn, email, and portfolio PDF." : "GitHub, LinkedIn, 이메일, PDF 포트폴리오입니다.";
+    en ? "GitHub, LinkedIn, email, and the playable game." : "GitHub, LinkedIn, 이메일과 실제 플레이 가능한 게임 링크입니다.";
 }
 
 function render(key = currentVersion()) {

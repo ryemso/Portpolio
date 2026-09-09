@@ -622,3 +622,5 @@ body.theme-advanced { --accent: #5b97ff; --accent-2: #8bc9ff; }
   .stat-row { grid-template-columns: 1fr; }
   .training-row { flex-direction: column; }
 }
+
+
