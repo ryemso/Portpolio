@@ -299,7 +299,8 @@ const profile = {
       enDesc: "Analyzed delivery bottlenecks and regional demand-supply imbalance to prioritize seller-acquisition regions.",
       resultKo: "셀러 유치 우선지역 도출",
       resultEn: "Seller-acquisition priorities",
-      tags: ["SQL", "Tableau", "E-commerce"]
+      tags: ["SQL", "Tableau", "E-commerce"],
+      hynix: true
     },
     {
       koTitle: "50세 이상 인지장애 경험 여부 예측",
@@ -308,7 +309,8 @@ const profile = {
       enDesc: "Prioritized recall because of false-negative cost and improved detection through model comparison and threshold adjustment.",
       resultKo: "Recall 0.72 → 0.78",
       resultEn: "Recall 0.72 → 0.78",
-      tags: ["Python", "Classification", "Threshold"]
+      tags: ["Python", "Classification", "Threshold"],
+      hynix: true
     },
     {
       koTitle: "열수요 예측",
@@ -318,6 +320,16 @@ const profile = {
       resultKo: "검증 RMSE 17.2",
       resultEn: "Validation RMSE 17.2",
       tags: ["Python", "LSTM", "Time Series"]
+    },
+    {
+      koTitle: "한우 등급 예측",
+      enTitle: "Hanwoo Grade Prediction",
+      koDesc: "개체 정보·도축 성적·혈통 관계·지역별 기상 데이터를 통합하고, 단순 피처 추가보다 등급 결정 구조를 표현하는 관점에서 XGBoost·RealMLP·HanwooFormer를 비교했습니다.",
+      enDesc: "Integrated individual, slaughter, pedigree, and regional weather data and compared XGBoost, RealMLP, and HanwooFormer from a domain-structure perspective.",
+      resultKo: "3개 모델 비교·앙상블",
+      resultEn: "3-model comparison & ensemble",
+      tags: ["Python", "Classification", "Feature Engineering", "Ensemble"],
+      hynix: true
     },
     {
       koTitle: "LendingClub 리스크 분류",
@@ -335,7 +347,8 @@ const profile = {
       enDesc: "Translated economic and market concepts into combat, stage, and reward systems and implemented them as a playable web game prototype, including movement, combat, stage transitions, rewards, and game-state logic.",
       resultKo: "Playable Web Prototype",
       resultEn: "Playable Web Prototype",
-      tags: ["Side Project", "Godot", "Game Design", "AI-assisted Prototyping"]
+      tags: ["Side Project", "Godot", "Game Design", "AI-assisted Prototyping"],
+      hynix: true
     }
   ],
 
@@ -615,10 +628,13 @@ function renderExperience(lang) {
   });
 }
 
-function renderProjects(lang) {
+function renderProjects(lang, key) {
   const grid = document.getElementById("projectGrid");
   grid.innerHTML = "";
-  profile.projects.forEach(p => {
+  const projects = key === "hynix"
+    ? profile.projects.filter(p => p.hynix && p.koTitle !== "열수요 예측")
+    : profile.projects;
+  projects.forEach(p => {
     const card = el("article", "project-card");
     const title = lang === "en" ? p.enTitle : p.koTitle;
     const desc = lang === "en" ? p.enDesc : p.koDesc;
@@ -738,7 +754,7 @@ function render(key = currentVersion()) {
   renderMainProject(key);
   renderEvidence(key);
   renderExperience(lang);
-  renderProjects(lang);
+  renderProjects(lang, key);
   renderSkills(key);
   renderTraining(lang);
   renderContacts(lang);
