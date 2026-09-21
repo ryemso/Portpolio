@@ -90,16 +90,16 @@ const profile = {
     hynix: {
       eyebrow: "SK HYNIX AI HACKATHON · CORE CASE",
       title: "기상 데이터 기반 시간대별 열수요 예측",
-      intro: "단순히 복잡한 모델을 적용하기보다 예측 오차가 발생하는 구조를 가설로 세우고, LSTM → BiLSTM/Attention → CNN-BiLSTM 계열로 실험을 반복하며 동일 검증 기준에서 개선 여부를 확인했습니다.",
+      intro: "단순히 복잡한 모델을 적용하기보다 예측 오차가 발생하는 구조를 가설로 세우고, LSTM → BiLSTM/Attention → CNN-BiLSTM 계열로 실험을 반복하며 동일한 검증 흐름에서 구조별 차이를 확인했습니다.",
       resultLabel: "VALIDATION",
-      resultValue: "RMSE 21.7 → 17.2",
+      resultValue: "최종 검증 RMSE 17.2",
       tags: ["Problem Definition", "Time Series", "CNN-BiLSTM", "Experiment Design", "Validation"],
       flow: [
         ["01 · Problem", "시간·지점별 기상정보와 지역난방 수요의 비선형 관계를 모델링해 시간대별 예측 오차를 줄이는 문제로 정의했습니다."],
         ["02 · Baseline", "LSTM 계열 모델을 기준선으로 두고 동일한 전처리·분할·RMSE 기준에서 성능을 확인했습니다."],
         ["03 · Hypothesis", "순환구조만으로는 급격한 단기 수요 변화 포착이 부족할 수 있다는 가설을 세우고 구조를 변경했습니다."],
         ["04 · Iterate", "BiLSTM/Attention과 CNN-BiLSTM 계열을 비교하며 실패 원인과 개선 효과를 반복 검증했습니다."],
-        ["05 · Verify", "공모전 최종 검증에서 RMSE 21.7에서 17.2까지 개선된 결과를 확인하고 제출 결과로 검증했습니다."]
+        ["05 · Verify", "공모전 최종 검증 단계에서 21.7과 17.2의 검증 수치를 확인했고, 최종 결과로 RMSE 17.2를 확보했습니다."]
       ]
     }
   },
@@ -538,7 +538,7 @@ function renderHynixEvidence() {
   const wrap = document.getElementById("caseEvidence");
   wrap.innerHTML = `
     <div class="metric-strip">
-      <div class="metric-tile"><strong>21.7 → 17.2</strong><span>열수요 예측 RMSE</span><small>동일 검증 흐름에서 구조 개선</small></div>
+      <div class="metric-tile"><strong>17.2</strong><span>열수요 최종 검증 RMSE</span><small>구조 비교 과정의 검증 수치 21.7 / 17.2</small></div>
       <div class="metric-tile"><strong>Recall 중심</strong><span>인지장애 예측</span><small>False Negative 비용을 반영한 평가 기준</small></div>
       <div class="metric-tile"><strong>3-way</strong><span>한우 등급 예측</span><small>XGBoost · RealMLP · HanwooFormer 비교/앙상블</small></div>
       <div class="metric-tile"><strong>Playable</strong><span>AI-assisted Prototype</span><small>The Liquidation of Penny 실제 구현</small></div>
@@ -594,13 +594,17 @@ function renderHynixEvidence() {
 function renderEvidence(key) {
   const isEnglish = profile.versions[key].lang === "en";
   document.getElementById("caseEvidenceTitle").textContent =
-    key === "strategy" ? "How the Analysis Became a Decision" : isEnglish ? "What I Actually Analyzed" : "실제로 분석한 것";
+    key === "hynix" ? "AI-Native Problem Solving Evidence"
+    : key === "strategy" ? "How the Analysis Became a Decision"
+    : isEnglish ? "What I Actually Analyzed" : "실제로 분석한 것";
   document.getElementById("caseEvidenceDesc").textContent =
-    key === "strategy"
-      ? "결과물을 많이 나열하기보다 실제 비즈니스 질문과 분석 흐름을 보여줍니다."
-      : isEnglish
-        ? "No original chart images were available, so the verified analysis numbers are visualized directly on the page."
-        : "원본 차트 이미지는 없지만, 당시 확정한 지표와 검증 과정을 그대로 웹에서 다시 시각화했습니다.";
+    key === "hynix"
+      ? "AI를 많이 사용했다는 설명보다, 문제를 정의하고 작업을 분해하고 결과를 검증해 다시 개선한 증거를 보여줍니다."
+      : key === "strategy"
+        ? "결과물을 많이 나열하기보다 실제 비즈니스 질문과 분석 흐름을 보여줍니다."
+        : isEnglish
+          ? "No original chart images were available, so the verified analysis numbers are visualized directly on the page."
+          : "원본 차트 이미지는 없지만, 당시 확정한 지표와 검증 과정을 그대로 웹에서 다시 시각화했습니다.";
 
   if (key === "strategy") renderStrategyEvidence();
   else if (key === "hynix") renderHynixEvidence();
@@ -632,7 +636,9 @@ function renderProjects(lang, key) {
   const grid = document.getElementById("projectGrid");
   grid.innerHTML = "";
   const projects = key === "hynix"
-    ? profile.projects.filter(p => p.hynix && p.koTitle !== "열수요 예측")
+    ? ["한우 등급 예측", "50세 이상 인지장애 경험 여부 예측", "The Liquidation of Penny", "Olist 셀러 유치 전략 분석"]
+        .map(title => profile.projects.find(p => p.koTitle === title))
+        .filter(Boolean)
     : profile.projects;
   projects.forEach(p => {
     const card = el("article", "project-card");
