@@ -12,7 +12,11 @@ profile.versions = {
     heroStack: ["Python", "Scikit-learn", "TensorFlow/Keras", "LSTM / Attention", "XGBoost", "MongoDB"]
   },
   strategy: profile.versions.strategy,
-  advanced: profile.versions.advanced
+  advanced: profile.versions.advanced,
+  hynix: {
+    ...profile.versions.hynix,
+    label: "SK hynix AI"
+  }
 };
 
 profile.mainProjects.ai = {
