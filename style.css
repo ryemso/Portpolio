@@ -580,66 +580,66 @@ h1 {
 
 footer { padding: 22px 0 42px; text-align: center; color: var(--muted); font-size: 0.86rem; }
 body.theme-analyst {
-  --accent: #8b7de9;
-  --accent-2: #b8aff6;
-  --surface-blue: #f3f0ff;
-  --surface-blue-2: #ebe5ff;
-  --line: rgba(139, 125, 233, 0.18);
+  --accent: #6f5bd6;
+  --accent-2: #9b88ef;
+  --surface-blue: #ebe6ff;
+  --surface-blue-2: #ddd4ff;
+  --line: rgba(111, 91, 214, 0.28);
 }
 body.theme-analyst .hero-main {
   background:
-    radial-gradient(circle at top right, rgba(184, 175, 246, 0.18), transparent 32%),
-    linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);
+    radial-gradient(circle at top right, rgba(155, 136, 239, 0.28), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f5f1ff 100%);
 }
 body.theme-analyst .section-blue .project-grid,
 body.theme-analyst .section-blue .strength-grid,
 body.theme-analyst .section-blue .contact-grid-simple {
-  background: linear-gradient(180deg, #f5f2ff, #ece7ff);
+  background: linear-gradient(180deg, #eee9ff, #ded5ff);
 }
 body.theme-analyst .main-result-box {
-  background: linear-gradient(180deg, #f4f1ff, #ebe6ff);
+  background: linear-gradient(180deg, #eee8ff, #ded4ff);
 }
 
 body.theme-ai {
-  --accent: #6d7480;
-  --accent-2: #a7adb5;
-  --surface-blue: #f1f3f5;
-  --surface-blue-2: #e6e9ed;
-  --line: rgba(109, 116, 128, 0.18);
+  --accent: #4f5661;
+  --accent-2: #7d8590;
+  --surface-blue: #e9ecef;
+  --surface-blue-2: #d9dde2;
+  --line: rgba(79, 86, 97, 0.28);
 }
 body.theme-ai .hero-main {
   background:
-    radial-gradient(circle at top right, rgba(167, 173, 181, 0.18), transparent 32%),
-    linear-gradient(180deg, #ffffff 0%, #f7f8f9 100%);
+    radial-gradient(circle at top right, rgba(125, 133, 144, 0.28), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f1f3f5 100%);
 }
 body.theme-ai .section-blue .project-grid,
 body.theme-ai .section-blue .strength-grid,
 body.theme-ai .section-blue .contact-grid-simple {
-  background: linear-gradient(180deg, #f4f5f6, #e9ecef);
+  background: linear-gradient(180deg, #eceff2, #dce1e6);
 }
 body.theme-ai .main-result-box {
-  background: linear-gradient(180deg, #f4f5f6, #e7eaee);
+  background: linear-gradient(180deg, #eceff2, #d9dee4);
 }
 
 body.theme-strategy {
-  --accent: #4f9b6f;
-  --accent-2: #8bc5a3;
-  --surface-blue: #eef8f1;
-  --surface-blue-2: #e2f2e8;
-  --line: rgba(79, 155, 111, 0.18);
+  --accent: #2f7d4f;
+  --accent-2: #65a97f;
+  --surface-blue: #e3f3e8;
+  --surface-blue-2: #cfe8d8;
+  --line: rgba(47, 125, 79, 0.28);
 }
 body.theme-strategy .hero-main {
   background:
-    radial-gradient(circle at top right, rgba(139, 197, 163, 0.18), transparent 32%),
-    linear-gradient(180deg, #ffffff 0%, #f7fcf8 100%);
+    radial-gradient(circle at top right, rgba(101, 169, 127, 0.28), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f1f9f3 100%);
 }
 body.theme-strategy .section-blue .project-grid,
 body.theme-strategy .section-blue .strength-grid,
 body.theme-strategy .section-blue .contact-grid-simple {
-  background: linear-gradient(180deg, #f1faf3, #e4f3e9);
+  background: linear-gradient(180deg, #e8f6ec, #d2eadb);
 }
 body.theme-strategy .main-result-box {
-  background: linear-gradient(180deg, #eff8f1, #e2f2e7);
+  background: linear-gradient(180deg, #e7f5eb, #d2ead9);
 }
 
 body.theme-hynix {
