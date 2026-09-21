@@ -30,6 +30,14 @@ const profile = {
       theme: "advanced",
       lang: "en",
       heroStack: ["SQL", "Python", "MongoDB", "Amplitude", "Tableau"]
+    },
+    hynix: {
+      label: "SK HYNIX · AI HACKATHON",
+      title: "문제를 정의하고, AI와 모델을 도구로 사용하며, 실패를 검증해 다시 개선하는 문제 해결형 분석가",
+      desc: "예측·분류·프로토타이핑 프로젝트에서 목표와 평가 기준을 먼저 정하고, AI와 모델의 제안을 직접 검증하며 반복적으로 결과물을 개선해 왔습니다.",
+      theme: "hynix",
+      lang: "ko",
+      heroStack: ["Problem Definition", "AI Collaboration", "Python", "ML/DL", "Validation"]
     }
   },
 
@@ -77,6 +85,21 @@ const profile = {
         ["03 · Measure", "Defined and calculated profile completeness, referral rate, payment behavior, and recommendation performance metrics."],
         ["04 · Diagnose", "Analyzed attractiveness vs. exposure and recommendation runway to inspect concentration and coverage issues."],
         ["05 · Operate", "Reviewed dashboard limitations and designed a MongoDB-to-Python automated reporting workflow."]
+      ]
+    },
+    hynix: {
+      eyebrow: "SK HYNIX AI HACKATHON · CORE CASE",
+      title: "기상 데이터 기반 시간대별 열수요 예측",
+      intro: "단순히 복잡한 모델을 적용하기보다 예측 오차가 발생하는 구조를 가설로 세우고, LSTM → BiLSTM/Attention → CNN-BiLSTM 계열로 실험을 반복하며 동일 검증 기준에서 개선 여부를 확인했습니다.",
+      resultLabel: "VALIDATION",
+      resultValue: "RMSE 21.7 → 17.2",
+      tags: ["Problem Definition", "Time Series", "CNN-BiLSTM", "Experiment Design", "Validation"],
+      flow: [
+        ["01 · Problem", "시간·지점별 기상정보와 지역난방 수요의 비선형 관계를 모델링해 시간대별 예측 오차를 줄이는 문제로 정의했습니다."],
+        ["02 · Baseline", "LSTM 계열 모델을 기준선으로 두고 동일한 전처리·분할·RMSE 기준에서 성능을 확인했습니다."],
+        ["03 · Hypothesis", "순환구조만으로는 급격한 단기 수요 변화 포착이 부족할 수 있다는 가설을 세우고 구조를 변경했습니다."],
+        ["04 · Iterate", "BiLSTM/Attention과 CNN-BiLSTM 계열을 비교하며 실패 원인과 개선 효과를 반복 검증했습니다."],
+        ["05 · Verify", "공모전 최종 검증에서 RMSE 21.7에서 17.2까지 개선된 결과를 확인하고 제출 결과로 검증했습니다."]
       ]
     }
   },
@@ -208,6 +231,14 @@ const profile = {
       { name: "Python", detail: "Pandas · Scikit-learn · Automation", evidence: "Preprocessing, reporting, advanced analysis" },
       { name: "BI", detail: "Tableau · Excel · GA4", evidence: "Visualization and reporting" },
       { name: "Advanced Analysis", detail: "Classification · Forecasting · ML/DL", evidence: "Supporting analytical capability" }
+    ],
+    hynix: [
+      { name: "Problem Definition", detail: "Goal · Constraint · Metric · Acceptance Criteria", evidence: "모델 선택보다 해결할 문제와 성공 기준을 먼저 정의" },
+      { name: "AI Collaboration", detail: "Decompose · Delegate · Review · Iterate", evidence: "AI의 초안을 그대로 채택하지 않고 작업을 나눠 요청하고 결과를 재검증" },
+      { name: "Python / Data", detail: "Pandas · Scikit-learn · TensorFlow", evidence: "전처리·모델링·평가·실험 자동화" },
+      { name: "ML / DL", detail: "Classification · Forecasting · Ensemble · CNN/LSTM", evidence: "문제 구조에 따라 모델과 평가 지표를 비교" },
+      { name: "Validation", detail: "Leakage Check · Error Analysis · Re-test", evidence: "동일 검증 조건에서 실패→수정→재검증을 반복" },
+      { name: "Build", detail: "GitHub · Web Prototype · AI-assisted Development", evidence: "분석뿐 아니라 실제 작동하는 프로토타입까지 구현" }
     ]
   },
 
@@ -490,6 +521,63 @@ function renderStrategyEvidence() {
   `;
 }
 
+function renderHynixEvidence() {
+  const wrap = document.getElementById("caseEvidence");
+  wrap.innerHTML = `
+    <div class="metric-strip">
+      <div class="metric-tile"><strong>21.7 → 17.2</strong><span>열수요 예측 RMSE</span><small>동일 검증 흐름에서 구조 개선</small></div>
+      <div class="metric-tile"><strong>Recall 중심</strong><span>인지장애 예측</span><small>False Negative 비용을 반영한 평가 기준</small></div>
+      <div class="metric-tile"><strong>3-way</strong><span>한우 등급 예측</span><small>XGBoost · RealMLP · HanwooFormer 비교/앙상블</small></div>
+      <div class="metric-tile"><strong>Playable</strong><span>AI-assisted Prototype</span><small>The Liquidation of Penny 실제 구현</small></div>
+    </div>
+
+    <div class="case-grid two-col">
+      <article class="case-card">
+        <div class="mini-label">PROBLEM SOLVING LOOP</div>
+        <h3>Define → Hypothesize → Experiment → Verify → Iterate</h3>
+        <p>모델을 먼저 고르지 않고 문제와 평가 기준을 정의한 뒤, 실패 결과를 원인 가설로 바꾸고 다음 실험을 설계했습니다. 열수요 프로젝트에서는 LSTM 단독 구조의 한계를 확인한 뒤 BiLSTM/Attention, CNN 결합 구조로 확장했습니다.</p>
+        <div class="amplitude-tags">
+          <span>Define</span><span>Baseline</span><span>Hypothesis</span><span>Experiment</span><span>Validation</span>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="mini-label">AI COLLABORATION</div>
+        <h3>AI의 답을 채택하는 것이 아니라, 작업을 분해하고 결과를 검증합니다.</h3>
+        <p>AI를 아이디어·코드 초안·디버깅 보조 도구로 활용하되, 데이터 누수·평가 지표·실행 결과·오류 원인은 직접 확인합니다. 결과가 예상과 다르면 프롬프트를 바꾸는 데서 끝내지 않고 가설과 구현을 수정해 다시 실행합니다.</p>
+        <div class="amplitude-tags">
+          <span>Decompose</span><span>Delegate</span><span>Review</span><span>Re-test</span><span>Decide</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="case-grid two-col">
+      <article class="case-card">
+        <div class="mini-label">CASE · COGNITIVE IMPAIRMENT</div>
+        <h3>평가 지표 자체를 문제에 맞게 다시 정의</h3>
+        <p>불균형 분류에서 Accuracy만 높이는 대신 놓치면 위험한 양성 사례를 고려해 Recall을 우선했습니다. SMOTE·앙상블·임계값 조정을 비교하고 Precision과 Recall의 trade-off를 함께 검토했습니다.</p>
+      </article>
+
+      <article class="case-card">
+        <div class="mini-label">CASE · HANWOO</div>
+        <h3>모델보다 도메인의 결정 구조를 먼저 고민</h3>
+        <p>개체 정보·도축 성적·혈통 관계·지역 기상 데이터를 통합하고, 단순 파생변수 추가보다 등급 결정 구조를 어떻게 표현할지에 초점을 맞춰 여러 모델과 앙상블을 비교했습니다.</p>
+      </article>
+    </div>
+
+    <article class="case-card work-card">
+      <div class="mini-label">AI-NATIVE BUILD</div>
+      <h3>The Liquidation of Penny · 아이디어를 작동하는 결과물로 전환</h3>
+      <div class="work-grid">
+        <div class="work-item"><strong>Define</strong><p>금융·주식 개념을 전투·성장·보상 시스템으로 번역해 게임 규칙을 정의했습니다.</p></div>
+        <div class="work-item"><strong>Build</strong><p>이동·전투·스테이지·보상 선택·게임 상태를 구현해 실제 플레이 가능한 프로토타입으로 만들었습니다.</p></div>
+        <div class="work-item"><strong>Debug</strong><p>기능 단위로 구현하고 오류와 밸런스 문제를 반복 수정했습니다.</p></div>
+        <div class="work-item"><strong>Operate</strong><p>GitHub에 작업 이력을 남기며 단계별 기능 확장과 결과물 관리를 이어가고 있습니다.</p></div>
+      </div>
+    </article>
+  `;
+}
+
 function renderEvidence(key) {
   const isEnglish = profile.versions[key].lang === "en";
   document.getElementById("caseEvidenceTitle").textContent =
@@ -502,6 +590,7 @@ function renderEvidence(key) {
         : "원본 차트 이미지는 없지만, 당시 확정한 지표와 검증 과정을 그대로 웹에서 다시 시각화했습니다.";
 
   if (key === "strategy") renderStrategyEvidence();
+  else if (key === "hynix") renderHynixEvidence();
   else renderDareEvidence(isEnglish ? "en" : "ko");
 }
 
@@ -596,15 +685,18 @@ function renderContacts(lang) {
 function renderCopy(key) {
   const en = profile.versions[key].lang === "en";
   const strategy = key === "strategy";
+  const hynix = key === "hynix";
 
   document.getElementById("mainProjectSectionTitle").textContent =
-    strategy ? "Main Business Analytics Case" : en ? "Main Product Analytics Case" : "Main Product Analytics Case";
+    hynix ? "Core Problem-Solving Case" : strategy ? "Main Business Analytics Case" : en ? "Main Product Analytics Case" : "Main Product Analytics Case";
   document.getElementById("mainProjectSectionDesc").textContent =
-    strategy
-      ? "프로젝트 목록보다 실제 비즈니스 질문과 분석 흐름을 먼저 보여줍니다."
-      : en
-        ? "A real-service case focused on metric definition, data validation, and product decision support."
-        : "프로젝트 이름보다 실제 서비스에서 무엇을 정의하고, 검증하고, 분석했는지를 먼저 보여줍니다.";
+    hynix
+      ? "모델 이름보다 문제 정의, 가설, 실험, 검증, 개선의 흐름을 먼저 보여줍니다."
+      : strategy
+        ? "프로젝트 목록보다 실제 비즈니스 질문과 분석 흐름을 먼저 보여줍니다."
+        : en
+          ? "A real-service case focused on metric definition, data validation, and product decision support."
+          : "프로젝트 이름보다 실제 서비스에서 무엇을 정의하고, 검증하고, 분석했는지를 먼저 보여줍니다.";
 
   document.getElementById("experienceTitle").textContent = en ? "Work Experience" : "Work Experience";
   document.getElementById("experienceDesc").textContent =
@@ -612,12 +704,14 @@ function renderCopy(key) {
 
   document.getElementById("projectsTitle").textContent = en ? "Selected Projects" : "Selected Projects";
   document.getElementById("projectSectionDesc").textContent =
-    en ? "Supporting projects that show breadth without diluting the main product-analytics identity."
+    hynix ? "분류·예측·비즈니스 분석·프로토타이핑을 통해 문제 정의와 검증 방식의 폭을 보여줍니다."
+    : en ? "Supporting projects that show breadth without diluting the main product-analytics identity."
        : "대표 Product Analytics 경험을 중심에 두고, 분석·모델링·구현 역량을 보여주는 프로젝트는 보조 사례로 압축했습니다.";
 
   document.getElementById("strengthsTitle").textContent = en ? "Skills I Use" : "Skills I Use";
   document.getElementById("strengthDesc").textContent =
-    en ? "Tools and methods are shown with what they were actually used for."
+    hynix ? "특정 도구 숙련도보다 문제를 쪼개고, AI와 모델을 활용하고, 결과를 검증하는 방식에 초점을 맞췄습니다."
+    : en ? "Tools and methods are shown with what they were actually used for."
        : "상급/중상 같은 자기평가 대신 실제로 무엇을 할 수 있는지만 적었습니다.";
 
   document.getElementById("educationTitle").textContent = en ? "Training" : "Training";
@@ -634,9 +728,10 @@ function render(key = currentVersion()) {
   const ver = profile.versions[key];
   const lang = ver.lang;
 
-  document.body.classList.remove("theme-strategy", "theme-advanced");
+  document.body.classList.remove("theme-strategy", "theme-advanced", "theme-hynix");
   if (ver.theme === "strategy") document.body.classList.add("theme-strategy");
   if (ver.theme === "advanced") document.body.classList.add("theme-advanced");
+  if (ver.theme === "hynix") document.body.classList.add("theme-hynix");
 
   renderVersionTabs(key);
   renderHero(key);
