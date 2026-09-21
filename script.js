@@ -23,14 +23,6 @@ const profile = {
       lang: "ko",
       heroStack: ["SQL", "Python", "Tableau", "GA4", "Amplitude"]
     },
-    advanced: {
-      label: "PRODUCT DATA ANALYST · EN",
-      title: "A Product Data Analyst who turns user behavior into product decisions",
-      desc: "I structure behavior logs, define product metrics, validate data quality, and connect findings to product and operational actions.",
-      theme: "advanced",
-      lang: "en",
-      heroStack: ["SQL", "Python", "MongoDB", "Amplitude", "Tableau"]
-    },
     hynix: {
       label: "SK HYNIX · AI HACKATHON",
       title: "문제를 정의하고, AI와 모델을 도구로 사용하며, 실패를 검증해 다시 개선하는 문제 해결형 분석가",
@@ -750,9 +742,10 @@ function render(key = currentVersion()) {
   const ver = profile.versions[key];
   const lang = ver.lang;
 
-  document.body.classList.remove("theme-strategy", "theme-advanced", "theme-hynix");
+  document.body.classList.remove("theme-analyst", "theme-strategy", "theme-ai", "theme-hynix");
+  if (ver.theme === "analyst") document.body.classList.add("theme-analyst");
   if (ver.theme === "strategy") document.body.classList.add("theme-strategy");
-  if (ver.theme === "advanced") document.body.classList.add("theme-advanced");
+  if (ver.theme === "ai") document.body.classList.add("theme-ai");
   if (ver.theme === "hynix") document.body.classList.add("theme-hynix");
 
   renderVersionTabs(key);
