@@ -7,12 +7,11 @@ profile.versions = {
     label: "AI / MACHINE LEARNING",
     title: "데이터에서 문제를 정의하고, ML/DL 모델을 서비스 과제로 연결하는 AI 엔지니어",
     desc: "시계열·분류 문제에서 데이터 전처리부터 모델 설계·검증·오류 수정까지 수행했고, 실제 서비스 로그 분석 경험을 바탕으로 AI가 활용될 수 있는 문제와 데이터를 정의합니다.",
-    theme: "advanced",
+    theme: "ai",
     lang: "ko",
     heroStack: ["Python", "Scikit-learn", "TensorFlow/Keras", "LSTM / Attention", "XGBoost", "MongoDB"]
   },
   strategy: profile.versions.strategy,
-  advanced: profile.versions.advanced,
   hynix: {
     ...profile.versions.hynix,
     label: "SK hynix AI"
