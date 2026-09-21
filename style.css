@@ -581,6 +581,30 @@ h1 {
 footer { padding: 22px 0 42px; text-align: center; color: var(--muted); font-size: 0.86rem; }
 body.theme-strategy { --accent: #5d98ff; --accent-2: #89c4ff; }
 body.theme-advanced { --accent: #5b97ff; --accent-2: #8bc9ff; }
+body.theme-hynix {
+  --accent: #ef5b34;
+  --accent-2: #f6a13a;
+  --surface-blue: #fff1ea;
+  --surface-blue-2: #ffe5d8;
+  --line: rgba(221, 102, 63, 0.18);
+}
+body.theme-hynix .hero-main {
+  background:
+    radial-gradient(circle at top right, rgba(246, 161, 58, 0.18), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #fff8f3 100%);
+}
+body.theme-hynix .section-blue .project-grid,
+body.theme-hynix .section-blue .strength-grid,
+body.theme-hynix .section-blue .contact-grid-simple {
+  background: linear-gradient(180deg, #fff4ee, #ffe7db);
+}
+body.theme-hynix .main-result-box {
+  background: linear-gradient(180deg, #fff4ea, #ffe6d6);
+}
+body.theme-hynix .eyebrow {
+  background: rgba(239, 91, 52, 0.1);
+}
+
 
 
 
