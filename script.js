@@ -56,6 +56,8 @@ const profile = {
       resultLabel: "OUTPUT",
       resultValue: "Seller Acquisition Priority",
       tags: ["SQL", "Tableau", "E-commerce", "Demand-Supply", "Strategy"],
+      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/olist/README.md",
+      linkLabel: "View Case Study",
       flow: [
         ["01 · Problem", "배송 지연과 지역별 판매자 분포 차이를 운영 문제로 정의했습니다."],
         ["02 · Data", "주문·고객·판매자·배송 테이블을 결합해 분석 데이터셋을 구성했습니다."],
@@ -86,6 +88,8 @@ const profile = {
       resultLabel: "VALIDATION",
       resultValue: "최종 검증 RMSE 17.2",
       tags: ["Problem Definition", "Time Series", "CNN-BiLSTM", "Experiment Design", "Validation"],
+      href: "https://github.com/ryemso/heat-demand-forecasting",
+      linkLabel: "View GitHub",
       flow: [
         ["01 · Problem", "시간·지점별 기상정보와 지역난방 수요의 비선형 관계를 모델링해 시간대별 예측 오차를 줄이는 문제로 정의했습니다."],
         ["02 · Baseline", "LSTM 계열 모델을 기준선으로 두고 동일한 전처리·분할·RMSE 기준에서 성능을 확인했습니다."],
@@ -292,6 +296,8 @@ const profile = {
       resultKo: "셀러 유치 우선지역 도출",
       resultEn: "Seller-acquisition priorities",
       tags: ["SQL", "Tableau", "E-commerce"],
+      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/olist/README.md",
+      linkLabel: "Case Study",
       hynix: true
     },
     {
@@ -302,6 +308,8 @@ const profile = {
       resultKo: "Recall 0.72 → 0.78",
       resultEn: "Recall 0.72 → 0.78",
       tags: ["Python", "Classification", "Threshold"],
+      href: "https://github.com/ryemso/cognitive-impairment-prediction",
+      linkLabel: "GitHub",
       hynix: true
     },
     {
@@ -311,7 +319,9 @@ const profile = {
       enDesc: "Combined weather and heat-demand data and compared time-series models.",
       resultKo: "검증 RMSE 17.2",
       resultEn: "Validation RMSE 17.2",
-      tags: ["Python", "LSTM", "Time Series"]
+      tags: ["Python", "LSTM", "Time Series"],
+      href: "https://github.com/ryemso/heat-demand-forecasting",
+      linkLabel: "GitHub"
     },
     {
       koTitle: "한우 등급 예측",
@@ -330,7 +340,9 @@ const profile = {
       enDesc: "Screened high-risk loans and evaluated a threshold-based potential-loss avoidance scenario.",
       resultKo: "잠재 손실 약 15% 방어 시나리오",
       resultEn: "Scenario: ~15% potential loss avoidance",
-      tags: ["Python", "Finance", "Classification"]
+      tags: ["Python", "Finance", "Classification"],
+      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/lendingclub/README.md",
+      linkLabel: "Case Study + Code"
     },
     {
       koTitle: "The Liquidation of Penny",
@@ -340,6 +352,8 @@ const profile = {
       resultKo: "Playable Web Prototype",
       resultEn: "Playable Web Prototype",
       tags: ["Side Project", "Godot", "Game Design", "AI-assisted Prototyping"],
+      href: "https://github.com/ryemso/The-Liquidation-of-Penny",
+      linkLabel: "GitHub",
       hynix: true
     }
   ],
@@ -412,8 +426,11 @@ function renderMainProject(key) {
   document.getElementById("mainProjectIntro").textContent = data.intro;
   document.getElementById("mainResultLabel").textContent = data.resultLabel;
   document.getElementById("mainResultValue").textContent = data.resultValue;
+  const mainSourceLink = data.href
+    ? `<a class="project-source-link" href="${data.href}" target="_blank" rel="noopener noreferrer">${data.linkLabel || "View Source"} ↗</a>`
+    : "";
   document.getElementById("mainProjectTags").innerHTML =
-    data.tags.map(t => `<span class="meta-chip">${t}</span>`).join("");
+    data.tags.map(t => `<span class="meta-chip">${t}</span>`).join("") + mainSourceLink;
 
   const flow = document.getElementById("mainFlow");
   flow.innerHTML = "";
@@ -644,6 +661,7 @@ function renderProjects(lang, key) {
         <span class="meta-chip result-chip">${result}</span>
         ${p.tags.map(t => `<span class="meta-chip">${t}</span>`).join("")}
       </div>
+      ${p.href ? `<a class="project-source-link project-card-link" href="${p.href}" target="_blank" rel="noopener noreferrer">${p.linkLabel || "View Source"} ↗</a>` : ""}
     `;
     grid.appendChild(card);
   });
