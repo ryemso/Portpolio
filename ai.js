@@ -21,18 +21,21 @@ profile.versions = {
 profile.mainProjects.ai = {
   eyebrow: "MAIN AI / ML CASE · HEAT DEMAND FORECASTING",
   title: "기상 데이터 기반 시간대별 열수요 예측",
-  intro: "시간 단위 기상·열수요 데이터를 기반으로 Bi-LSTM, CNN-LSTM, BiLSTM+Attention 구조를 비교하고, 시퀀스 생성·스케일링·데이터 경계 문제를 수정하며 예측 성능을 개선했습니다.",
+  intro: "시간 단위 기상·열수요 데이터를 기반으로 Bi-LSTM, CNN-LSTM, BiLSTM+Attention 구조를 비교하고, 시퀀스 생성·스케일링·검증 경계 문제를 점검하며 예측 성능을 개선했습니다.",
   resultLabel: "VALIDATION",
   resultValue: "RMSE 21.7 → 17.2",
   tags: ["Python", "TensorFlow/Keras", "Bi-LSTM", "CNN-LSTM", "Attention", "Time Series"],
-  href: "https://github.com/ryemso/heat-demand-forecasting",
-  linkLabel: "View GitHub",
+  links: [
+    ["Repository", "https://github.com/ryemso/heat-demand-forecasting"],
+    ["Notebook", "https://github.com/ryemso/heat-demand-forecasting/blob/main/notebooks/01_heat_demand_modeling.ipynb"],
+    ["Model Code", "https://github.com/ryemso/heat-demand-forecasting/blob/main/src/heat_demand_model.py"]
+  ],
   flow: [
     ["01 · Problem", "시간 단위 열수요를 기상·시간 변수로 예측하는 시계열 회귀 문제를 정의했습니다."],
     ["02 · Experiment", "Bi-LSTM → CNN-LSTM → BiLSTM+Attention 구조를 비교하며 모델 구조와 하이퍼파라미터를 실험했습니다."],
-    ["03 · Diagnose", "시퀀스 생성 과정과 Dataset boundary에서 연속 시점이 손실되고, 스케일링 과정에서 누수 가능성이 생기는 문제를 확인했습니다."],
-    ["04 · Improve", "Sliding Window·Padding과 Train-only Scaling을 적용해 전체 예측 구간의 연속성과 검증 신뢰도를 높였습니다."],
-    ["05 · Result", "검증 RMSE를 21.7에서 17.2로 개선하고 Attention 기반 시간대 영향도 해석까지 확장했습니다."]
+    ["03 · Diagnose", "시퀀스 생성과 validation/test 경계에서 연속 시점 정보가 끊길 수 있는 문제, scaler fit 범위에서 생길 수 있는 누수 가능성을 점검했습니다."],
+    ["04 · Improve", "공개 모듈은 Train-only Scaling과 Sliding Window 생성 로직을 중심으로 정리했고, 당시 경계 연속성 보완 실험은 README에서 범위를 구분해 문서화했습니다."],
+    ["05 · Result", "공모전 검증 과정에서 확인한 주요 RMSE를 21.7에서 17.2로 개선했습니다."]
   ]
 };
 
@@ -52,19 +55,19 @@ function renderAIEvidence() {
       <div class="metric-tile"><strong>21.7 → 17.2</strong><span>Validation RMSE</span><small>시계열 예측 성능 개선</small></div>
       <div class="metric-tile"><strong>3+</strong><span>Model Architectures</span><small>Bi-LSTM · CNN-LSTM · Attention</small></div>
       <div class="metric-tile"><strong>Train-only</strong><span>Scaling</span><small>검증 누수 방지</small></div>
-      <div class="metric-tile"><strong>Sliding Window</strong><span>Sequence Design</span><small>경계 구간 연속성 보완</small></div>
+      <div class="metric-tile"><strong>Boundary Check</strong><span>Sequence Design</span><small>검증 경계의 연속성 손실 가능성 점검</small></div>
     </div>
 
     <div class="case-grid two-col">
       <article class="case-card">
         <div class="mini-label">MODEL DEVELOPMENT</div>
-        <h3>모델을 바꾸기 전에 데이터와 시퀀스 문제를 먼저 수정</h3>
-        <p>단순히 LSTM 층을 늘리는 방식이 아니라 시퀀스 선두 누락, validation/test 경계, 스케일러 fit 범위를 점검하고 예측 파이프라인 자체를 다시 설계했습니다.</p>
+        <h3>모델 구조와 함께 데이터·검증 파이프라인을 점검</h3>
+        <p>단순히 LSTM 층을 늘리는 방식이 아니라 validation/test 경계와 스케일러 fit 범위를 함께 확인했습니다. 공개 코드는 Train-only Scaling과 Sliding Window 중심으로 검토 가능하게 정리했습니다.</p>
       </article>
       <article class="case-card">
-        <div class="mini-label">INTERPRETABILITY</div>
-        <h3>Attention을 성능 개선뿐 아니라 시간대 영향도 해석에 활용</h3>
-        <p>BiLSTM+Attention 구조를 비교 실험하고 Attention Weight를 통해 시간대별 영향도를 해석하는 방향까지 확장했습니다.</p>
+        <div class="mini-label">ARCHITECTURE COMPARISON</div>
+        <h3>BiLSTM · CNN-LSTM · Attention 계열 구조를 비교</h3>
+        <p>시계열의 단기 패턴과 순환 구조를 어떻게 결합할지 여러 아키텍처를 비교했습니다. 공개 포트폴리오에서는 확인 가능한 모델 구조와 검증 기록 범위까지만 제시합니다.</p>
       </article>
     </div>
 
@@ -103,7 +106,7 @@ renderProjects = function(lang, key) {
   const order = [
     "50세 이상 인지장애 경험 여부 예측",
     "LendingClub 리스크 분류",
-    "Olist 셀러 유치 전략 분석",
+    "Olist E-commerce Analytics",
     "The Liquidation of Penny"
   ];
   const projects = profile.projects
@@ -119,7 +122,7 @@ renderProjects = function(lang, key) {
         <span class="meta-chip result-chip">${p.resultKo}</span>
         ${p.tags.map(t => `<span class="meta-chip">${t}</span>`).join("")}
       </div>
-      ${p.href ? `<a class="project-source-link project-card-link" href="${p.href}" target="_blank" rel="noopener noreferrer">${p.linkLabel || "View Source"} ↗</a>` : ""}
+      <div class="project-links">${sourceLinksMarkup(p, "project-card-link")}</div>
     `;
     grid.appendChild(card);
   });
