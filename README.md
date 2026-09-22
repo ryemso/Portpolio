@@ -25,14 +25,16 @@ Data / Product Analytics와 AI/ML 프로젝트를 직무별로 보여주는 개�
 ## Main Evidence
 
 ### Product Analytics
-- MongoDB 행동·결제·추천 로그 분석
+- [Product Analytics Internship Case Study](https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md) — MongoDB 행동·결제·추천 로그 분석
 - Active User / Referral / Exposure / Runway 지표 정의
 - Amplitude Retention / Cohort 분석
 - 데이터 원천 오류 검증 및 지표 재정의
+- [Olist E-commerce Analytics](https://github.com/ryemso/olist-ecommerce-analytics) — Seller 전략 · 고객 유지 · 배송 분석
+- [LendingClub Credit Risk](https://github.com/ryemso/lendingclub-credit-risk) — 불균형 분류 · 모델 비교 · SHAP
 
 ### AI / ML
-- Heat Demand Forecasting: BiLSTM / CNN-LSTM / Attention
-- Cognitive Impairment Prediction: Ensemble / Optuna / Threshold Optimization
+- [Heat Demand Forecasting](https://github.com/ryemso/heat-demand-forecasting): BiLSTM / CNN-LSTM / Attention
+- [Cognitive Impairment Prediction](https://github.com/ryemso/cognitive-impairment-prediction): Ensemble / Optuna / Threshold Optimization
 - Classification / Time-series modeling
 
 ### Side Project
