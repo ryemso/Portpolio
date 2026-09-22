@@ -723,3 +723,14 @@ body.theme-hynix .eyebrow {
 .project-card-link {
   margin: 12px 0 0;
 }
+
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.project-links .project-card-link {
+  margin: 0;
+}
