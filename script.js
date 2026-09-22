@@ -41,6 +41,8 @@ const profile = {
       resultLabel: "ROLE",
       resultValue: "Raw Logs → Metric Definition → Validation → Decision Support",
       tags: ["MongoDB Aggregation", "Python", "Amplitude", "Product Metrics", "Data Validation"],
+      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md",
+      linkLabel: "View Case Study",
       flow: [
         ["01 · Define", "활동 로그별 사용자 수를 비교해 최근 30일 Active 기준을 profilevisithistories로 정리했습니다."],
         ["02 · Validate", "취향 등록량 0.16개라는 비정상 값을 발견하고 원천 데이터를 재검증해 users.taste/coreTaste로 수정했습니다."],
@@ -73,6 +75,8 @@ const profile = {
       resultLabel: "ROLE",
       resultValue: "Raw Logs → Metric Definition → Validation → Decision Support",
       tags: ["MongoDB Aggregation", "Python", "Amplitude", "Product Metrics", "Data Validation"],
+      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md",
+      linkLabel: "View Case Study",
       flow: [
         ["01 · Define", "Compared activity logs and selected profile visit history as the consistent 30-day active-user basis."],
         ["02 · Validate", "Detected an implausible taste-count metric, traced the wrong source, and corrected the metric using user profile fields."],
