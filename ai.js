@@ -25,6 +25,8 @@ profile.mainProjects.ai = {
   resultLabel: "VALIDATION",
   resultValue: "RMSE 21.7 → 17.2",
   tags: ["Python", "TensorFlow/Keras", "Bi-LSTM", "CNN-LSTM", "Attention", "Time Series"],
+  href: "https://github.com/ryemso/heat-demand-forecasting",
+  linkLabel: "View GitHub",
   flow: [
     ["01 · Problem", "시간 단위 열수요를 기상·시간 변수로 예측하는 시계열 회귀 문제를 정의했습니다."],
     ["02 · Experiment", "Bi-LSTM → CNN-LSTM → BiLSTM+Attention 구조를 비교하며 모델 구조와 하이퍼파라미터를 실험했습니다."],
@@ -116,6 +118,7 @@ renderProjects = function(lang, key) {
         <span class="meta-chip result-chip">${p.resultKo}</span>
         ${p.tags.map(t => `<span class="meta-chip">${t}</span>`).join("")}
       </div>
+      ${p.href ? `<a class="project-source-link project-card-link" href="${p.href}" target="_blank" rel="noopener noreferrer">${p.linkLabel || "View Source"} ↗</a>` : ""}
     `;
     grid.appendChild(card);
   });
