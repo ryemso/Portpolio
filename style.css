@@ -699,3 +699,27 @@ body.theme-hynix .eyebrow {
 }
 
 
+
+
+/* Direct evidence links */
+.project-source-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-left: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(77, 146, 255, 0.24);
+  background: rgba(255,255,255,0.92);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.project-source-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+.project-card-link {
+  margin: 12px 0 0;
+}
