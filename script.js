@@ -42,30 +42,33 @@ const profile = {
       resultValue: "Raw Logs → Metric Definition → Validation → Decision Support",
       tags: ["MongoDB Aggregation", "Python", "Amplitude", "Product Metrics", "Data Validation"],
       href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md",
-      linkLabel: "View GitHub + Notebook",
+      linkLabel: "View Case Study",
       flow: [
-        ["01 · Define", "활동 로그별 사용자 수를 비교해 최근 30일 Active 기준을 profilevisithistories로 정리했습니다."],
-        ["02 · Validate", "취향 등록량 0.16개라는 비정상 값을 발견하고 원천 데이터를 재검증해 users.taste/coreTaste로 수정했습니다."],
-        ["03 · Measure", "Active 프로필 완성도, 친구 초대율, 결제·재결제 유저, Like/Chat Request Rate 등 서비스 지표를 정의·산출했습니다."],
-        ["04 · Diagnose", "매력도와 프로필 피노출의 관계, 추천 후보군과 runway를 분석해 노출 편중·추천 커버리지 이슈를 점검했습니다."],
-        ["05 · Operate", "Amplitude 상시 대시보드의 한계를 확인하고 MongoDB→Python 기반 자동 리포트 구조를 설계했습니다."]
+        ["01 · Define", "여러 활동 로그를 비교해 기간·이벤트·Unique User 기준을 먼저 고정했습니다."],
+        ["02 · Validate", "운영 화면과 맞지 않는 지표를 발견하고 원천 데이터의 의미와 필드를 다시 검증했습니다."],
+        ["03 · Measure", "Active, 프로필 완성도, 초대, 결제·재결제, Like/Chat Request 등 사용자 단위 지표를 정의했습니다."],
+        ["04 · Diagnose", "추천 노출 편중과 후보군 커버리지를 사용자 단위로 분석해 서비스 이슈를 점검했습니다."],
+        ["05 · Operate", "Amplitude UI 집계와 맞지 않는 지표는 MongoDB→Python 기반 별도 리포팅 구조를 검토했습니다."]
       ]
     },
     strategy: {
       eyebrow: "OLIST · BUSINESS ANALYTICS",
-      title: "배송 병목과 지역 수요·공급 불균형 기반 셀러 유치 전략",
-      intro: "주문·배송·판매자·지역 데이터를 결합해 배송 병목과 지역별 공급 부족을 분석하고 셀러 유치 우선지역을 제안했습니다.",
+      title: "데이터 구조 검증에서 Seller·Retention·Delivery 전략까지",
+      intro: "주문·결제·고객·상품·리뷰·판매자 데이터를 결합하면서 분석 단위와 join 중복을 먼저 검증하고, Seller 확보·고객 유지·배송 경험이라는 세 가지 비즈니스 질문으로 확장했습니다.",
       resultLabel: "OUTPUT",
-      resultValue: "Seller Acquisition Priority",
-      tags: ["SQL", "Tableau", "E-commerce", "Demand-Supply", "Strategy"],
-      href: "https://github.com/ryemso/olist-ecommerce-analytics",
-      linkLabel: "View GitHub + Notebook",
+      resultValue: "Data Validation → Business Insight",
+      tags: ["Python", "Pandas", "Tableau", "E-commerce", "Statistics"],
+      links: [
+        ["Repository", "https://github.com/ryemso/olist-ecommerce-analytics"],
+        ["Notebook", "https://github.com/ryemso/olist-ecommerce-analytics/blob/main/notebooks/01_olist_analysis.ipynb"],
+        ["Pipeline", "https://github.com/ryemso/olist-ecommerce-analytics/blob/main/src/preprocessing.py"]
+      ],
       flow: [
-        ["01 · Problem", "배송 지연과 지역별 판매자 분포 차이를 운영 문제로 정의했습니다."],
-        ["02 · Data", "주문·고객·판매자·배송 테이블을 결합해 분석 데이터셋을 구성했습니다."],
-        ["03 · Analysis", "주문 수요와 판매자 공급, 배송 시간을 지역 단위로 비교했습니다."],
-        ["04 · Insight", "수요는 높지만 공급이 부족하고 배송 병목이 겹치는 지역을 도출했습니다."],
-        ["05 · Action", "셀러 유치와 운영 개선의 우선지역으로 연결했습니다."]
+        ["01 · Problem", "Marketplace 성장 관점에서 Seller 확보, 고객 유지, 배송 운영 문제를 각각 정의했습니다."],
+        ["02 · Validate", "order item과 payment의 다중 행 때문에 생길 수 있는 n:n merge 증식을 확인하고 분석 단위를 다시 정리했습니다."],
+        ["03 · Seller", "카테고리 주문 비중, Seller-주문 관계, 경쟁도와 성장 카테고리를 비교해 모집 후보를 탐색했습니다."],
+        ["04 · Customer", "재구매 흐름과 Review Score를 비교하고 배송기간과 만족도의 관계를 검토했습니다."],
+        ["05 · Action", "관측 데이터의 상관·회귀 결과를 인과효과로 과장하지 않고 Seller·운영 개선의 우선순위로 정리했습니다."]
       ]
     },
     advanced: {
@@ -76,13 +79,13 @@ const profile = {
       resultValue: "Raw Logs → Metric Definition → Validation → Decision Support",
       tags: ["MongoDB Aggregation", "Python", "Amplitude", "Product Metrics", "Data Validation"],
       href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md",
-      linkLabel: "View GitHub + Notebook",
+      linkLabel: "View Case Study",
       flow: [
-        ["01 · Define", "Compared activity logs and selected profile visit history as the consistent 30-day active-user basis."],
-        ["02 · Validate", "Detected an implausible taste-count metric, traced the wrong source, and corrected the metric using user profile fields."],
-        ["03 · Measure", "Defined and calculated profile completeness, referral rate, payment behavior, and recommendation performance metrics."],
-        ["04 · Diagnose", "Analyzed attractiveness vs. exposure and recommendation runway to inspect concentration and coverage issues."],
-        ["05 · Operate", "Reviewed dashboard limitations and designed a MongoDB-to-Python automated reporting workflow."]
+        ["01 · Define", "Compared activity logs and fixed a consistent period, event, and unique-user basis."],
+        ["02 · Validate", "Detected an implausible metric and rechecked the source semantics against operational context."],
+        ["03 · Measure", "Defined profile, referral, payment, and recommendation metrics at the user level."],
+        ["04 · Diagnose", "Reviewed exposure concentration and candidate-pool coverage without exposing internal operational figures."],
+        ["05 · Operate", "Reviewed a MongoDB-to-Python reporting workflow for metrics that did not map cleanly to dashboard aggregation."]
       ]
     },
     hynix: {
@@ -107,102 +110,94 @@ const profile = {
   dareEvidence: {
     ko: {
       metrics: [
-        { label: "30일 Active 유저", value: "989명", note: "profilevisithistories 기준" },
-        { label: "평균 사진", value: "1.59개", note: "Active 유저 1인당" },
-        { label: "평균 프롬프트", value: "4.73개", note: "Active 유저 1인당" },
-        { label: "평균 취향", value: "22.99개", note: "원천 검증 후 수정" }
+        { label: "Active User", value: "DEFINE", note: "기간·이벤트·Unique 기준 고정" },
+        { label: "Metric Source", value: "VALIDATE", note: "비정상 값은 원천까지 재검증" },
+        { label: "Referral / Payment", value: "MEASURE", note: "사용자 단위 분자·분모 정의" },
+        { label: "Recommendation", value: "DIAGNOSE", note: "노출 편중·후보군 커버리지 점검" }
       ],
       validation: {
         eyebrow: "DATA VALIDATION",
         title: "직관적으로 이상한 숫자를 그대로 쓰지 않았습니다.",
-        before: "0.16",
-        after: "22.99",
-        unit: "개 / 유저",
-        text: "처음에는 tastelikes를 취향 등록 원천으로 사용해 평균 0.16개가 나왔습니다. 실제 어드민과 맞지 않는 값을 재검증해 users.taste + coreTaste로 변경했고, 최종 평균을 22.99개로 수정했습니다."
+        before: "Wrong source",
+        after: "Verified source",
+        unit: "",
+        text: "운영 화면과 맞지 않는 지표가 나오면 값을 설명으로 합리화하지 않고, 사용한 로그의 의미와 프로필 필드를 다시 확인해 원천을 수정한 뒤 재계산했습니다."
       },
       referral: {
         eyebrow: "PRODUCT METRIC",
-        title: "주간 친구 초대율",
-        text: "피초대자 수가 아니라 ‘해당 주 초대한 Unique User / 해당 주 전체 User’로 지표를 다시 정의했습니다.",
-        values: [
-          ["7/26", 26.5], ["8/02", 11.3], ["8/09", 21.6], ["8/16", 11.7],
-          ["8/23", 10.3], ["8/30", 19.7], ["9/06", 25.1]
-        ]
+        title: "분자·분모부터 다시 정의",
+        text: "초대·결제·활성 지표는 이벤트 건수가 아니라 Unique User와 기간 기준을 먼저 고정했습니다. 동일한 이름의 지표라도 분석 목적에 따라 분모가 달라질 수 있어 정의를 문서화했습니다."
       },
       recommendation: {
         eyebrow: "RECOMMENDATION ANALYTICS",
         title: "노출 편중과 추천 커버리지 점검",
         stats: [
-          { value: "0.293", label: "Pearson · 매력도↔피노출" },
-          { value: "0.436", label: "Spearman · 매력도↔피노출" },
-          { value: "0.93", label: "평균 Runway" }
+          { value: "Exposure", label: "사용자 단위 노출 집계" },
+          { value: "Coverage", label: "후보군 소진·커버리지" },
+          { value: "Pattern", label: "특성과 노출의 관계" }
         ],
-        text: "showprofiles의 shownProfileIds를 피노출 유저 기준으로 풀어 노출량을 집계하고, 매력도와의 관계 및 후보군 runway를 분석했습니다. 매력도 구간별 평균 노출은 약 8.39에서 28.25까지 증가하는 경향을 보였습니다."
+        text: "추천 로그를 피노출 사용자 단위로 재구성하고, 특정 사용자군에 노출이 집중되는지와 실제 가용 후보군이 충분한지를 함께 점검했습니다. 공개 포트폴리오에는 내부 운영 수치를 노출하지 않습니다."
       },
       query: {
         eyebrow: "MONGODB / DATA WORK",
         title: "실제로 사용한 데이터 작업",
         items: [
-          ["Collection Discovery", "transactions에서 userId가 없음을 확인하고 transactionhistories를 실제 결제 원천으로 찾아냈습니다."],
-          ["Join & Aggregation", "$lookup, $group, $match, $project, $map, $dateTrunc, $unwind를 활용해 사용자·결제·초대·노출 데이터를 결합했습니다."],
-          ["User-level Metrics", "Unique User, 결제 유저, 2회 이상 재결제, Active Device, 초대 유저 등 사용자 단위 지표를 추출했습니다."],
-          ["Dashboard / Reporting", "Amplitude/GA에서 정의가 맞지 않는 비율 지표는 MongoDB→PyMongo→Pandas 기반 정기 리포트 방식으로 대안을 설계했습니다."]
+          ["Source Discovery", "필요한 식별자가 없는 데이터 원천을 그대로 쓰지 않고 결제·행동 분석에 적합한 원천을 다시 찾았습니다."],
+          ["Join & Aggregation", "$lookup, $group, $match, $project, $map, $dateTrunc, $unwind를 활용해 사용자 단위 분석 데이터를 구성했습니다."],
+          ["User-level Metrics", "활성, 결제·재결제, 초대, 추천 반응처럼 중복 이벤트의 영향을 받는 지표를 Unique User 기준으로 계산했습니다."],
+          ["Dashboard / Reporting", "제품 분석 도구의 기본 aggregation과 정의가 맞지 않는 지표는 MongoDB→Python/Pandas 계산 구조를 검토했습니다."]
         ]
       },
       amplitude: {
         eyebrow: "AMPLITUDE",
-        title: "Retention / Cohort도 코드가 아니라 제품 분석 도구에서 수행했습니다.",
-        text: "Amplitude에서 Cohort Filter와 Rolling Window를 활용해 Retention·재방문 관점의 사용자 행동을 확인했습니다. 지표 정의가 UI 기본 Aggregation과 맞지 않는 경우에는 MongoDB 계산과 병행하는 방향을 검토했습니다."
+        title: "Retention / Cohort는 제품 분석 도구에서 검토",
+        text: "Amplitude의 Cohort, Rolling Window, Segmentation을 사용해 재방문과 사용자군 행동을 확인했습니다. UI 집계가 원하는 정의와 맞지 않을 때는 raw log 계산과 비교했습니다."
       }
     },
     en: {
       metrics: [
-        { label: "30-day Active Users", value: "989", note: "profile visit history basis" },
-        { label: "Avg. Photos", value: "1.59", note: "per active user" },
-        { label: "Avg. Prompts", value: "4.73", note: "per active user" },
-        { label: "Avg. Tastes", value: "22.99", note: "after source validation" }
+        { label: "Active User", value: "DEFINE", note: "Fix period, event, and unique-user basis" },
+        { label: "Metric Source", value: "VALIDATE", note: "Trace implausible values back to source" },
+        { label: "Referral / Payment", value: "MEASURE", note: "Define numerator and denominator" },
+        { label: "Recommendation", value: "DIAGNOSE", note: "Inspect concentration and coverage" }
       ],
       validation: {
         eyebrow: "DATA VALIDATION",
-        title: "I did not keep a metric that looked implausible.",
-        before: "0.16",
-        after: "22.99",
-        unit: "items / user",
-        text: "The first calculation used tastelikes and produced an implausible 0.16 tastes per user. After checking the admin view and data semantics, I corrected the source to users.taste + coreTaste and recalculated the metric."
+        title: "I did not keep an implausible metric just because the query ran.",
+        before: "Wrong source",
+        after: "Verified source",
+        unit: "",
+        text: "When a metric did not match operational context, I rechecked the meaning of the source logs and profile fields, corrected the source, and recalculated instead of rationalizing the number."
       },
       referral: {
         eyebrow: "PRODUCT METRIC",
-        title: "Weekly Referral Rate",
-        text: "Redefined the metric as unique inviters in each week divided by total users in that week, rather than using invitee counts.",
-        values: [
-          ["7/26", 26.5], ["8/02", 11.3], ["8/09", 21.6], ["8/16", 11.7],
-          ["8/23", 10.3], ["8/30", 19.7], ["9/06", 25.1]
-        ]
+        title: "Define the numerator and denominator first",
+        text: "For referral, payment, and activity metrics, I fixed the time window and unique-user basis before calculating rates. The metric definition was documented because the denominator can change with the analytical purpose."
       },
       recommendation: {
         eyebrow: "RECOMMENDATION ANALYTICS",
         title: "Exposure Concentration & Recommendation Coverage",
         stats: [
-          { value: "0.293", label: "Pearson · attractiveness vs exposure" },
-          { value: "0.436", label: "Spearman · attractiveness vs exposure" },
-          { value: "0.93", label: "Average runway" }
+          { value: "Exposure", label: "user-level aggregation" },
+          { value: "Coverage", label: "candidate-pool runway" },
+          { value: "Pattern", label: "attribute vs. exposure" }
         ],
-        text: "Expanded shownProfileIds by exposed user, calculated exposure counts, and compared exposure against attractiveness and candidate-pool runway. Average exposure increased from about 8.39 to 28.25 across attractiveness buckets."
+        text: "Reconstructed recommendation logs around exposed users and inspected concentration, candidate-pool coverage, and descriptive exposure patterns. Internal operational figures are intentionally omitted from the public portfolio."
       },
       query: {
         eyebrow: "MONGODB / DATA WORK",
         title: "What I actually did with the data",
         items: [
-          ["Collection Discovery", "Found that transactions lacked userId and traced payment analysis to transactionhistories."],
-          ["Join & Aggregation", "Used $lookup, $group, $match, $project, $map, $dateTrunc, and $unwind across user, payment, referral, and exposure logs."],
-          ["User-level Metrics", "Extracted paying users, repeat payers, active-device users, inviters, and other unique-user metrics."],
-          ["Dashboard / Reporting", "For ratio metrics that did not map cleanly to Amplitude/GA aggregation, designed a MongoDB → PyMongo → Pandas reporting alternative."]
+          ["Source Discovery", "When a source lacked the identifiers needed for analysis, I traced the appropriate payment or behavior source instead of forcing the join."],
+          ["Join & Aggregation", "Used $lookup, $group, $match, $project, $map, $dateTrunc, and $unwind to build user-level analytical datasets."],
+          ["User-level Metrics", "Calculated activity, payment, repeat-payment, referral, and recommendation-response metrics on a unique-user basis."],
+          ["Dashboard / Reporting", "Reviewed MongoDB-to-Python/Pandas calculations for metrics that did not map cleanly to product-analytics UI aggregation."]
         ]
       },
       amplitude: {
         eyebrow: "AMPLITUDE",
-        title: "Retention and cohort analysis was done in a product analytics tool.",
-        text: "Used cohort filters and rolling windows in Amplitude to review retention and revisit behavior. When UI aggregation did not match the desired metric definition, I compared it with MongoDB-based calculations."
+        title: "Retention and cohort analysis in a product analytics tool",
+        text: "Used cohort, rolling-window, and segmentation views to inspect revisit behavior, and compared them with raw-log calculations when the UI aggregation did not match the intended definition."
       }
     }
   },
@@ -293,15 +288,18 @@ const profile = {
 
   projects: [
     {
-      koTitle: "Olist 셀러 유치 전략 분석",
-      enTitle: "Olist Seller Acquisition Strategy",
-      koDesc: "배송 병목과 지역별 수요·공급 불균형을 분석해 셀러 유치 우선지역과 운영 개선 방향을 제안했습니다.",
-      enDesc: "Analyzed delivery bottlenecks and regional demand-supply imbalance to prioritize seller-acquisition regions.",
-      resultKo: "셀러 유치 우선지역 도출",
-      resultEn: "Seller-acquisition priorities",
-      tags: ["SQL", "Tableau", "E-commerce"],
-      href: "https://github.com/ryemso/olist-ecommerce-analytics",
-      linkLabel: "GitHub · Notebook",
+      koTitle: "Olist E-commerce Analytics",
+      enTitle: "Olist E-commerce Analytics",
+      koDesc: "주문·결제·고객·상품·리뷰 데이터를 결합하며 n:n join 중복을 검증하고, Seller 확보·고객 유지·배송 경험을 분석했습니다.",
+      enDesc: "Validated n:n join duplication across order and payment data, then analyzed seller acquisition, customer retention, and delivery experience.",
+      resultKo: "Data Validation → Business Insight",
+      resultEn: "Data Validation → Business Insight",
+      tags: ["Python", "Pandas", "Tableau", "E-commerce"],
+      links: [
+        ["Repository", "https://github.com/ryemso/olist-ecommerce-analytics"],
+        ["Notebook", "https://github.com/ryemso/olist-ecommerce-analytics/blob/main/notebooks/01_olist_analysis.ipynb"],
+        ["Pipeline", "https://github.com/ryemso/olist-ecommerce-analytics/blob/main/src/preprocessing.py"]
+      ],
       hynix: true
     },
     {
@@ -338,26 +336,31 @@ const profile = {
       hynix: true
     },
     {
-      koTitle: "LendingClub 리스크 분류",
-      enTitle: "LendingClub Risk Analysis",
-      koDesc: "부실 위험군을 선별하고 임계값에 따른 잠재 손실 방어 시나리오를 분석했습니다.",
-      enDesc: "Screened high-risk loans and evaluated a threshold-based potential-loss avoidance scenario.",
-      resultKo: "잠재 손실 약 15% 방어 시나리오",
-      resultEn: "Scenario: ~15% potential loss avoidance",
-      tags: ["Python", "Finance", "Classification"],
-      href: "https://github.com/ryemso/lendingclub-credit-risk",
-      linkLabel: "GitHub · Notebook + Code"
+      koTitle: "LendingClub Credit Risk Modeling",
+      enTitle: "LendingClub Credit Risk Modeling",
+      koDesc: "불균형 대출 분류 실험을 다시 검토해 초기 target leakage를 명시적으로 분리하고, train-only scaling·SMOTE·모델 비교 흐름으로 공개 코드를 재구성했습니다.",
+      enDesc: "Revisited imbalanced credit-risk experiments, documented the initial target leakage, and rebuilt a reviewable train-only scaling, SMOTE, and model-comparison workflow.",
+      resultKo: "Leakage-aware · Imbalanced Classification",
+      resultEn: "Leakage-aware · Imbalanced Classification",
+      tags: ["Python", "Imbalanced-learn", "XGBoost", "LightGBM"],
+      links: [
+        ["Repository", "https://github.com/ryemso/lendingclub-credit-risk"],
+        ["Notebook", "https://github.com/ryemso/lendingclub-credit-risk/blob/main/notebooks/01_lendingclub_leakage_aware_experiments.ipynb"],
+        ["Pipeline", "https://github.com/ryemso/lendingclub-credit-risk/blob/main/src/modeling_pipeline.py"]
+      ]
     },
     {
       koTitle: "The Liquidation of Penny",
       enTitle: "The Liquidation of Penny",
-      koDesc: "경제·시장 개념을 전투·스테이지·보상 시스템으로 번역하고, 실제 플레이 가능한 웹 게임 프로토타입으로 구현했습니다. 이동·전투·맵 전환·보상 선택과 게임 상태를 직접 설계하고 디버깅했습니다.",
-      enDesc: "Translated economic and market concepts into combat, stage, and reward systems and implemented them as a playable web game prototype, including movement, combat, stage transitions, rewards, and game-state logic.",
-      resultKo: "Playable Web Prototype",
-      resultEn: "Playable Web Prototype",
-      tags: ["Side Project", "Godot", "Game Design", "AI-assisted Prototyping"],
-      href: "https://github.com/ryemso/The-Liquidation-of-Penny",
-      linkLabel: "GitHub",
+      koDesc: "금융·시장 개념을 전투·탐험·보상 시스템으로 구현한 웹 액션 로그라이트입니다. 이벤트 로깅, run 단위 플레이 분석, 자동 회귀 테스트까지 함께 설계했습니다.",
+      enDesc: "Built a browser action roguelite that translates finance concepts into combat, exploration, and rewards, with event logging, run-level analytics, and automated regression tests.",
+      resultKo: "Playable Web Prototype + Analytics",
+      resultEn: "Playable Web Prototype + Analytics",
+      tags: ["JavaScript", "Game Systems", "Event Logging", "Analytics"],
+      links: [
+        ["Repository", "https://github.com/ryemso/The-Liquidation-of-Penny"],
+        ["Play", "https://ryemso.github.io/The-Liquidation-of-Penny/"]
+      ],
       hynix: true
     }
   ],
@@ -395,11 +398,20 @@ function el(tag, className, html) {
   return node;
 }
 
+function sourceLinksMarkup(data, extraClass = "") {
+  const links = data.links || (data.href ? [[data.linkLabel || "View Source", data.href]] : []);
+  if (!links.length) return "";
+  return links.map(([label, href]) =>
+    `<a class="project-source-link ${extraClass}" href="${href}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`
+  ).join("");
+}
+
 function renderVersionTabs(activeKey) {
   const tabs = document.getElementById("versionTabs");
   if (!tabs) return;
   tabs.innerHTML = "";
   Object.entries(profile.versions).forEach(([key, ver]) => {
+    if (key === "hynix" && activeKey !== "hynix") return;
     const btn = el("button", `version-tab ${key === activeKey ? "active" : ""}`, ver.label);
     btn.addEventListener("click", () => {
       setVersionInUrl(key);
@@ -430,11 +442,9 @@ function renderMainProject(key) {
   document.getElementById("mainProjectIntro").textContent = data.intro;
   document.getElementById("mainResultLabel").textContent = data.resultLabel;
   document.getElementById("mainResultValue").textContent = data.resultValue;
-  const mainSourceLink = data.href
-    ? `<a class="project-source-link" href="${data.href}" target="_blank" rel="noopener noreferrer">${data.linkLabel || "View Source"} ↗</a>`
-    : "";
+  const mainSourceLinks = sourceLinksMarkup(data);
   document.getElementById("mainProjectTags").innerHTML =
-    data.tags.map(t => `<span class="meta-chip">${t}</span>`).join("") + mainSourceLink;
+    data.tags.map(t => `<span class="meta-chip">${t}</span>`).join("") + mainSourceLinks;
 
   const flow = document.getElementById("mainFlow");
   flow.innerHTML = "";
@@ -485,7 +495,6 @@ function renderDareEvidence(lang) {
           <span class="before">${data.validation.before}</span>
           <span class="arrow">→</span>
           <span class="after">${data.validation.after}</span>
-          <small>${data.validation.unit}</small>
         </div>
         <p>${data.validation.text}</p>
       </article>
@@ -494,7 +503,9 @@ function renderDareEvidence(lang) {
         <div class="mini-label">${data.referral.eyebrow}</div>
         <h3>${data.referral.title}</h3>
         <p>${data.referral.text}</p>
-        <div class="mini-bar-chart">${barsMarkup(data.referral.values)}</div>
+        <div class="amplitude-tags">
+          <span>Unique User</span><span>Period</span><span>Numerator</span><span>Denominator</span>
+        </div>
       </article>
     </div>
 
@@ -529,19 +540,19 @@ function renderStrategyEvidence() {
   wrap.innerHTML = `
     <div class="strategy-evidence">
       <article class="case-card">
-        <div class="mini-label">DATA STRUCTURE</div>
-        <h3>주문·고객·판매자·배송 데이터를 하나의 분석 흐름으로 결합</h3>
-        <p>지역별 주문 수요와 판매자 공급, 배송 지연을 함께 비교할 수 있도록 분석 단위를 정리했습니다.</p>
+        <div class="mini-label">DATA VALIDATION</div>
+        <h3>Join 결과가 늘어났다면 먼저 분석 단위를 의심</h3>
+        <p>order item과 payment의 다중 행 때문에 주문이 증식할 수 있는 구조를 확인하고, unique order 기준과 payment 집계 방식을 다시 정리했습니다.</p>
       </article>
       <article class="case-card">
-        <div class="mini-label">BUSINESS QUESTION</div>
-        <h3>“어디에 셀러를 더 유치해야 배송 구조가 좋아지는가?”</h3>
-        <p>수요는 높지만 판매자 공급이 부족하고 배송 병목이 나타나는 지역을 우선순위로 정리했습니다.</p>
+        <div class="mini-label">MARKETPLACE ANALYTICS</div>
+        <h3>Seller 수만 늘리는 것이 아니라 어떤 카테고리를 볼지 정의</h3>
+        <p>주문 비중, Seller-주문 관계, HHI와 성장률을 함께 확인해 핵심 카테고리와 성장 후보를 분리했습니다.</p>
       </article>
       <article class="case-card">
-        <div class="mini-label">OUTPUT</div>
-        <h3>분석 결과를 운영 우선순위로 변환</h3>
-        <p>단순 EDA가 아니라 셀러 확보와 지역 운영 전략에 사용할 수 있는 방향으로 결과를 압축했습니다.</p>
+        <div class="mini-label">CUSTOMER / DELIVERY</div>
+        <h3>배송 경험과 고객 만족을 함께 분석</h3>
+        <p>재구매 흐름, Review Score, 배송기간의 관계를 비교하고 관측 상관을 인과효과로 과장하지 않은 채 운영 개선 방향으로 연결했습니다.</p>
       </article>
     </div>
   `;
@@ -649,7 +660,7 @@ function renderProjects(lang, key) {
   const grid = document.getElementById("projectGrid");
   grid.innerHTML = "";
   const projects = key === "hynix"
-    ? ["한우 등급 예측", "50세 이상 인지장애 경험 여부 예측", "The Liquidation of Penny", "Olist 셀러 유치 전략 분석"]
+    ? ["한우 등급 예측", "50세 이상 인지장애 경험 여부 예측", "The Liquidation of Penny", "Olist E-commerce Analytics"]
         .map(title => profile.projects.find(p => p.koTitle === title))
         .filter(Boolean)
     : profile.projects;
@@ -665,7 +676,7 @@ function renderProjects(lang, key) {
         <span class="meta-chip result-chip">${result}</span>
         ${p.tags.map(t => `<span class="meta-chip">${t}</span>`).join("")}
       </div>
-      ${p.href ? `<a class="project-source-link project-card-link" href="${p.href}" target="_blank" rel="noopener noreferrer">${p.linkLabel || "View Source"} ↗</a>` : ""}
+      <div class="project-links">${sourceLinksMarkup(p, "project-card-link")}</div>
     `;
     grid.appendChild(card);
   });
