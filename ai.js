@@ -80,6 +80,7 @@ function renderAIEvidence() {
         <h3>DARE 실제 서비스 로그 분석</h3>
         <p>MongoDB 행동·결제·추천 로그를 직접 검증하고 Python 분석 데이터셋을 구축했습니다. 모델링 이전 단계에서 어떤 데이터와 지표가 서비스 문제를 설명하는지 정의한 실무 경험입니다.</p>
         <div class="amplitude-tags"><span>MongoDB</span><span>Python</span><span>Data Validation</span><span>Product Metrics</span></div>
+        <a class="project-source-link project-card-link" href="https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md" target="_blank" rel="noopener noreferrer">View Case Study ↗</a>
       </article>
     </div>
   `;
