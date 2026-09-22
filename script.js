@@ -58,7 +58,7 @@ const profile = {
       resultLabel: "OUTPUT",
       resultValue: "Seller Acquisition Priority",
       tags: ["SQL", "Tableau", "E-commerce", "Demand-Supply", "Strategy"],
-      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/olist/README.md",
+      href: "https://github.com/ryemso/olist-ecommerce-analytics",
       linkLabel: "View Case Study",
       flow: [
         ["01 · Problem", "배송 지연과 지역별 판매자 분포 차이를 운영 문제로 정의했습니다."],
@@ -300,7 +300,7 @@ const profile = {
       resultKo: "셀러 유치 우선지역 도출",
       resultEn: "Seller-acquisition priorities",
       tags: ["SQL", "Tableau", "E-commerce"],
-      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/olist/README.md",
+      href: "https://github.com/ryemso/olist-ecommerce-analytics",
       linkLabel: "Case Study",
       hynix: true
     },
@@ -345,7 +345,7 @@ const profile = {
       resultKo: "잠재 손실 약 15% 방어 시나리오",
       resultEn: "Scenario: ~15% potential loss avoidance",
       tags: ["Python", "Finance", "Classification"],
-      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/lendingclub/README.md",
+      href: "https://github.com/ryemso/lendingclub-credit-risk",
       linkLabel: "Case Study + Code"
     },
     {
