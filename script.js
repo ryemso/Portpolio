@@ -242,7 +242,7 @@ const profile = {
       {
         company: "데어",
         role: "데이터 분석 인턴",
-        period: "2025.09 — 2025.10",
+        period: "2025.09 — 2025.09",
         points: [
           "MongoDB 컬렉션 구조를 직접 검증하고 사용자 행동·결제·초대·추천 로그 기반 지표를 산출했습니다.",
           "잘못된 데이터 원천과 지표 정의를 재검증하고 Active·친구 초대율·추천 노출·Runway 등 서비스 지표를 정리했습니다.",
@@ -265,7 +265,7 @@ const profile = {
       {
         company: "DARE",
         role: "Data Analysis Intern",
-        period: "Sep 2025 — Oct 2025",
+        period: "Sep 2025 — Sep 2025",
         points: [
           "Inspected MongoDB collection structures and calculated product metrics from behavior, payment, referral, and recommendation logs.",
           "Revalidated incorrect data sources and metric definitions and analyzed active users, referral rate, recommendation exposure, and runway.",
