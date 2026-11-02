@@ -10,6 +10,8 @@ Data / Product Analytics와 AI/ML 프로젝트를 직무별로 보여주는 개�
   https://kimsportpolio.netlify.app/?ver=ai
 - **Business / Growth Analytics**  
   https://kimsportpolio.netlify.app/?ver=strategy
+- **LOTTE AX Challenge · LOTTE Hotel**  
+  https://kimsportpolio.netlify.app/?ver=lotte
 
 ## Structure
 
@@ -21,6 +23,8 @@ Data / Product Analytics와 AI/ML 프로젝트를 직무별로 보여주는 개�
   선박 식별 entity matching을 Main Case로 두고 후보 생성·재순위·누수 방지 검증 과정을 강조
 - `?ver=strategy`  
   Olist 분석을 중심으로 Business/Growth Analytics 관점으로 구성
+- `?ver=lotte`  
+  롯데호텔의 브랜드·지점별 고객 데이터 통합 및 통합 데이터 기반 맞춤 추천 과제에 맞춰 DARE·Olist·Entity Matching 경험을 연결
 
 ## Main Evidence
 
@@ -66,4 +70,4 @@ README.md
 - Heat Demand: AI 메인에서 보조 사례로 이동하고 Train-only Scaling / Sliding Window 범위를 유지
 - Hanwoo: 오래된 XGBoost·RealMLP·HanwooFormer 설명을 현재 저장소 기준 CatBoost + XGBoost / Public Macro-F1 0.219로 교정
 - The Liquidation of Penny: JavaScript 기반 게임 시스템, 이벤트 로깅, run 단위 분석, 자동 테스트를 현재 저장소 기준으로 반영
-- SK hynix 전용 버전은 일반 버전 탭에서 숨기고 `?ver=hynix` 직접 링크로만 접근
+- LOTTE AX Challenge 전용 버전은 일반 버전 탭에서 숨기고 `?ver=lotte` 직접 링크로만 접근
