@@ -1,15 +1,15 @@
 // AI / ML focused portfolio layer for ?ver=ai
-// Keeps the existing Product/Growth portfolio intact and adds a role-specific view.
+// Keeps the Product/Growth portfolio intact and adds a role-specific AI/ML view.
 
 profile.versions = {
   analyst: profile.versions.analyst,
   ai: {
     label: "AI / MACHINE LEARNING",
-    title: "데이터에서 문제를 정의하고, ML/DL 모델을 서비스 과제로 연결하는 AI 엔지니어",
-    desc: "시계열·분류 문제에서 데이터 전처리부터 모델 설계·검증·오류 수정까지 수행했고, 실제 서비스 로그 분석 경험을 바탕으로 AI가 활용될 수 있는 문제와 데이터를 정의합니다.",
+    title: "데이터·모델·검증 구조를 함께 설계해 성능을 개선하는 AI/ML 문제 해결형 분석가",
+    desc: "선박 entity matching 공모전에서 후보 생성·재순위·누수 방지 검증을 반복하며 Public 0.8011에서 0.9357까지 개선했습니다. 시계열·불균형 분류 프로젝트를 통해 문제별 평가 기준과 검증 구조도 다뤘습니다.",
     theme: "ai",
     lang: "ko",
-    heroStack: ["Python", "Scikit-learn", "TensorFlow/Keras", "LSTM / Attention", "XGBoost", "MongoDB"]
+    heroStack: ["Python", "Entity Matching", "E5", "LightGBM / CatBoost", "Ranking", "Validation"]
   },
   strategy: profile.versions.strategy,
   hynix: {
@@ -19,73 +19,85 @@ profile.versions = {
 };
 
 profile.mainProjects.ai = {
-  eyebrow: "MAIN AI / ML CASE · HEAT DEMAND FORECASTING",
-  title: "기상 데이터 기반 시간대별 열수요 예측",
-  intro: "시간 단위 기상·열수요 데이터를 기반으로 Bi-LSTM, CNN-LSTM, BiLSTM+Attention 구조를 비교하고, 시퀀스 생성·스케일링·검증 경계 문제를 점검하며 예측 성능을 개선했습니다.",
-  resultLabel: "VALIDATION",
-  resultValue: "RMSE 21.7 → 17.2",
-  tags: ["Python", "TensorFlow/Keras", "Bi-LSTM", "CNN-LSTM", "Attention", "Time Series"],
-  links: [
-    ["Repository", "https://github.com/ryemso/heat-demand-forecasting"],
-    ["Notebook", "https://github.com/ryemso/heat-demand-forecasting/blob/main/notebooks/01_heat_demand_modeling.ipynb"],
-    ["Model Code", "https://github.com/ryemso/heat-demand-forecasting/blob/main/src/heat_demand_model.py"]
-  ],
+  eyebrow: "MAIN AI / ML CASE · VESSEL ENTITY MATCHING",
+  title: "표기가 다른 항만 기록을 표준 선박 ID로 연결한 선박 식별 AI",
+  intro: "한글·영문·오탈자·축약·발음·숫자 표기 차이가 섞인 항만 기록을 표준 선박 카탈로그 ID에 연결했습니다. 문자열 유사도 하나에 의존하지 않고 후보 생성과 후보 재순위를 분리하고, 임베딩·메타데이터·역방향 특징을 결합했습니다.",
+  resultLabel: "DACON PUBLIC",
+  resultValue: "0.8011 → 0.9357",
+  tags: ["Python", "Entity Matching", "E5", "LightGBM", "CatBoost", "Reranking"],
+  href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md",
+  linkLabel: "View Case Study",
   flow: [
-    ["01 · Problem", "시간 단위 열수요를 기상·시간 변수로 예측하는 시계열 회귀 문제를 정의했습니다."],
-    ["02 · Experiment", "Bi-LSTM → CNN-LSTM → BiLSTM+Attention 구조를 비교하며 모델 구조와 하이퍼파라미터를 실험했습니다."],
-    ["03 · Diagnose", "시퀀스 생성과 validation/test 경계에서 연속 시점 정보가 끊길 수 있는 문제, scaler fit 범위에서 생길 수 있는 누수 가능성을 점검했습니다."],
-    ["04 · Improve", "공개 모듈은 Train-only Scaling과 Sliding Window 생성 로직을 중심으로 정리했고, 당시 경계 연속성 보완 실험은 README에서 범위를 구분해 문서화했습니다."],
-    ["05 · Result", "공모전 검증 과정에서 확인한 주요 RMSE를 21.7에서 17.2로 개선했습니다."]
+    ["01 · Problem", "동일 선박이 한글·영문·오타·축약·발음 차이로 기록되는 noisy entity matching 문제로 정의했습니다."],
+    ["02 · Retrieve", "문자 n-gram·fuzzy·발음·메타데이터·E5 임베딩을 조합해 정답 후보가 검색 단계에서 빠지지 않도록 후보군을 확장했습니다."],
+    ["03 · Rerank", "후보 안에 정답이 있어도 1위를 잘못 고르는 오류를 줄이기 위해 LightGBM/CatBoost ranking, 상대 점수·margin, 역방향 특징과 pairwise 실험을 적용했습니다."],
+    ["04 · Validate", "원본과 합성 변형을 같은 그룹으로 묶고 동일 원본 참조를 막아 누수를 줄였습니다. Test 행끼리 정보를 공유하는 방식은 최종 제출에서 사용하지 않았습니다."],
+    ["05 · Iterate", "최고 모델을 보존한 채 challenger를 비교하고 실패·동률 실험도 기록했습니다. Public 기준 주요 개선 흐름은 0.8011 → 0.8839 → 0.8997 → 0.9234 → 0.9311 → 0.9357입니다."]
   ]
 };
 
 profile.skills.ai = [
-  { name: "Python / ML", detail: "Pandas · Scikit-learn · XGBoost · CatBoost", evidence: "분류·회귀 실험, 전처리, 평가 파이프라인 구성" },
-  { name: "Deep Learning", detail: "TensorFlow/Keras · LSTM · CNN · Attention", evidence: "열수요 시계열 예측 구조 비교 및 성능 개선" },
-  { name: "Model Evaluation", detail: "RMSE · Recall · F1 · Threshold Optimization", evidence: "문제 특성에 맞춰 평가 기준과 임계값을 재설계" },
-  { name: "Experimentation", detail: "Model Comparison · Optuna · Ensemble · Early Stopping", evidence: "다수 모델 비교와 하이퍼파라미터·앙상블 실험" },
-  { name: "Data Engineering", detail: "MongoDB Aggregation · SQL · Python", evidence: "실제 서비스 로그 정규화와 분석 데이터셋 구축" },
-  { name: "Applied AI Thinking", detail: "Problem Definition · Data Validation · Decision Support", evidence: "모델 개발과 실제 서비스 데이터 문제 정의를 함께 경험" }
+  { name: "Entity Matching", detail: "Normalization · Candidate Retrieval · Reranking", evidence: "한글·영문·오탈자·발음 차이가 있는 선박 기록을 표준 ID로 연결" },
+  { name: "Ranking / ML", detail: "LightGBM · CatBoost · Pairwise · Margin", evidence: "정답 후보 포함 이후의 선택 오류를 후보 경쟁 문제로 분리해 개선" },
+  { name: "Embeddings", detail: "E5 · Similarity Features", evidence: "문자열 특징과 고정 임베딩 유사도를 후보 구별 신호로 결합" },
+  { name: "Validation", detail: "Group Split · Leakage Check · Error Analysis", evidence: "원본/합성 후손 그룹 분리, 행 독립성, 실패 실험 보존" },
+  { name: "Deep Learning", detail: "TensorFlow/Keras · LSTM · CNN · Attention", evidence: "열수요 시계열 예측에서 모델 구조와 시퀀스 검증 비교" },
+  { name: "Applied Data", detail: "MongoDB · SQL · Python · Product Metrics", evidence: "실제 서비스 로그에서 원천 데이터와 지표 정의를 검증한 인턴 경험" }
 ];
 
 function renderAIEvidence() {
   const wrap = document.getElementById("caseEvidence");
   wrap.innerHTML = `
     <div class="metric-strip">
-      <div class="metric-tile"><strong>21.7 → 17.2</strong><span>Validation RMSE</span><small>시계열 예측 성능 개선</small></div>
-      <div class="metric-tile"><strong>3+</strong><span>Model Architectures</span><small>Bi-LSTM · CNN-LSTM · Attention</small></div>
-      <div class="metric-tile"><strong>Train-only</strong><span>Scaling</span><small>검증 누수 방지</small></div>
-      <div class="metric-tile"><strong>Boundary Check</strong><span>Sequence Design</span><small>검증 경계의 연속성 손실 가능성 점검</small></div>
+      <div class="metric-tile"><strong>0.8011 → 0.9357</strong><span>DACON Public</span><small>초기 매핑에서 최종 최고 Public까지</small></div>
+      <div class="metric-tile"><strong>0.9234</strong><span>E5 + Inverse</span><small>임베딩과 역방향 특징 결합</small></div>
+      <div class="metric-tile"><strong>0.9311</strong><span>Pairwise Reranking</span><small>후보 간 경쟁 학습 강화</small></div>
+      <div class="metric-tile"><strong>0.9357</strong><span>Best Public</span><small>구조적 비한글 재순위 개선</small></div>
     </div>
 
     <div class="case-grid two-col">
       <article class="case-card">
-        <div class="mini-label">MODEL DEVELOPMENT</div>
-        <h3>모델 구조와 함께 데이터·검증 파이프라인을 점검</h3>
-        <p>단순히 LSTM 층을 늘리는 방식이 아니라 validation/test 경계와 스케일러 fit 범위를 함께 확인했습니다. 공개 코드는 Train-only Scaling과 Sliding Window 중심으로 검토 가능하게 정리했습니다.</p>
+        <div class="mini-label">RETRIEVAL → RERANKING</div>
+        <h3>후보를 찾는 문제와 정답을 고르는 문제를 분리했습니다.</h3>
+        <p>문자열·발음·메타데이터·E5 특징으로 후보를 넓힌 뒤, 후보 안에 정답이 있어도 1위를 잘못 선택하는 오류는 별도의 ranking 문제로 다뤘습니다. 단순 유사도 점수 하나보다 후보 간 상대 차이를 학습하는 방향으로 실험을 확장했습니다.</p>
+        <div class="amplitude-tags"><span>n-gram</span><span>Fuzzy</span><span>Phonetic</span><span>E5</span><span>Reranking</span></div>
       </article>
+
       <article class="case-card">
-        <div class="mini-label">ARCHITECTURE COMPARISON</div>
-        <h3>BiLSTM · CNN-LSTM · Attention 계열 구조를 비교</h3>
-        <p>시계열의 단기 패턴과 순환 구조를 어떻게 결합할지 여러 아키텍처를 비교했습니다. 공개 포트폴리오에서는 확인 가능한 모델 구조와 검증 기록 범위까지만 제시합니다.</p>
+        <div class="mini-label">VALIDATION DISCIPLINE</div>
+        <h3>성능 개선보다 먼저 누수와 검증 단위를 통제했습니다.</h3>
+        <p>원본과 그 합성 변형을 같은 그룹으로 묶고, 자기 자신이나 같은 원본에서 만든 기록을 참조해 정답을 얻지 않도록 제한했습니다. 로컬 Dev와 Public 결과가 다를 때도 한쪽만 선택해 설명하지 않고 두 결과를 함께 기록했습니다.</p>
+        <div class="amplitude-tags"><span>Group Split</span><span>Leakage Check</span><span>Row Independence</span><span>Error Audit</span></div>
       </article>
     </div>
 
     <div class="case-grid two-col">
+      <article class="case-card">
+        <div class="mini-label">SECOND CASE · TIME SERIES</div>
+        <h3>열수요 예측 · RMSE 21.7 → 17.2</h3>
+        <p>BiLSTM, CNN-LSTM, Attention 계열 구조를 비교하면서 모델뿐 아니라 train-only scaling, 시퀀스 생성, validation/test 경계의 연속성 문제를 함께 점검했습니다.</p>
+        <a class="project-source-link project-card-link" href="https://github.com/ryemso/heat-demand-forecasting" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+      </article>
+
       <article class="case-card">
         <div class="mini-label">SECOND CASE · CLASSIFICATION</div>
-        <h3>50세 이상 인지장애 경험 여부 예측</h3>
-        <p>LR·KNN·SVM·RF·LightGBM·CatBoost·XGBoost·MLP를 비교하고 SMOTE, Soft Voting/Stacking, Optuna, Threshold 조정으로 양성 Recall을 0.72에서 0.78로 개선했습니다.</p>
-        <div class="amplitude-tags"><span>Classification</span><span>SMOTE</span><span>Optuna</span><span>Ensemble</span><span>Threshold</span></div>
-      </article>
-      <article class="case-card">
-        <div class="mini-label">THIRD CASE · SERVICE DATA</div>
-        <h3>DARE 실제 서비스 로그 분석</h3>
-        <p>MongoDB 행동·결제·추천 로그를 직접 검증하고 Python 분석 데이터셋을 구축했습니다. 모델링 이전 단계에서 어떤 데이터와 지표가 서비스 문제를 설명하는지 정의한 실무 경험입니다.</p>
-        <div class="amplitude-tags"><span>MongoDB</span><span>Python</span><span>Data Validation</span><span>Product Metrics</span></div>
-        <a class="project-source-link project-card-link" href="https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md" target="_blank" rel="noopener noreferrer">View Case Study ↗</a>
+        <h3>인지장애 예측 · Recall 0.72 → 0.78</h3>
+        <p>False Negative 비용을 기준으로 Recall을 우선하고, SMOTE·앙상블·Optuna·Threshold 조정을 비교했습니다. Recall 개선과 함께 Precision 하락도 확인해 단일 지표 최적화의 한계를 검토했습니다.</p>
+        <a class="project-source-link project-card-link" href="https://github.com/ryemso/cognitive-impairment-prediction" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
       </article>
     </div>
+
+    <article class="case-card work-card">
+      <div class="mini-label">DOMAIN / LEAKAGE REVIEW</div>
+      <h3>한우 등급 예측 · Public Macro-F1 0.219</h3>
+      <div class="work-grid">
+        <div class="work-item"><strong>Leakage</strong><p>train에만 존재하는 도축 후 판정 변수를 실제 test에서 사용할 수 없는 정보로 보고 제거했습니다.</p></div>
+        <div class="work-item"><strong>Model</strong><p>CatBoost와 XGBoost 예측 확률을 결합하고 C계열 과소예측 보정을 적용했습니다.</p></div>
+        <div class="work-item"><strong>Review</strong><p>직접 16개 등급을 맞히는 접근보다 육질·육량 등 도메인 결정 구조를 분리하는 방향이 필요하다는 회고를 남겼습니다.</p></div>
+        <div class="work-item"><strong>Evidence</strong><p>공개 저장소에는 재현 가능한 pipeline과 프로젝트 로그·회고 문서를 남겼습니다.</p></div>
+      </div>
+      <a class="project-source-link project-card-link" href="https://github.com/ryemso/Hanwoo_ranke" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+    </article>
   `;
 }
 
@@ -93,7 +105,7 @@ const baseRenderEvidence = renderEvidence;
 renderEvidence = function(key) {
   if (key !== "ai") return baseRenderEvidence(key);
   document.getElementById("caseEvidenceTitle").textContent = "AI / ML Development Evidence";
-  document.getElementById("caseEvidenceDesc").textContent = "모델 이름 나열보다 문제 정의, 실험 비교, 오류 진단, 검증 개선까지 실제 모델 개발 흐름을 보여줍니다.";
+  document.getElementById("caseEvidenceDesc").textContent = "최종 점수보다 후보 생성·재순위·누수 방지·오류 분석을 어떻게 반복했는지에 초점을 맞췄습니다.";
   renderAIEvidence();
 };
 
@@ -104,14 +116,17 @@ renderProjects = function(lang, key) {
   const grid = document.getElementById("projectGrid");
   grid.innerHTML = "";
   const order = [
+    "열수요 예측",
     "50세 이상 인지장애 경험 여부 예측",
-    "LendingClub 리스크 분류",
+    "한우 등급 예측",
+    "LendingClub Credit Risk Modeling",
     "Olist E-commerce Analytics",
     "The Liquidation of Penny"
   ];
+  const rank = new Map(order.map((title, idx) => [title, idx]));
   const projects = profile.projects
-    .filter(p => p.koTitle !== "열수요 예측")
-    .sort((a, b) => order.indexOf(a.koTitle) - order.indexOf(b.koTitle));
+    .filter(p => p.koTitle !== "Port Problem Solving · 선박 식별 AI" && rank.has(p.koTitle))
+    .sort((a, b) => rank.get(a.koTitle) - rank.get(b.koTitle));
 
   projects.forEach(p => {
     const card = el("article", "project-card");
@@ -134,10 +149,10 @@ renderCopy = function(key) {
   if (key !== "ai") return;
 
   document.getElementById("mainProjectSectionTitle").textContent = "Main AI / ML Case";
-  document.getElementById("mainProjectSectionDesc").textContent = "시계열 예측 프로젝트에서 모델 비교뿐 아니라 데이터 파이프라인과 검증 문제를 어떻게 고쳤는지 보여줍니다.";
-  document.getElementById("experienceDesc").textContent = "실제 서비스 데이터를 다루며 AI/ML 적용 이전의 데이터 정의·검증 역량을 쌓은 경험입니다.";
-  document.getElementById("projectSectionDesc").textContent = "분류 모델링과 서비스 데이터 경험을 중심으로 AI/ML 적용 범위를 보여주는 보조 사례입니다.";
-  document.getElementById("strengthDesc").textContent = "모델명보다 데이터 처리·모델 실험·평가·검증에서 실제 사용한 역량을 정리했습니다.";
+  document.getElementById("mainProjectSectionDesc").textContent = "최신 공모전 프로젝트에서 noisy entity matching을 후보 생성·재순위·검증 문제로 나눠 개선한 과정을 보여줍니다.";
+  document.getElementById("experienceDesc").textContent = "실제 서비스 로그를 다루며 모델링 이전의 데이터 정의·원천 검증 역량도 함께 쌓았습니다.";
+  document.getElementById("projectSectionDesc").textContent = "열수요·불균형 분류·한우 등급 예측을 보조 사례로 두어 문제 유형별 모델링과 검증 경험을 보여줍니다.";
+  document.getElementById("strengthDesc").textContent = "모델 이름보다 retrieval·ranking·validation·error analysis에서 실제 사용한 역량을 정리했습니다.";
 };
 
 // script.js renders once before this file loads. Render again so ?ver=ai is applied.
