@@ -676,7 +676,9 @@ function renderProjects(lang, key) {
     ? ["한우 등급 예측", "50세 이상 인지장애 경험 여부 예측", "The Liquidation of Penny", "Olist E-commerce Analytics"]
         .map(title => profile.projects.find(p => p.koTitle === title))
         .filter(Boolean)
-    : profile.projects;
+    : key === "analyst"
+      ? profile.projects.filter(p => p.koTitle !== "The Liquidation of Penny")
+      : profile.projects;
   projects.forEach(p => {
     const card = el("article", "project-card");
     const title = lang === "en" ? p.enTitle : p.koTitle;
@@ -726,10 +728,13 @@ function renderTraining(lang) {
   });
 }
 
-function renderContacts(lang) {
+function renderContacts(lang, key) {
   const wrap = document.getElementById("contactList");
   wrap.innerHTML = "";
-  profile.contacts.forEach(item => {
+  const contacts = key === "analyst"
+    ? profile.contacts.filter(item => item.label !== "The Liquidation of Penny")
+    : profile.contacts;
+  contacts.forEach(item => {
     const node = el("a", "contact-link");
     node.href = item.href;
     if (item.href.startsWith("http")) {
@@ -802,7 +807,7 @@ function render(key = currentVersion()) {
   renderProjects(lang, key);
   renderSkills(key);
   renderTraining(lang);
-  renderContacts(lang);
+  renderContacts(lang, key);
   renderCopy(key);
 }
 
