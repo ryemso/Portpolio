@@ -110,9 +110,6 @@ const profile = {
     }
   },
 
-  dareEvidence:    }
-  },
-
   dareEvidence: {
     ko: {
       metrics: [
@@ -241,9 +238,6 @@ const profile = {
       { name: "Data Validation", detail: "Source Check · Join Validation · Leakage Check", evidence: "잘못된 원천, n:n join 증식, 모델 누수 가능성을 재검증" },
       { name: "Modeling", detail: "LightGBM · CatBoost · XGBoost · Scikit-learn", evidence: "식별·분류 문제에서 모델 비교와 평가 기준 설계 경험" }
     ]
-  },
-
-  internships:    ]
   },
 
   internships: {
