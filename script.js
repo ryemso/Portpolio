@@ -810,6 +810,12 @@ function render(key = currentVersion()) {
   renderTraining(lang);
   renderContacts(lang, key);
   renderCopy(key);
+
+  const resumeLink = document.getElementById("resumeNavLink");
+  if (resumeLink) {
+    const resumeView = key === "lotte" ? "lotte" : key === "strategy" ? "growth" : key === "ai" ? "ml" : "analyst";
+    resumeLink.href = `./resume/?view=${resumeView}`;
+  }
 }
 
 render();
