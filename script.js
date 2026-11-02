@@ -23,13 +23,13 @@ const profile = {
       lang: "ko",
       heroStack: ["SQL", "Python", "Tableau", "GA4", "Amplitude"]
     },
-    hynix: {
-      label: "SK HYNIX · AI HACKATHON",
-      title: "문제를 정의하고, AI와 모델을 도구로 사용하며, 실패를 검증해 다시 개선하는 문제 해결형 분석가",
-      desc: "예측·분류·프로토타이핑 프로젝트에서 목표와 평가 기준을 먼저 정하고, AI와 모델의 제안을 직접 검증하며 반복적으로 결과물을 개선해 왔습니다.",
-      theme: "hynix",
+    lotte: {
+      label: "LOTTE AX CHALLENGE · 롯데호텔",
+      title: "파편화된 고객 데이터를 하나의 고객 관점으로 연결하고, 맞춤 추천으로 이어가는 데이터 분석가",
+      desc: "롯데호텔 과제의 핵심인 브랜드·지점별 고객 데이터 통합과 통합 데이터 기반 맞춤 추천에 맞춰, 실제 서비스 로그 통합·고객 지표 정의·entity matching·추천 로그 분석 경험을 연결했습니다.",
+      theme: "lotte",
       lang: "ko",
-      heroStack: ["Problem Definition", "AI Collaboration", "Python", "ML/DL", "Validation"]
+      heroStack: ["Customer Data Integration", "Identity Resolution", "MongoDB / SQL", "Recommendation Analytics", "Data Validation"]
     }
   },
 
@@ -88,23 +88,29 @@ const profile = {
         ["05 · Operate", "Reviewed a MongoDB-to-Python reporting workflow for metrics that did not map cleanly to dashboard aggregation."]
       ]
     },
-    hynix: {
-      eyebrow: "SK HYNIX AI HACKATHON · CORE CASE",
-      title: "기상 데이터 기반 시간대별 열수요 예측",
-      intro: "단순히 복잡한 모델을 적용하기보다 예측 오차가 발생하는 구조를 가설로 세우고, LSTM → BiLSTM/Attention → CNN-BiLSTM 계열로 실험을 반복하며 동일한 검증 흐름에서 구조별 차이를 확인했습니다.",
-      resultLabel: "VALIDATION",
-      resultValue: "최종 검증 RMSE 17.2",
-      tags: ["Problem Definition", "Time Series", "CNN-BiLSTM", "Experiment Design", "Validation"],
-      href: "https://github.com/ryemso/heat-demand-forecasting",
-      linkLabel: "View GitHub",
+    lotte: {
+      eyebrow: "LOTTE AX CHALLENGE 2026 · LOTTE HOTEL",
+      title: "호텔 고객 데이터 통합 및 맞춤 추천",
+      intro: "과제에서 요구하는 브랜드·지점별 파편화 고객 데이터 통합과 통합 데이터 기반 맞춤 추천을, 제가 실제로 수행한 데이터 원천 검증·사용자 단위 지표 설계·entity matching·추천 로그 분석 경험과 연결했습니다.",
+      resultLabel: "CHALLENGE FIT",
+      resultValue: "Integrate → Identify → Profile → Recommend → Validate",
+      tags: ["Customer Data Integration", "Identity Resolution", "Product Analytics", "Recommendation Analytics", "Data Validation"],
+      links: [
+        ["DARE Case Study", "https://github.com/ryemso/Ryemso/blob/main/case-studies/product-analytics-internship/README.md"],
+        ["Entity Matching Case", "https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"],
+        ["Olist Analytics", "https://github.com/ryemso/olist-ecommerce-analytics"]
+      ],
       flow: [
-        ["01 · Problem", "시간·지점별 기상정보와 지역난방 수요의 비선형 관계를 모델링해 시간대별 예측 오차를 줄이는 문제로 정의했습니다."],
-        ["02 · Baseline", "LSTM 계열 모델을 기준선으로 두고 동일한 전처리·분할·RMSE 기준에서 성능을 확인했습니다."],
-        ["03 · Hypothesis", "순환구조만으로는 급격한 단기 수요 변화 포착이 부족할 수 있다는 가설을 세우고 구조를 변경했습니다."],
-        ["04 · Iterate", "BiLSTM/Attention과 CNN-BiLSTM 계열을 비교하며 실패 원인과 개선 효과를 반복 검증했습니다."],
-        ["05 · Verify", "공모전 최종 검증 단계에서 21.7과 17.2의 검증 수치를 확인했고, 최종 결과로 RMSE 17.2를 확보했습니다."]
+        ["01 · Integrate", "DARE에서 여러 MongoDB 컬렉션의 행동·결제·추천 로그를 확인하고, 분석에 필요한 연결 필드와 원천 데이터를 다시 찾아 사용자 단위 데이터로 구성했습니다."],
+        ["02 · Identify", "선박 식별 AI에서는 서로 다르게 기록된 대상을 표준 ID에 연결하는 entity matching 문제를 후보 생성·재순위로 분리해 해결했습니다. 고객 통합과 동일한 문제라고 주장하지 않고, 식별·매칭 문제를 다룬 경험으로 연결합니다."],
+        ["03 · Profile", "DARE와 Olist에서 Unique User·주문 단위·고객 단위를 먼저 정의하고, 중복 join과 잘못된 분모가 지표를 왜곡하지 않도록 분석 단위를 검증했습니다."],
+        ["04 · Recommend", "DARE에서 추천 모델을 직접 운영한 경험은 없지만 추천 노출 로그를 사용자 단위로 재구성하고, 노출 편중과 후보군 커버리지를 분석해 추천 영역의 데이터 문제를 진단했습니다."],
+        ["05 · Validate", "운영 맥락과 맞지 않는 값은 원천까지 다시 확인하고, 모델링 프로젝트에서는 leakage와 검증 단위를 점검해 결과를 재검증하는 방식을 유지했습니다."]
       ]
     }
+  },
+
+  dareEvidence:    }
   },
 
   dareEvidence: {
@@ -227,14 +233,17 @@ const profile = {
       { name: "BI", detail: "Tableau · Excel · GA4", evidence: "Visualization and reporting" },
       { name: "Advanced Analysis", detail: "Classification · Forecasting · ML/DL", evidence: "Supporting analytical capability" }
     ],
-    hynix: [
-      { name: "Problem Definition", detail: "Goal · Constraint · Metric · Acceptance Criteria", evidence: "모델 선택보다 해결할 문제와 성공 기준을 먼저 정의" },
-      { name: "AI Collaboration", detail: "Decompose · Delegate · Review · Iterate", evidence: "AI의 초안을 그대로 채택하지 않고 작업을 나눠 요청하고 결과를 재검증" },
-      { name: "Python / Data", detail: "Pandas · Scikit-learn · TensorFlow", evidence: "전처리·모델링·평가·실험 자동화" },
-      { name: "ML / DL", detail: "Classification · Forecasting · Ensemble · CNN/LSTM", evidence: "문제 구조에 따라 모델과 평가 지표를 비교" },
-      { name: "Validation", detail: "Leakage Check · Error Analysis · Re-test", evidence: "동일 검증 조건에서 실패→수정→재검증을 반복" },
-      { name: "Build", detail: "GitHub · Web Prototype · AI-assisted Development", evidence: "분석뿐 아니라 실제 작동하는 프로토타입까지 구현" }
+    lotte: [
+      { name: "Data Integration", detail: "MongoDB · SQL · Python · Aggregation", evidence: "여러 로그 원천과 연결 필드를 확인해 사용자 단위 분석 데이터 구성" },
+      { name: "Identity Resolution", detail: "Normalization · Candidate Retrieval · Reranking", evidence: "표기가 다른 레코드를 표준 ID에 연결한 entity matching 공모전 경험" },
+      { name: "Customer Analytics", detail: "Unique User · Retention · Cohort · Segmentation", evidence: "서비스 행동 로그와 이커머스 고객 데이터를 기준 단위별로 분석" },
+      { name: "Recommendation Analytics", detail: "Exposure · Candidate Pool · Coverage", evidence: "추천 로그의 사용자 단위 노출 편중과 후보군 커버리지 분석" },
+      { name: "Data Validation", detail: "Source Check · Join Validation · Leakage Check", evidence: "잘못된 원천, n:n join 증식, 모델 누수 가능성을 재검증" },
+      { name: "Modeling", detail: "LightGBM · CatBoost · XGBoost · Scikit-learn", evidence: "식별·분류 문제에서 모델 비교와 평가 기준 설계 경험" }
     ]
+  },
+
+  internships:    ]
   },
 
   internships: {
@@ -300,7 +309,7 @@ const profile = {
         ["Notebook", "https://github.com/ryemso/olist-ecommerce-analytics/blob/main/notebooks/01_olist_analysis.ipynb"],
         ["Pipeline", "https://github.com/ryemso/olist-ecommerce-analytics/blob/main/src/preprocessing.py"]
       ],
-      hynix: true
+      lotte: true
     },
     {
       koTitle: "Port Problem Solving · 선박 식별 AI",
@@ -323,7 +332,7 @@ const profile = {
       tags: ["Python", "Classification", "Threshold"],
       href: "https://github.com/ryemso/cognitive-impairment-prediction",
       linkLabel: "GitHub",
-      hynix: true
+      lotte: true
     },
     {
       koTitle: "열수요 예측",
@@ -346,7 +355,7 @@ const profile = {
       tags: ["Python", "CatBoost", "XGBoost", "Feature Engineering", "Multi-class"],
       href: "https://github.com/ryemso/Hanwoo_ranke",
       linkLabel: "GitHub",
-      hynix: true
+      lotte: true
     },
     {
       koTitle: "LendingClub Credit Risk Modeling",
@@ -374,7 +383,7 @@ const profile = {
         ["Repository", "https://github.com/ryemso/The-Liquidation-of-Penny"],
         ["Play", "https://ryemso.github.io/The-Liquidation-of-Penny/"]
       ],
-      hynix: true
+      lotte: true
     }
   ],
 
@@ -424,7 +433,7 @@ function renderVersionTabs(activeKey) {
   if (!tabs) return;
   tabs.innerHTML = "";
   Object.entries(profile.versions).forEach(([key, ver]) => {
-    if (key === "hynix" && activeKey !== "hynix") return;
+    if (key === "lotte" && activeKey !== "lotte") return;
     const btn = el("button", `version-tab ${key === activeKey ? "active" : ""}`, ver.label);
     btn.addEventListener("click", () => {
       setVersionInUrl(key);
@@ -571,58 +580,56 @@ function renderStrategyEvidence() {
   `;
 }
 
-function renderHynixEvidence() {
+function renderLotteEvidence() {
   const wrap = document.getElementById("caseEvidence");
   wrap.innerHTML = `
     <div class="metric-strip">
-      <div class="metric-tile"><strong>17.2</strong><span>열수요 최종 검증 RMSE</span><small>구조 비교 과정의 검증 수치 21.7 / 17.2</small></div>
-      <div class="metric-tile"><strong>Recall 중심</strong><span>인지장애 예측</span><small>False Negative 비용을 반영한 평가 기준</small></div>
-      <div class="metric-tile"><strong>0.219</strong><span>한우 Public Macro-F1</span><small>CatBoost · XGBoost 확률 앙상블</small></div>
-      <div class="metric-tile"><strong>Playable</strong><span>AI-assisted Prototype</span><small>The Liquidation of Penny 실제 구현</small></div>
+      <div class="metric-tile"><strong>MongoDB</strong><span>Service Data Integration</span><small>행동·결제·추천 로그의 원천 및 연결 구조 검증</small></div>
+      <div class="metric-tile"><strong>Entity Matching</strong><span>Identity Resolution</span><small>서로 다른 표기의 레코드를 표준 ID로 연결</small></div>
+      <div class="metric-tile"><strong>Retention / Cohort</strong><span>Customer Analytics</span><small>사용자군과 재방문 행동 분석</small></div>
+      <div class="metric-tile"><strong>Join Validation</strong><span>Customer 360 Foundation</span><small>분석 단위와 중복 증식 점검</small></div>
     </div>
 
     <div class="case-grid two-col">
       <article class="case-card">
-        <div class="mini-label">PROBLEM SOLVING LOOP</div>
-        <h3>Define → Hypothesize → Experiment → Verify → Iterate</h3>
-        <p>모델을 먼저 고르지 않고 문제와 평가 기준을 정의한 뒤, 실패 결과를 원인 가설로 바꾸고 다음 실험을 설계했습니다. 열수요 프로젝트에서는 LSTM 단독 구조의 한계를 확인한 뒤 BiLSTM/Attention, CNN 결합 구조로 확장했습니다.</p>
-        <div class="amplitude-tags">
-          <span>Define</span><span>Baseline</span><span>Hypothesis</span><span>Experiment</span><span>Validation</span>
-        </div>
+        <div class="mini-label">DATA INTEGRATION · DARE</div>
+        <h3>필요한 고객 정보가 한 곳에 없을 때 원천부터 다시 찾았습니다.</h3>
+        <p>행동·결제·추천 데이터가 서로 다른 MongoDB 컬렉션에 있을 때 분석 목적에 필요한 식별자와 연결 필드를 확인하고, 잘못 선택한 원천은 다시 찾아 사용자 단위 데이터셋으로 구성했습니다.</p>
+        <div class="amplitude-tags"><span>MongoDB</span><span>$lookup</span><span>Aggregation</span><span>Unique User</span></div>
       </article>
 
       <article class="case-card">
-        <div class="mini-label">AI COLLABORATION</div>
-        <h3>AI의 답을 채택하는 것이 아니라, 작업을 분해하고 결과를 검증합니다.</h3>
-        <p>AI를 아이디어·코드 초안·디버깅 보조 도구로 활용하되, 데이터 누수·평가 지표·실행 결과·오류 원인은 직접 확인합니다. 결과가 예상과 다르면 프롬프트를 바꾸는 데서 끝내지 않고 가설과 구현을 수정해 다시 실행합니다.</p>
-        <div class="amplitude-tags">
-          <span>Decompose</span><span>Delegate</span><span>Review</span><span>Re-test</span><span>Decide</span>
-        </div>
+        <div class="mini-label">IDENTITY RESOLUTION · PORT PROBLEM SOLVING</div>
+        <h3>다르게 기록된 대상을 하나의 표준 ID로 연결하는 문제를 다뤘습니다.</h3>
+        <p>한글·영문·오탈자·축약·발음 차이가 섞인 선박 기록을 표준 선박 ID에 연결했습니다. 호텔 고객 통합 경험 자체는 아니지만, 파편화된 레코드의 동일 대상을 식별하는 문제와 연결되는 기술적 경험입니다.</p>
+        <a class="project-source-link project-card-link" href="https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md" target="_blank" rel="noopener noreferrer">View Case Study ↗</a>
       </article>
     </div>
 
     <div class="case-grid two-col">
       <article class="case-card">
-        <div class="mini-label">CASE · COGNITIVE IMPAIRMENT</div>
-        <h3>평가 지표 자체를 문제에 맞게 다시 정의</h3>
-        <p>불균형 분류에서 Accuracy만 높이는 대신 놓치면 위험한 양성 사례를 고려해 Recall을 우선했습니다. SMOTE·앙상블·임계값 조정을 비교하고 Precision과 Recall의 trade-off를 함께 검토했습니다.</p>
+        <div class="mini-label">CUSTOMER DATA · OLIST</div>
+        <h3>고객·주문·결제 데이터 결합에서 분석 단위를 먼저 검증했습니다.</h3>
+        <p>order item과 payment의 다중 행으로 주문이 중복 증식할 수 있는 구조를 확인하고, unique order와 고객 기준을 다시 정리한 뒤 고객 유지와 배송 경험을 분석했습니다.</p>
+        <a class="project-source-link project-card-link" href="https://github.com/ryemso/olist-ecommerce-analytics" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
       </article>
 
       <article class="case-card">
-        <div class="mini-label">CASE · HANWOO</div>
-        <h3>모델보다 도메인의 결정 구조를 먼저 고민</h3>
-        <p>개체·혈통·농장/지역·기상 데이터를 결합하고, train에만 존재하는 도축 후 판정 변수의 누수 가능성을 제거했습니다. CatBoost·XGBoost 확률 앙상블로 16개 최종 등급을 예측했습니다.</p>
+        <div class="mini-label">RECOMMENDATION ANALYTICS · DARE</div>
+        <h3>추천 결과가 누구에게 얼마나 노출되는지 사용자 단위로 봤습니다.</h3>
+        <p>추천 모델 자체를 개발·운영한 경험으로 과장하지 않고, 실제 추천 노출 로그를 피노출 사용자 기준으로 재구성해 노출 편중과 후보군 커버리지를 분석한 경험을 제시합니다.</p>
+        <div class="amplitude-tags"><span>Exposure</span><span>Coverage</span><span>Candidate Pool</span><span>Product Metrics</span></div>
       </article>
     </div>
 
     <article class="case-card work-card">
-      <div class="mini-label">AI-NATIVE BUILD</div>
-      <h3>The Liquidation of Penny · 아이디어를 작동하는 결과물로 전환</h3>
+      <div class="mini-label">FIT TO LOTTE HOTEL CHALLENGE</div>
+      <h3>과제 요구와 제가 이미 해본 데이터 문제의 접점</h3>
       <div class="work-grid">
-        <div class="work-item"><strong>Define</strong><p>금융·주식 개념을 전투·성장·보상 시스템으로 번역해 게임 규칙을 정의했습니다.</p></div>
-        <div class="work-item"><strong>Build</strong><p>이동·전투·스테이지·보상 선택·게임 상태를 구현해 실제 플레이 가능한 프로토타입으로 만들었습니다.</p></div>
-        <div class="work-item"><strong>Debug</strong><p>기능 단위로 구현하고 오류와 밸런스 문제를 반복 수정했습니다.</p></div>
-        <div class="work-item"><strong>Operate</strong><p>GitHub에 작업 이력을 남기며 단계별 기능 확장과 결과물 관리를 이어가고 있습니다.</p></div>
+        <div class="work-item"><strong>Integrate</strong><p>파편화된 원천을 확인하고 사용자 단위로 연결하는 데이터 작업 경험.</p></div>
+        <div class="work-item"><strong>Identify</strong><p>서로 다른 표기의 레코드를 표준 ID로 연결하는 entity matching 경험.</p></div>
+        <div class="work-item"><strong>Understand</strong><p>Retention·Cohort·고객 유지·행동 지표를 사용자 기준으로 해석한 경험.</p></div>
+        <div class="work-item"><strong>Recommend</strong><p>추천 로그의 노출·후보군 구조를 분석한 경험을 바탕으로, 통합 고객 데이터 이후 추천 문제로 확장할 수 있는 기반.</p></div>
       </div>
     </article>
   `;
@@ -631,12 +638,12 @@ function renderHynixEvidence() {
 function renderEvidence(key) {
   const isEnglish = profile.versions[key].lang === "en";
   document.getElementById("caseEvidenceTitle").textContent =
-    key === "hynix" ? "AI-Native Problem Solving Evidence"
+    key === "lotte" ? "Relevant Experience for LOTTE Hotel Challenge"
     : key === "strategy" ? "How the Analysis Became a Decision"
     : isEnglish ? "What I Actually Analyzed" : "실제로 분석한 것";
   document.getElementById("caseEvidenceDesc").textContent =
-    key === "hynix"
-      ? "AI를 많이 사용했다는 설명보다, 문제를 정의하고 작업을 분해하고 결과를 검증해 다시 개선한 증거를 보여줍니다."
+    key === "lotte"
+      ? "호텔 고객 데이터 통합·추천을 이미 수행했다고 주장하지 않고, 과제와 직접 연결되는 실제 데이터 경험만 골라 보여줍니다."
       : key === "strategy"
         ? "결과물을 많이 나열하기보다 실제 비즈니스 질문과 분석 흐름을 보여줍니다."
         : isEnglish
@@ -644,7 +651,7 @@ function renderEvidence(key) {
           : "원본 차트 이미지는 없지만, 당시 확정한 지표와 검증 과정을 그대로 웹에서 다시 시각화했습니다.";
 
   if (key === "strategy") renderStrategyEvidence();
-  else if (key === "hynix") renderHynixEvidence();
+  else if (key === "lotte") renderLotteEvidence();
   else renderDareEvidence(isEnglish ? "en" : "ko");
 }
 
@@ -672,8 +679,8 @@ function renderExperience(lang) {
 function renderProjects(lang, key) {
   const grid = document.getElementById("projectGrid");
   grid.innerHTML = "";
-  const projects = key === "hynix"
-    ? ["한우 등급 예측", "50세 이상 인지장애 경험 여부 예측", "The Liquidation of Penny", "Olist E-commerce Analytics"]
+  const projects = key === "lotte"
+    ? ["Port Problem Solving · 선박 식별 AI", "Olist E-commerce Analytics", "50세 이상 인지장애 경험 여부 예측"]
         .map(title => profile.projects.find(p => p.koTitle === title))
         .filter(Boolean)
     : (key === "analyst" || key === "strategy")
@@ -731,7 +738,7 @@ function renderTraining(lang) {
 function renderContacts(lang, key) {
   const wrap = document.getElementById("contactList");
   wrap.innerHTML = "";
-  const contacts = (key === "analyst" || key === "strategy")
+  const contacts = (key === "analyst" || key === "strategy" || key === "lotte")
     ? profile.contacts.filter(item => item.label !== "The Liquidation of Penny")
     : profile.contacts;
   contacts.forEach(item => {
@@ -750,13 +757,13 @@ function renderContacts(lang, key) {
 function renderCopy(key) {
   const en = profile.versions[key].lang === "en";
   const strategy = key === "strategy";
-  const hynix = key === "hynix";
+  const lotte = key === "lotte";
 
   document.getElementById("mainProjectSectionTitle").textContent =
-    hynix ? "Core Problem-Solving Case" : strategy ? "Main Business Analytics Case" : en ? "Main Product Analytics Case" : "Main Product Analytics Case";
+    lotte ? "LOTTE Hotel Challenge Fit" : strategy ? "Main Business Analytics Case" : en ? "Main Product Analytics Case" : "Main Product Analytics Case";
   document.getElementById("mainProjectSectionDesc").textContent =
-    hynix
-      ? "모델 이름보다 문제 정의, 가설, 실험, 검증, 개선의 흐름을 먼저 보여줍니다."
+    lotte
+      ? "브랜드·지점별 고객 데이터 통합과 통합 데이터 기반 맞춤 추천이라는 과제 목표에 맞춰, 실제로 수행한 관련 경험을 연결했습니다."
       : strategy
         ? "프로젝트 목록보다 실제 비즈니스 질문과 분석 흐름을 먼저 보여줍니다."
         : en
@@ -769,13 +776,13 @@ function renderCopy(key) {
 
   document.getElementById("projectsTitle").textContent = en ? "Selected Projects" : "Selected Projects";
   document.getElementById("projectSectionDesc").textContent =
-    hynix ? "분류·예측·비즈니스 분석·프로토타이핑을 통해 문제 정의와 검증 방식의 폭을 보여줍니다."
+    lotte ? "고객 데이터 통합·식별·분석·모델링과 가장 직접적으로 연결되는 프로젝트만 남겼습니다."
     : en ? "Supporting projects that show breadth without diluting the main product-analytics identity."
        : "대표 Product Analytics 경험을 중심에 두고, 분석·모델링·구현 역량을 보여주는 프로젝트는 보조 사례로 압축했습니다.";
 
   document.getElementById("strengthsTitle").textContent = en ? "Skills I Use" : "Skills I Use";
   document.getElementById("strengthDesc").textContent =
-    hynix ? "특정 도구 숙련도보다 문제를 쪼개고, AI와 모델을 활용하고, 결과를 검증하는 방식에 초점을 맞췄습니다."
+    lotte ? "데이터 통합·동일 고객 식별·고객 행동 분석·추천 데이터 분석과 연결되는 실제 사용 경험만 정리했습니다."
     : en ? "Tools and methods are shown with what they were actually used for."
        : "상급/중상 같은 자기평가 대신 실제로 무엇을 할 수 있는지만 적었습니다.";
 
@@ -793,11 +800,11 @@ function render(key = currentVersion()) {
   const ver = profile.versions[key];
   const lang = ver.lang;
 
-  document.body.classList.remove("theme-analyst", "theme-strategy", "theme-ai", "theme-hynix");
+  document.body.classList.remove("theme-analyst", "theme-strategy", "theme-ai", "theme-lotte");
   if (ver.theme === "analyst") document.body.classList.add("theme-analyst");
   if (ver.theme === "strategy") document.body.classList.add("theme-strategy");
   if (ver.theme === "ai") document.body.classList.add("theme-ai");
-  if (ver.theme === "hynix") document.body.classList.add("theme-hynix");
+  if (ver.theme === "lotte") document.body.classList.add("theme-lotte");
 
   renderVersionTabs(key);
   renderHero(key);
