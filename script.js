@@ -303,6 +303,17 @@ const profile = {
       hynix: true
     },
     {
+      koTitle: "Port Problem Solving · 선박 식별 AI",
+      enTitle: "Port Problem Solving · Vessel Entity Matching",
+      koDesc: "표기가 다른 항만 기록을 표준 선박 ID에 연결하는 entity matching 공모전 프로젝트입니다. 문자열·발음·메타데이터·E5 임베딩과 후보 재순위를 결합하고, 원본 그룹 분리와 행 독립 검증을 유지했습니다.",
+      enDesc: "Matched noisy multilingual port records to canonical vessel IDs using string, phonetic, metadata, E5 embedding, and candidate reranking with leakage-aware validation.",
+      resultKo: "DACON Public 0.8011 → 0.9357",
+      resultEn: "DACON Public 0.8011 → 0.9357",
+      tags: ["Python", "Entity Matching", "E5", "LightGBM", "CatBoost", "Ranking"],
+      href: "https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md",
+      linkLabel: "Case Study"
+    },
+    {
       koTitle: "50세 이상 인지장애 경험 여부 예측",
       enTitle: "Cognitive Impairment Experience Prediction",
       koDesc: "False Negative 비용을 고려해 Recall 중심으로 모델을 비교하고 임계값 조정으로 탐지 성능을 개선했습니다.",
@@ -328,11 +339,13 @@ const profile = {
     {
       koTitle: "한우 등급 예측",
       enTitle: "Hanwoo Grade Prediction",
-      koDesc: "개체 정보·도축 성적·혈통 관계·지역별 기상 데이터를 통합하고, 단순 피처 추가보다 등급 결정 구조를 표현하는 관점에서 XGBoost·RealMLP·HanwooFormer를 비교했습니다.",
-      enDesc: "Integrated individual, slaughter, pedigree, and regional weather data and compared XGBoost, RealMLP, and HanwooFormer from a domain-structure perspective.",
-      resultKo: "3개 모델 비교·앙상블",
-      resultEn: "3-model comparison & ensemble",
-      tags: ["Python", "Classification", "Feature Engineering", "Ensemble"],
+      koDesc: "개체·혈통·농장/지역·기상 데이터를 결합해 16개 최종 등급을 예측했습니다. train에만 존재하는 도축 후 판정 변수의 누수 가능성을 제거하고 CatBoost·XGBoost 확률 앙상블로 재설계했습니다.",
+      enDesc: "Predicted 16 final Hanwoo grades from individual, pedigree, farm/region, and weather data, removing train-only post-slaughter leakage risks and using a CatBoost/XGBoost probability ensemble.",
+      resultKo: "Public Macro-F1 0.219",
+      resultEn: "Public Macro-F1 0.219",
+      tags: ["Python", "CatBoost", "XGBoost", "Feature Engineering", "Multi-class"],
+      href: "https://github.com/ryemso/Hanwoo_ranke",
+      linkLabel: "GitHub",
       hynix: true
     },
     {
@@ -352,8 +365,8 @@ const profile = {
     {
       koTitle: "The Liquidation of Penny",
       enTitle: "The Liquidation of Penny",
-      koDesc: "금융·시장 개념을 전투·탐험·보상 시스템으로 구현한 웹 액션 로그라이트입니다. 이벤트 로깅, run 단위 플레이 분석, 자동 회귀 테스트까지 함께 설계했습니다.",
-      enDesc: "Built a browser action roguelite that translates finance concepts into combat, exploration, and rewards, with event logging, run-level analytics, and automated regression tests.",
+      koDesc: "금융·시장 개념을 전투·탐험·보상 시스템으로 구현한 웹 액션 로그라이트입니다. 현재 6장 29개 방까지 확장했고, 이벤트 로깅·run 단위 분석·자동 회귀 테스트를 함께 운영합니다.",
+      enDesc: "Built a browser action roguelite that translates finance concepts into combat, exploration, and rewards; it now spans 29 rooms across six chapters with event logging, run-level analytics, and automated regression tests.",
       resultKo: "Playable Web Prototype + Analytics",
       resultEn: "Playable Web Prototype + Analytics",
       tags: ["JavaScript", "Game Systems", "Event Logging", "Analytics"],
@@ -564,7 +577,7 @@ function renderHynixEvidence() {
     <div class="metric-strip">
       <div class="metric-tile"><strong>17.2</strong><span>열수요 최종 검증 RMSE</span><small>구조 비교 과정의 검증 수치 21.7 / 17.2</small></div>
       <div class="metric-tile"><strong>Recall 중심</strong><span>인지장애 예측</span><small>False Negative 비용을 반영한 평가 기준</small></div>
-      <div class="metric-tile"><strong>3-way</strong><span>한우 등급 예측</span><small>XGBoost · RealMLP · HanwooFormer 비교/앙상블</small></div>
+      <div class="metric-tile"><strong>0.219</strong><span>한우 Public Macro-F1</span><small>CatBoost · XGBoost 확률 앙상블</small></div>
       <div class="metric-tile"><strong>Playable</strong><span>AI-assisted Prototype</span><small>The Liquidation of Penny 실제 구현</small></div>
     </div>
 
@@ -598,7 +611,7 @@ function renderHynixEvidence() {
       <article class="case-card">
         <div class="mini-label">CASE · HANWOO</div>
         <h3>모델보다 도메인의 결정 구조를 먼저 고민</h3>
-        <p>개체 정보·도축 성적·혈통 관계·지역 기상 데이터를 통합하고, 단순 파생변수 추가보다 등급 결정 구조를 어떻게 표현할지에 초점을 맞춰 여러 모델과 앙상블을 비교했습니다.</p>
+        <p>개체·혈통·농장/지역·기상 데이터를 결합하고, train에만 존재하는 도축 후 판정 변수의 누수 가능성을 제거했습니다. CatBoost·XGBoost 확률 앙상블로 16개 최종 등급을 예측했습니다.</p>
       </article>
     </div>
 
