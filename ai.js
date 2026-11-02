@@ -12,10 +12,7 @@ profile.versions = {
     heroStack: ["Python", "Entity Matching", "E5", "LightGBM / CatBoost", "Ranking", "Validation"]
   },
   strategy: profile.versions.strategy,
-  hynix: {
-    ...profile.versions.hynix,
-    label: "SK hynix AI"
-  }
+  lotte: profile.versions.lotte
 };
 
 profile.mainProjects.ai = {
