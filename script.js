@@ -676,7 +676,7 @@ function renderProjects(lang, key) {
     ? ["한우 등급 예측", "50세 이상 인지장애 경험 여부 예측", "The Liquidation of Penny", "Olist E-commerce Analytics"]
         .map(title => profile.projects.find(p => p.koTitle === title))
         .filter(Boolean)
-    : key === "analyst"
+    : (key === "analyst" || key === "strategy")
       ? profile.projects.filter(p => p.koTitle !== "The Liquidation of Penny")
       : profile.projects;
   projects.forEach(p => {
@@ -731,7 +731,7 @@ function renderTraining(lang) {
 function renderContacts(lang, key) {
   const wrap = document.getElementById("contactList");
   wrap.innerHTML = "";
-  const contacts = key === "analyst"
+  const contacts = (key === "analyst" || key === "strategy")
     ? profile.contacts.filter(item => item.label !== "The Liquidation of Penny")
     : profile.contacts;
   contacts.forEach(item => {
