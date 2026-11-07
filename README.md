@@ -45,6 +45,12 @@ Data / Product Analytics와 AI/ML 프로젝트를 직무별로 보여주는 개�
 ### Side Project
 - [The Liquidation of Penny](https://ryemso.github.io/The-Liquidation-of-Penny/) — playable web game prototype
 
+## Training
+
+- 내일배움캠프 데이터 6기 · 2025.02–2025.07
+- 데이터 분석 및 마케팅 교육 · 2023.08–2023.11
+- 코드잇 대학생 코딩캠프 3기 · 2021.03.15–2021.04.13 · 수료
+
 ## Files
 
 ```text
