@@ -385,12 +385,12 @@ const profile = {
     ko: [
       ["스파르타코딩", "내일배움캠프 데이터 6기", "2025.02 — 2025.07", "Python · SQL · Tableau · ML/DL"],
       ["패스트캠프", "데이터 분석 및 마케팅", "2023.08 — 2023.11", "Amplitude · GA4 · AARRR · A/B Test"],
-      ["Codeit", "Programming & Data Science Track", "2021.03 — 2021.05", "Python · JavaScript · DataFrame · Visualization"]
+      ["코드잇", "대학생 코딩캠프 3기", "2021.03.15 — 2021.04.13", "코딩 교육 및 활동 과정 수료"]
     ],
     en: [
       ["Sparta Coding Club", "Data Cohort 6", "Feb 2025 — Jul 2025", "Python · SQL · Tableau · ML/DL"],
       ["Fastcampus", "Data Analysis & Marketing", "Aug 2023 — Nov 2023", "Amplitude · GA4 · AARRR · A/B Test"],
-      ["Codeit", "Programming & Data Science Track", "Mar 2021 — May 2021", "Python · JavaScript · DataFrame · Visualization"]
+      ["Codeit", "University Coding Camp Cohort 3", "Mar 15 2021 — Apr 13 2021", "Completed coding education and activity program"]
     ]
   }
 };
