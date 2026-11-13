@@ -82,6 +82,61 @@
   }
   .when{white-space:nowrap!important}
 }
+
+/* Explicit print-only resume pages */
+.print-resume{display:none}
+.print-page{background:#fff}
+.print-page-side{background:var(--tint);border-right:1px solid var(--line)}
+@media print{
+  .paper{display:none!important}
+  .print-resume{display:block!important}
+  .print-page{
+    display:grid!important;
+    grid-template-columns:29% 71%!important;
+    width:210mm!important;
+    min-height:297mm!important;
+    break-after:page!important;
+    page-break-after:always!important;
+    overflow:visible!important;
+  }
+  .print-page:last-child{
+    break-after:auto!important;
+    page-break-after:auto!important;
+  }
+  .print-page-side{
+    padding:32px 23px!important;
+    border-right:1px solid var(--line)!important;
+    border-bottom:0!important;
+  }
+  .print-page-content{
+    padding:32px 34px!important;
+    min-width:0!important;
+  }
+  .print-page .profile-photo-wrap{width:115px!important;box-shadow:none!important}
+  .print-page .side-sections{display:block!important}
+  .print-page .side-sections>section{display:block!important;width:auto!important}
+  .print-page .content h3,
+  .print-page-content h3{margin-top:20px}
+  .print-page .entry{break-inside:avoid;page-break-inside:avoid;margin-bottom:13px}
+  .print-page .entry p,
+  .print-page .entry li{font-size:10px;line-height:1.65}
+  .print-page .summary{font-size:11px;margin-bottom:16px}
+  .print-page-side h3{margin-top:19px}
+  .print-page .footnote{margin-top:10px}
+  .print-page .resume-timeline{margin-top:15px;grid-column:auto!important}
+  .print-page .resume-timeline-list{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+    padding-left:13px!important;
+  }
+  .print-page .resume-timeline-list::before{display:block!important}
+  .print-page .resume-time{padding-left:10px!important;border-left:0!important}
+  .print-page .resume-time b{font-size:7px}
+  .print-page .resume-time strong{font-size:8.2px}
+  .print-page .resume-time small{font-size:6.8px;line-height:1.35}
+  .print-page .resume-time::before{width:6px;height:6px;left:-12px}
+}
 </style>
 <style>
 /* Cover-letter section */
@@ -95,8 +150,12 @@
 .letter-item[open] summary::after{content:"−"}
 .letter-item summary::-webkit-details-marker{display:none}
 .letter-item p{margin:0;padding:0 7px 24px;color:#435260;line-height:2;white-space:pre-line;font-size:13px}
-@media(max-width:760px){.letter{margin:15px 0 0;padding:24px 21px}.letter-head h2{font-size:18px}.letter-item summary{font-size:13px}}
-@media print{.letter{break-before:page;box-shadow:none;border:0;padding:14mm 17mm;margin:0;max-width:none}.letter-item{break-inside:avoid}.letter-item p{display:block!important;padding-bottom:12px;font-size:10px;line-height:1.7}.letter-item summary{padding:14px 0 7px;font-size:12px}.letter-item summary::after{display:none}.letter-head h2{font-size:17px}}
+.letter-item.expanded{padding:20px 6px}
+.letter-item.expanded+.letter-item.expanded{border-top:0}
+.letter-item-title{margin:0 0 10px!important;padding:0!important;border:0!important;font-size:15px!important;letter-spacing:-.02em!important;text-transform:none!important;color:#2f4352!important}
+.letter-item.expanded p{padding:0 1px 4px}
+@media(max-width:760px){.letter{margin:15px 0 0;padding:24px 21px}.letter-head h2{font-size:18px}.letter-item summary{font-size:13px}.letter-item-title{font-size:13px!important}}
+@media print{.letter{break-before:page;box-shadow:none;border:0;padding:14mm 17mm;margin:0;max-width:none}.letter-item{break-inside:avoid}.letter-item p{display:block!important;padding-bottom:12px;font-size:10px;line-height:1.7}.letter-item summary{padding:14px 0 7px;font-size:12px}.letter-item summary::after{display:none}.letter-item.expanded{padding:10px 0}.letter-item-title{font-size:12px!important;margin-bottom:6px!important}.letter-head h2{font-size:17px}}
 </style>
 </head>
 <body>
@@ -151,6 +210,69 @@
    <div class="footnote">직무별 버전 선택 · 브라우저 인쇄에서 PDF 저장 가능 · 최종 제출 전 지원 기업에 맞춰 내용 조정</div>
   </section>
  </main>
+
+ <div class="print-resume" id="printResume" aria-hidden="true">
+  <section class="print-page print-page-1">
+   <aside class="print-page-side side">
+    <div class="profile-photo-wrap"><img class="profile-photo" src="./profile.jpg" alt="김동현 증명사진" width="160" height="193"></div>
+    <div class="side-sections">
+     <section><h3>CONTACT & LINKS</h3><p class="small"><a href="https://github.com/ryemso">github.com/ryemso</a></p><p class="small"><a href="../">Portfolio Website</a></p><p class="small muted">연락처는 채용 플랫폼을 통해 전달</p></section>
+     <section><h3>EDUCATION</h3><p><b>강남대학교</b><br><span class="small muted">데이터사이언스 전공<br>경영학 부전공<br>2022.03 – 2025.02</span></p><p><b>용인송담대학교</b><br><span class="small muted">정보통신학과<br>2017.03 – 2021.02</span></p></section>
+     <section><h3>TOOLS</h3><div id="skillsPrint"></div></section>
+     <section><h3>CERTIFICATE</h3><p class="small">ADsP · 데이터분석 준전문가<br><span class="muted">2025.06</span></p><p class="small">OPIc IM1<br><span class="muted">2026.02</span></p></section>
+    </div>
+   </aside>
+   <section class="print-page-content content">
+    <div class="eyebrow" id="labelPrint">Product / Business Data Analyst</div>
+    <h1>김동현</h1>
+    <p class="subtitle" id="headlinePrint"></p>
+    <div class="summary" id="summaryPrint"></div>
+    <h3>Experience</h3>
+    <div class="entry"><div class="entrytop"><strong>DARE · 데이터 분석 인턴</strong><span class="when">2025.09 – 2025.09</span></div><div class="role">사용자 행동 데이터 · MongoDB · Amplitude</div><ul id="darePrint"></ul></div>
+    <div class="entry"><div class="entrytop"><strong>잘큼 · 데이터 분석 인턴</strong><span class="when">2024.09 – 2024.11</span></div><div class="role">구매 데이터 · 수요 분석 · 보고 자동화</div><ul>
+     <li>지점별 구매 데이터를 정리하고 날짜·점포별로 수요가 집중되는 구간을 비교해 운영 시 참고할 수 있는 기초 분석을 지원했습니다.</li>
+     <li>반복적으로 취합하던 보고 자료를 정리·자동화하는 업무에 참여해, 같은 기준으로 데이터를 다시 확인할 수 있는 형태를 만드는 경험을 쌓았습니다.</li>
+     <li>지역별 인구통계와 상권 정보를 활용해 지점 주변 수요를 조사했습니다. 단순 매출 집계보다 ‘어디에서 왜 수요가 달라지는가’를 보는 관점을 익혔습니다.</li>
+    </ul></div>
+    <div class="entry"><div class="entrytop"><strong>올케팅 · 퍼포먼스 마케팅 인턴</strong><span class="when">2023.12 – 2024.01</span></div><div class="role">Meta · 카카오스타일 · 광고 성과 데이터</div><ul>
+     <li>Meta와 카카오스타일 등 광고 매체의 캠페인 운영을 보조하며 소재·타겟·예산 설정과 실제 집행 흐름을 접했습니다.</li>
+     <li>광고 계정별 성과 데이터를 정리하고 ROAS·전환 등 기본 퍼포먼스 지표를 주간·월간 리포트 형태로 확인하는 업무를 지원했습니다.</li>
+     <li>이 경험을 계기로 ‘광고를 집행하는 것’에서 끝나지 않고, 이후 어떤 고객이 반응하고 다시 행동하는지까지 데이터로 보고 싶어 데이터 분석 쪽으로 관심을 확장했습니다.</li>
+    </ul></div>
+   </section>
+  </section>
+
+  <section class="print-page print-page-2">
+   <aside class="print-page-side side">
+    <section><h3>TRAINING</h3>
+     <p class="small">내일배움캠프 데이터 6기<br><span class="muted">2025.02 – 2025.07</span></p>
+     <p class="small">데이터 분석·마케팅 교육<br><span class="muted">2023.08 – 2023.11</span></p>
+     <p class="small">코드잇 · 대학생 코딩캠프 3기<br><span class="muted">2021.03.15 – 2021.04.13 · 수료</span></p>
+    </section>
+    <section class="resume-timeline" aria-label="경력 및 학습 타임라인">
+     <h3>CAREER TIMELINE</h3>
+     <div class="resume-timeline-list">
+      <div class="resume-time"><b>2017.03–2021.02</b><strong>용인송담대학교</strong><small>정보통신학과</small></div>
+      <div class="resume-time"><b>2021.03–04</b><strong>코드잇</strong><small>대학생 코딩캠프 3기</small></div>
+      <div class="resume-time"><b>2022.03–2025.02</b><strong>강남대학교</strong><small>데이터사이언스 · 경영학</small></div>
+      <div class="resume-time"><b>2023.12–2024.01</b><strong>올케팅</strong><small>퍼포먼스 마케팅 인턴</small></div>
+      <div class="resume-time"><b>2024.09–11</b><strong>잘큼</strong><small>데이터 분석 인턴</small></div>
+      <div class="resume-time"><b>2025.02–07</b><strong>내일배움캠프</strong><small>데이터 6기 · 프로젝트 병행</small></div>
+      <div class="resume-time"><b>2025.09</b><strong>DARE</strong><small>데이터 분석 인턴</small></div>
+      <div class="resume-time current"><b>2025.10–현재</b><strong>구직 · 프로젝트 고도화</strong><small>공모전 · GitHub · 포트폴리오 개선</small></div>
+     </div>
+    </section>
+   </aside>
+   <section class="print-page-content content">
+    <h3>Selected Projects</h3>
+    <div id="projectsPrint"></div>
+    <h3>Working Principles</h3>
+    <p id="principlePrint" class="muted"></p>
+    <div class="footnote">직무별 버전 선택 · 브라우저 인쇄에서 PDF 저장 가능 · 최종 제출 전 지원 기업에 맞춰 내용 조정</div>
+   </section>
+  </section>
+ </div>
+
 <section class="letter" id="cover-letter" aria-labelledby="letterTitle"><div class="letter-head"><div><small>Cover Letter · 자기소개서</small><h2 id="letterTitle"></h2></div><span class="muted">직무별 자기소개서</span></div><div id="letterItems"></div></section>
 </div>
 <script>
@@ -207,10 +329,11 @@ function renderLetter(mode){
  };
  document.getElementById("letterTitle").textContent=titles[mode]||titles.analyst;
  const items=document.getElementById("letterItems");
- items.replaceChildren(...(letters[mode]||letters.analyst).map(([head,body],i)=>{
-  const d=document.createElement("details");d.className="letter-item";if(i===0)d.open=true;
-  const s=document.createElement("summary");s.textContent=head;
-  const p=document.createElement("p");p.textContent=body;d.append(s,p);return d;
+ items.replaceChildren(...(letters[mode]||letters.analyst).map(([head,body])=>{
+  const article=document.createElement("article");article.className="letter-item expanded";
+  const h=document.createElement("h3");h.className="letter-item-title";h.textContent=head;
+  const p=document.createElement("p");p.textContent=body;
+  article.append(h,p);return article;
  }));
 }
 
@@ -292,13 +415,19 @@ const modes={
 function render(mode){
  renderLetter(mode);
  const d=modes[mode]||modes.analyst;
- document.getElementById("label").textContent=d.label;
- document.getElementById("headline").textContent=d.headline;
- document.getElementById("summary").textContent=d.summary;
- document.getElementById("principle").textContent=d.principle;
- document.getElementById("skills").replaceChildren(...d.skills.map(x=>{const s=document.createElement("span");s.className="chip";s.textContent=x;return s}));
- document.getElementById("dare").replaceChildren(...d.dare.map(x=>{const e=document.createElement("li");e.textContent=x;return e}));
- document.getElementById("projects").replaceChildren(...d.projects.map(([name,desc,url])=>{const a=document.createElement("article");a.className="entry";const h=document.createElement("strong");h.textContent=name;const p=document.createElement("p");p.textContent=desc;const l=document.createElement("a");l.className="projectlink";l.href=url;l.target="_blank";l.rel="noopener";l.textContent="프로젝트 기록 ↗";a.append(h,p,l);return a}));
+ ["label","labelPrint"].forEach(id=>document.getElementById(id).textContent=d.label);
+ ["headline","headlinePrint"].forEach(id=>document.getElementById(id).textContent=d.headline);
+ ["summary","summaryPrint"].forEach(id=>document.getElementById(id).textContent=d.summary);
+ ["principle","principlePrint"].forEach(id=>document.getElementById(id).textContent=d.principle);
+ const skillNodes=()=>d.skills.map(x=>{const s=document.createElement("span");s.className="chip";s.textContent=x;return s});
+ document.getElementById("skills").replaceChildren(...skillNodes());
+ document.getElementById("skillsPrint").replaceChildren(...skillNodes());
+ const dareNodes=()=>d.dare.map(x=>{const e=document.createElement("li");e.textContent=x;return e});
+ document.getElementById("dare").replaceChildren(...dareNodes());
+ document.getElementById("darePrint").replaceChildren(...dareNodes());
+ const projectNodes=()=>d.projects.map(([name,desc,url])=>{const a=document.createElement("article");a.className="entry";const h=document.createElement("strong");h.textContent=name;const p=document.createElement("p");p.textContent=desc;const l=document.createElement("a");l.className="projectlink";l.href=url;l.target="_blank";l.rel="noopener";l.textContent="프로젝트 기록 ↗";a.append(h,p,l);return a});
+ document.getElementById("projects").replaceChildren(...projectNodes());
+ document.getElementById("projectsPrint").replaceChildren(...projectNodes());
  document.querySelectorAll("[data-mode]").forEach(x=>{
    if(x.dataset.mode==="lotte") x.hidden=mode!=="lotte";
    x.setAttribute("aria-selected",String(x.dataset.mode===mode));
