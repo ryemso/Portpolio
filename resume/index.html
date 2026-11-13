@@ -14,6 +14,21 @@
 @media(max-width:760px){.shell{padding:15px 10px 35px}.toolbar{align-items:flex-start}.tabs button{flex:1 1 150px}.paper{display:flex;flex-direction:column}.side{padding:25px 23px;border:0;border-bottom:1px solid var(--line)}.initials{display:none}.side-sections{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.side h3{margin-top:12px}.content{padding:28px 23px}.content h3{margin-top:23px}h1{font-size:31px}.entrytop{flex-wrap:wrap;gap:2px}.when{white-space:normal}}
 @media print{@page{size:A4;margin:0}html,body{background:white!important;font-size:11px}.shell{max-width:none;padding:0}.toolbar,.tabs{display:none!important}.paper{border-radius:0;box-shadow:none;grid-template-columns:29% 71%;min-height:297mm;break-inside:avoid}.side{padding:32px 23px}.content{padding:32px 34px}.content h3{margin-top:20px}.entry{margin-bottom:13px}.entry p,.entry li{font-size:10px;line-height:1.65}.summary{font-size:11px;margin-bottom:16px}.side h3{margin-top:19px}.footnote{margin-top:10px}a{text-decoration:none}}
 .profile-photo-wrap{width:132px;aspect-ratio:160/193;margin-bottom:22px;border:1px solid #d5e0e5;border-radius:5px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(24,46,64,.1)}.profile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}@media(max-width:760px){.profile-photo-wrap{width:112px;margin-bottom:18px}}@media print{.profile-photo-wrap{width:115px;box-shadow:none}}
+
+/* Career timeline compact */
+.resume-timeline{margin:18px 0 22px;padding:15px 16px 13px;border:1px solid var(--line);background:#fbfdfe;border-radius:6px}
+.resume-timeline-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.resume-timeline-head strong{font:800 11px "DM Sans","Noto Sans KR",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#344c5d}
+.resume-timeline-head span{font-size:10px;color:var(--muted)}
+.resume-timeline-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.resume-time{position:relative;border-top:2px solid #aabac4;padding-top:9px}
+.resume-time::before{content:"";position:absolute;top:-5px;left:0;width:8px;height:8px;border-radius:50%;background:#647f92;border:1.5px solid #fff;box-shadow:0 0 0 1px #647f92}
+.resume-time b{display:block;font:700 9px "DM Sans","Noto Sans KR",sans-serif;color:#526b7c;margin-bottom:3px}
+.resume-time strong{display:block;font-size:10.5px;line-height:1.45}
+.resume-time small{display:block;margin-top:2px;color:#71808d;font-size:8.6px;line-height:1.4}
+.resume-time.current{border-top-color:#c58a36}.resume-time.current::before{background:#c58a36;box-shadow:0 0 0 1px #c58a36}
+@media(max-width:760px){.resume-timeline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media print{.resume-timeline{margin:11px 0 14px;padding:10px 11px}.resume-timeline-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.resume-time{padding-top:6px}.resume-time b{font-size:7.5px}.resume-time strong{font-size:8.4px}.resume-time small{font-size:7px}.resume-timeline-head{margin-bottom:8px}}
 </style>
 <style>
 /* Cover-letter section */
@@ -53,6 +68,19 @@
   <section class="content">
    <div class="eyebrow" id="label">Product / Business Data Analyst</div>
    <h1>김동현</h1><p class="subtitle" id="headline"></p><div class="summary" id="summary"></div>
+   <section class="resume-timeline" aria-label="경력 및 학습 타임라인">
+    <div class="resume-timeline-head"><strong>Career Timeline</strong><span>학력 · 교육 · 인턴 · 최근 활동을 한 번에 보기</span></div>
+    <div class="resume-timeline-grid">
+     <div class="resume-time"><b>2017.03–2021.02</b><strong>용인송담대</strong><small>정보통신학과</small></div>
+     <div class="resume-time"><b>2021.03–04</b><strong>코드잇</strong><small>대학생 코딩캠프 3기</small></div>
+     <div class="resume-time"><b>2022.03–2025.02</b><strong>강남대</strong><small>데이터사이언스 · 경영학</small></div>
+     <div class="resume-time"><b>2023.12–2024.01</b><strong>올케팅</strong><small>퍼포먼스 마케팅 인턴</small></div>
+     <div class="resume-time"><b>2024.09–11</b><strong>잘큼</strong><small>데이터 분석 인턴</small></div>
+     <div class="resume-time"><b>2025.02–07</b><strong>내일배움캠프</strong><small>데이터 6기 · 프로젝트 병행</small></div>
+     <div class="resume-time"><b>2025.09</b><strong>DARE</strong><small>데이터 분석 인턴</small></div>
+     <div class="resume-time current"><b>2025.10–현재</b><strong>구직 · 프로젝트 고도화</strong><small>공모전 · GitHub · 포트폴리오 개선</small></div>
+    </div>
+   </section>
    <h3>Experience</h3>
    <div class="entry"><div class="entrytop"><strong>DARE · 데이터 분석 인턴</strong><span class="when">2025.09 – 2025.09</span></div><div class="role">사용자 행동 데이터 · MongoDB</div><ul id="dare"></ul></div>
    <div class="entry"><div class="entrytop"><strong>잘큼 · 데이터 분석 인턴</strong><span class="when">2024.09 – 2024.11</span></div><p>지점별 구매 데이터를 전처리하고 수요 집중일 분석을 지원했으며, 분석 보고서 자동화와 인구통계 기반 지역 수요 조사를 수행했습니다.</p></div>
