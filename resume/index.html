@@ -28,7 +28,60 @@
 .resume-time.current::before{background:#c58a36;box-shadow:0 0 0 1px #c58a36}
 .resume-time.current strong{color:#9a671d}
 @media(max-width:760px){.resume-timeline{grid-column:1/-1}.resume-timeline-list{grid-template-columns:repeat(2,minmax(0,1fr));padding-left:0}.resume-timeline-list::before{display:none}.resume-time{padding-left:14px;border-left:1px solid #b8c6cf}.resume-time::before{left:-5px;top:5px}}
-@media print{.resume-timeline{margin-top:15px}.resume-timeline h3{margin-top:15px!important}.resume-timeline-list{gap:8px;padding-left:13px}.resume-time b{font-size:7px}.resume-time strong{font-size:8.2px}.resume-time small{font-size:6.8px;line-height:1.35}.resume-time::before{width:6px;height:6px;left:-12px}}
+@media print{
+.resume-timeline{margin-top:15px;grid-column:auto!important}
+.resume-timeline h3{margin-top:15px!important}
+.resume-timeline-list{display:grid!important;grid-template-columns:1fr!important;gap:8px;padding-left:13px}
+.resume-timeline-list::before{display:block!important}
+.resume-time{padding-left:10px!important;border-left:0!important}
+.resume-time b{font-size:7px}
+.resume-time strong{font-size:8.2px}
+.resume-time small{font-size:6.8px;line-height:1.35}
+.resume-time::before{width:6px;height:6px;left:-12px}
+}
+
+/* Print layout hard reset: prevents mobile breakpoint from leaking into A4 print */
+@media print{
+  .paper{
+    display:grid!important;
+    grid-template-columns:29% 71%!important;
+    flex-direction:initial!important;
+    width:100%!important;
+    min-height:297mm;
+    overflow:visible;
+  }
+  .side{
+    display:block!important;
+    width:auto!important;
+    min-width:0!important;
+    padding:32px 23px!important;
+    border-right:1px solid var(--line)!important;
+    border-bottom:0!important;
+  }
+  .side-sections{
+    display:block!important;
+    grid-template-columns:none!important;
+    gap:0!important;
+  }
+  .side-sections > section{
+    display:block!important;
+    width:auto!important;
+    grid-column:auto!important;
+  }
+  .content{
+    display:block!important;
+    width:auto!important;
+    min-width:0!important;
+    padding:32px 34px!important;
+  }
+  .entrytop{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    justify-content:space-between!important;
+    align-items:baseline!important;
+  }
+  .when{white-space:nowrap!important}
+}
 </style>
 <style>
 /* Cover-letter section */
