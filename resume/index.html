@@ -15,20 +15,20 @@
 @media print{@page{size:A4;margin:0}html,body{background:white!important;font-size:11px}.shell{max-width:none;padding:0}.toolbar,.tabs{display:none!important}.paper{border-radius:0;box-shadow:none;grid-template-columns:29% 71%;min-height:297mm;break-inside:avoid}.side{padding:32px 23px}.content{padding:32px 34px}.content h3{margin-top:20px}.entry{margin-bottom:13px}.entry p,.entry li{font-size:10px;line-height:1.65}.summary{font-size:11px;margin-bottom:16px}.side h3{margin-top:19px}.footnote{margin-top:10px}a{text-decoration:none}}
 .profile-photo-wrap{width:132px;aspect-ratio:160/193;margin-bottom:22px;border:1px solid #d5e0e5;border-radius:5px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(24,46,64,.1)}.profile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}@media(max-width:760px){.profile-photo-wrap{width:112px;margin-bottom:18px}}@media print{.profile-photo-wrap{width:115px;box-shadow:none}}
 
-/* Career timeline compact */
-.resume-timeline{margin:18px 0 22px;padding:15px 16px 13px;border:1px solid var(--line);background:#fbfdfe;border-radius:6px}
-.resume-timeline-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
-.resume-timeline-head strong{font:800 11px "DM Sans","Noto Sans KR",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#344c5d}
-.resume-timeline-head span{font-size:10px;color:var(--muted)}
-.resume-timeline-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
-.resume-time{position:relative;border-top:2px solid #aabac4;padding-top:9px}
-.resume-time::before{content:"";position:absolute;top:-5px;left:0;width:8px;height:8px;border-radius:50%;background:#647f92;border:1.5px solid #fff;box-shadow:0 0 0 1px #647f92}
-.resume-time b{display:block;font:700 9px "DM Sans","Noto Sans KR",sans-serif;color:#526b7c;margin-bottom:3px}
-.resume-time strong{display:block;font-size:10.5px;line-height:1.45}
-.resume-time small{display:block;margin-top:2px;color:#71808d;font-size:8.6px;line-height:1.4}
-.resume-time.current{border-top-color:#c58a36}.resume-time.current::before{background:#c58a36;box-shadow:0 0 0 1px #c58a36}
-@media(max-width:760px){.resume-timeline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media print{.resume-timeline{margin:11px 0 14px;padding:10px 11px}.resume-timeline-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.resume-time{padding-top:6px}.resume-time b{font-size:7.5px}.resume-time strong{font-size:8.4px}.resume-time small{font-size:7px}.resume-timeline-head{margin-bottom:8px}}
+/* Career timeline · sidebar vertical */
+.resume-timeline{margin-top:24px}
+.resume-timeline h3{margin-top:24px!important}
+.resume-timeline-list{position:relative;display:grid;gap:12px;margin-top:4px;padding-left:16px}
+.resume-timeline-list::before{content:"";position:absolute;left:4px;top:5px;bottom:6px;width:1px;background:#b8c6cf}
+.resume-time{position:relative;padding-left:10px}
+.resume-time::before{content:"";position:absolute;left:-15px;top:5px;width:7px;height:7px;border-radius:50%;background:#647f92;border:2px solid var(--tint);box-shadow:0 0 0 1px #647f92}
+.resume-time b{display:block;font:700 8.5px "DM Sans","Noto Sans KR",sans-serif;color:#526b7c;margin-bottom:2px}
+.resume-time strong{display:block;font-size:10.5px;line-height:1.45;color:#344c5d}
+.resume-time small{display:block;margin-top:1px;color:#71808d;font-size:8.7px;line-height:1.45}
+.resume-time.current::before{background:#c58a36;box-shadow:0 0 0 1px #c58a36}
+.resume-time.current strong{color:#9a671d}
+@media(max-width:760px){.resume-timeline{grid-column:1/-1}.resume-timeline-list{grid-template-columns:repeat(2,minmax(0,1fr));padding-left:0}.resume-timeline-list::before{display:none}.resume-time{padding-left:14px;border-left:1px solid #b8c6cf}.resume-time::before{left:-5px;top:5px}}
+@media print{.resume-timeline{margin-top:15px}.resume-timeline h3{margin-top:15px!important}.resume-timeline-list{gap:8px;padding-left:13px}.resume-time b{font-size:7px}.resume-time strong{font-size:8.2px}.resume-time small{font-size:6.8px;line-height:1.35}.resume-time::before{width:6px;height:6px;left:-12px}}
 </style>
 <style>
 /* Cover-letter section */
@@ -63,24 +63,24 @@
     <section><h3>TOOLS</h3><div id="skills"></div></section>
     <section><h3>CERTIFICATE</h3><p class="small">ADsP · 데이터분석 준전문가<br><span class="muted">2025.06</span></p><p class="small">OPIc IM1<br><span class="muted">2026.02</span></p></section>
     <section><h3>TRAINING</h3><p class="small">내일배움캠프 데이터 6기<br><span class="muted">2025.02 – 2025.07</span></p><p class="small">데이터 분석·마케팅 교육<br><span class="muted">2023.08 – 2023.11</span></p><p class="small">코드잇 · 대학생 코딩캠프 3기<br><span class="muted">2021.03.15 – 2021.04.13 · 수료</span></p></section>
+    <section class="resume-timeline" aria-label="경력 및 학습 타임라인">
+     <h3>CAREER TIMELINE</h3>
+     <div class="resume-timeline-list">
+      <div class="resume-time"><b>2017.03–2021.02</b><strong>용인송담대학교</strong><small>정보통신학과</small></div>
+      <div class="resume-time"><b>2021.03–04</b><strong>코드잇</strong><small>대학생 코딩캠프 3기</small></div>
+      <div class="resume-time"><b>2022.03–2025.02</b><strong>강남대학교</strong><small>데이터사이언스 · 경영학</small></div>
+      <div class="resume-time"><b>2023.12–2024.01</b><strong>올케팅</strong><small>퍼포먼스 마케팅 인턴</small></div>
+      <div class="resume-time"><b>2024.09–11</b><strong>잘큼</strong><small>데이터 분석 인턴</small></div>
+      <div class="resume-time"><b>2025.02–07</b><strong>내일배움캠프</strong><small>데이터 6기 · 프로젝트 병행</small></div>
+      <div class="resume-time"><b>2025.09</b><strong>DARE</strong><small>데이터 분석 인턴</small></div>
+      <div class="resume-time current"><b>2025.10–현재</b><strong>구직 · 프로젝트 고도화</strong><small>공모전 · GitHub · 포트폴리오 개선</small></div>
+     </div>
+    </section>
    </div>
   </aside>
   <section class="content">
    <div class="eyebrow" id="label">Product / Business Data Analyst</div>
    <h1>김동현</h1><p class="subtitle" id="headline"></p><div class="summary" id="summary"></div>
-   <section class="resume-timeline" aria-label="경력 및 학습 타임라인">
-    <div class="resume-timeline-head"><strong>Career Timeline</strong><span>학력 · 교육 · 인턴 · 최근 활동을 한 번에 보기</span></div>
-    <div class="resume-timeline-grid">
-     <div class="resume-time"><b>2017.03–2021.02</b><strong>용인송담대</strong><small>정보통신학과</small></div>
-     <div class="resume-time"><b>2021.03–04</b><strong>코드잇</strong><small>대학생 코딩캠프 3기</small></div>
-     <div class="resume-time"><b>2022.03–2025.02</b><strong>강남대</strong><small>데이터사이언스 · 경영학</small></div>
-     <div class="resume-time"><b>2023.12–2024.01</b><strong>올케팅</strong><small>퍼포먼스 마케팅 인턴</small></div>
-     <div class="resume-time"><b>2024.09–11</b><strong>잘큼</strong><small>데이터 분석 인턴</small></div>
-     <div class="resume-time"><b>2025.02–07</b><strong>내일배움캠프</strong><small>데이터 6기 · 프로젝트 병행</small></div>
-     <div class="resume-time"><b>2025.09</b><strong>DARE</strong><small>데이터 분석 인턴</small></div>
-     <div class="resume-time current"><b>2025.10–현재</b><strong>구직 · 프로젝트 고도화</strong><small>공모전 · GitHub · 포트폴리오 개선</small></div>
-    </div>
-   </section>
    <h3>Experience</h3>
    <div class="entry"><div class="entrytop"><strong>DARE · 데이터 분석 인턴</strong><span class="when">2025.09 – 2025.09</span></div><div class="role">사용자 행동 데이터 · MongoDB · Amplitude</div><ul id="dare"></ul></div>
    <div class="entry"><div class="entrytop"><strong>잘큼 · 데이터 분석 인턴</strong><span class="when">2024.09 – 2024.11</span></div><div class="role">구매 데이터 · 수요 분석 · 보고 자동화</div><ul>
