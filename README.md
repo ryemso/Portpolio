@@ -5,13 +5,15 @@ Data / Product Analytics와 AI/ML 프로젝트를 직무별로 보여주는 개�
 ## Live
 
 - **Product Data Analyst**  
-  https://kimsportpolio.netlify.app/?ver=analyst
+  https://ryemso.github.io/Portpolio/?ver=analyst
 - **AI / Machine Learning**  
-  https://kimsportpolio.netlify.app/?ver=ai
+  https://ryemso.github.io/Portpolio/?ver=ai
 - **Business / Growth Analytics**  
-  https://kimsportpolio.netlify.app/?ver=strategy
+  https://ryemso.github.io/Portpolio/?ver=strategy
 - **LOTTE AX Challenge · LOTTE Hotel**  
-  https://kimsportpolio.netlify.app/?ver=lotte
+  https://ryemso.github.io/Portpolio/?ver=lotte
+- **Mobidays 36th Internship · AI/AX Resume**  
+  https://ryemso.github.io/Portpolio/resume/?view=mobidays
 
 ## Structure
 
