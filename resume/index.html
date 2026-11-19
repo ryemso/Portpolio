@@ -166,6 +166,7 @@
   <button type="button" data-mode="growth" role="tab" aria-selected="false">Marketing / Growth</button>
   <button type="button" data-mode="ml" role="tab" aria-selected="false">Data Science / AI</button>
   <button type="button" data-mode="lotte" role="tab" aria-selected="false" hidden>LOTTE AX · Hotel</button>
+  <button type="button" data-mode="mobidays" role="tab" aria-selected="false" hidden>MOBIDAYS · AI/AX</button>
  </nav>
  <main class="paper" id="resume">
   <aside class="side"><div class="profile-photo-wrap"><img class="profile-photo" src="./profile.jpg" alt="김동현 증명사진" width="160" height="193"></div>
@@ -308,6 +309,16 @@ const letters={
   ["실패한 실험도 다음 접근을 바꾸는 근거로 남깁니다",
    "한우 예측의 Public Macro-F1 0.219는 높은 성적이라고 볼 수 없지만, 결과가 낮았기 때문에 오히려 문제 정의 자체를 다시 보게 됐습니다. 대회 종료 후 최종 등급을 한 번에 맞히는 것보다 육질·육량·등외 여부처럼 실제 등급 결정 구조를 단계적으로 모델링할 필요가 있다는 점을 확인했습니다. 구현하지 않은 개선안을 이미 수행한 것처럼 표현하지 않고, 실제 수행한 것과 이후 회고에서 배운 것을 구분해서 기록하고 있습니다.\n\n저는 실패한 결과를 숨기기보다 어떤 가정이 잘못됐는지 확인하고 다음 실험의 방향으로 바꾸는 편입니다. 모델 이름을 많이 아는 사람보다, 데이터와 검증 구조를 설명하고 결과가 왜 나왔는지 끝까지 추적할 수 있는 Applied ML 문제 해결자가 되고 싶습니다."]
  ],
+ mobidays:[
+  ["현업의 반복 작업을 먼저 보고, 그 다음에 도구를 만듭니다",
+   "저는 AI를 먼저 적용할 곳을 찾기보다, 사람이 반복해서 확인하고 정리하는 일이 어디에 있는지부터 봅니다. 올케팅에서 퍼포먼스 마케팅 인턴으로 캠페인 세팅과 성과 데이터 정리 업무를 지원했고, 잘큼에서는 반복적으로 취합하던 보고 자료를 정리·자동화하는 업무에 참여했습니다. DARE에서는 실제 서비스 로그를 다루며 운영 화면과 원천 데이터의 값이 다를 때 어떤 데이터와 기준을 써야 하는지 다시 확인했습니다.\n\n이 경험을 거치며 AX는 새로운 모델을 붙이는 것보다 현업이 실제로 시간을 쓰는 지점을 이해하고, 무엇을 자동화하면 판단과 실행이 빨라지는지 찾는 일에 가깝다고 생각하게 됐습니다. 광고 운영·데이터 분석을 모두 접해 본 경험을 바탕으로 현업의 언어를 이해한 뒤 작게 구현하고 검증하는 방식으로 문제를 풀고 싶습니다."],
+  ["작은 도구라도 실제로 작동하는 흐름까지 만들어 봤습니다",
+   "Cat Hero 보스 보상 기록·정산 프로젝트에서는 스크린샷에서 보상 카드를 인식하고 수량을 구조화해 기록하는 흐름을 만들었습니다. OCR 결과를 그대로 믿지 않고 사용자가 직접 수정할 수 있는 확인 단계를 두었고, 수기 등록·익명 인원 분배·CSV 내보내기와 Supabase 연동까지 이어지는 형태로 구현했습니다. 웹형과 Windows형을 함께 제공하며 입력→검수→저장→조회 흐름을 하나의 도구로 연결했습니다.\n\n이 프로젝트에서 중요했던 것은 ‘AI를 썼다’는 사실보다 실제 사용 과정에서 잘못 인식된 값이 어떻게 수정되고, 이후 데이터로 남아 다시 확인될 수 있는지를 설계하는 일이었습니다. 완성된 상용 서비스라고 주장하지 않지만, 작은 문제를 작동하는 도구로 만들고 오류를 줄이는 과정을 직접 반복했다는 점은 AI/AX 업무와 가장 가까운 경험입니다."],
+  ["데이터가 어떻게 저장되고 연결되는지부터 확인합니다",
+   "DARE에서는 행동·결제·추천·초대 데이터가 서로 다른 MongoDB 컬렉션에 나뉘어 있었습니다. 필요한 분석을 위해 사용자 식별자와 연결 필드를 확인하고, 잘못된 원천을 사용해 운영 화면과 다른 값이 나왔을 때는 데이터 원천과 필드 의미를 다시 찾아 재계산했습니다. MongoDB Aggregation과 Python/Pandas를 이용해 사용자 단위 데이터셋을 구성했고, Active User·결제/재결제·추천 노출처럼 중복 이벤트가 영향을 주는 지표는 Unique 기준을 먼저 정의했습니다.\n\nOlist 프로젝트에서도 주문·품목·결제 테이블을 단순 병합했을 때 n:n 관계로 행이 증식하는 문제를 확인했습니다. 이런 경험 덕분에 API나 AI 기능을 붙이기 전에 데이터 구조와 연결 관계가 맞는지, 잘못된 join이나 중복이 결과를 왜곡하지 않는지 먼저 보는 습관이 있습니다."],
+  ["AI 결과를 그대로 쓰지 않고, 오류를 확인해 다음 실험으로 바꿉니다",
+   "항만 선박 식별 AI 공모전에서는 표기가 다른 선박 기록을 표준 ID에 연결하는 Entity Matching 문제를 해결했습니다. 문자열 유사도 하나로는 후보를 안정적으로 구분하기 어려워 Normalization → Candidate Retrieval → Feature Engineering → Reranking으로 문제를 나눴고, E5·LightGBM·CatBoost·pairwise 실험을 적용해 Public 0.8011에서 0.9357까지 개선했습니다.\n\n점수 개선 과정에서도 같은 원본에서 파생된 데이터를 같은 그룹으로 묶고 동일 원본 참조를 막아 leakage를 줄였습니다. 모든 실험이 좋아진 것은 아니어서 실패·동률 실험도 남겨 다음 challenger의 근거로 사용했습니다. 모비데이즈 AI/AX에서도 프로토타입을 빠르게 만들되, 결과를 검증하고 오류와 사용자 피드백을 다음 개선으로 연결하는 방식으로 일하고 싶습니다."]
+ ],
  lotte:[
   ["파편화된 데이터를 하나의 고객 관점으로 연결하는 문제로 이해했습니다",
    "롯데호텔 과제의 핵심은 여러 브랜드·지점에서 발생한 데이터를 단순히 한 테이블에 모으는 것이 아니라, 동일 고객을 신뢰할 수 있게 식별하고 고객의 거래·행동 이력을 하나의 관점으로 연결하는 것이라고 생각했습니다. 데이터가 통합되어도 고객 식별 기준이 흔들리거나 중복 집계가 발생하면 이후 세그먼트와 추천 역시 신뢰하기 어렵기 때문입니다.\n\n저는 호텔 고객 통합을 실제 운영한 경험이 있다고 주장하지 않습니다. 대신 DARE에서 여러 MongoDB 컬렉션의 사용자 로그 연결 구조를 확인한 경험, Olist에서 고객·주문·결제 테이블의 중복을 검증한 경험, 선박 Entity Matching에서 서로 다른 표기의 레코드를 표준 ID에 연결한 경험을 과제와 연결해 제안하고자 합니다."],
@@ -325,6 +336,7 @@ function renderLetter(mode){
   analyst:"서비스 로그의 기준을 검증하고, 다음 행동으로 연결합니다.",
   growth:"광고 성과에서 고객 행동까지, 실행과 측정을 연결합니다.",
   ml:"후보 생성·재순위·검증 구조를 나눠 복잡한 ML 문제를 해결합니다.",
+  mobidays:"현업의 반복 업무를 관찰하고, 작동하는 AI 도구로 바꿉니다.",
   lotte:"파편화된 고객 데이터를 연결하고, 신뢰할 수 있는 추천 기반을 설계합니다."
  };
  document.getElementById("letterTitle").textContent=titles[mode]||titles.analyst;
@@ -392,6 +404,24 @@ const modes={
   ],
   principle:"문제·평가 기준 정의 → 누수 점검 → 기준 모델 → 오류 분석 → challenger 실험 → 동일 조건 재검증"
  },
+ mobidays:{
+  label:"MOBIDAYS 36th Internship · AI/AX",
+  headline:"현업의 반복 작업을 관찰하고, 데이터와 AI를 연결해 실제 쓰이는 도구로 바꿉니다.",
+  summary:"모비데이즈 AI/AX 직무에 맞춰 광고 운영 경험, 실제 서비스 로그의 데이터 구조·검증 경험, Python/JavaScript 기반 도구 제작, AI 모델 실험 경험을 하나의 흐름으로 정리했습니다. 거대한 모델을 연구하는 역할보다 현업의 불편을 발견하고 작은 프로토타입을 빠르게 만든 뒤 오류와 피드백으로 개선하는 AX 문제 해결에 강점을 두고 있습니다.",
+  skills:["Python","JavaScript","MongoDB / SQL","API & Data Processing","LLM / AI Coding Tools","Supabase","Git / GitHub"],
+  dare:[
+   "행동·결제·추천·초대 데이터가 여러 MongoDB 컬렉션에 나뉜 환경에서 필요한 사용자 연결 필드와 실제 데이터 원천을 확인했습니다. 운영 화면과 맞지 않는 값은 결과를 맞추기보다 컬렉션·필드 의미를 다시 검증해 재계산했습니다.",
+   "MongoDB Aggregation과 Python/Pandas로 사용자 단위 분석 데이터를 구성하고 Active User, 결제/재결제, 초대, 추천 노출 등 지표의 기간·이벤트·Unique User 기준을 정의했습니다.",
+   "추천 노출과 후보군 분석을 통해 반복 노출과 사용자별 가용 pool을 확인했습니다. 단순 수치 집계보다 실제 서비스 흐름에서 어떤 데이터가 필요한지 역으로 확인하는 방식으로 접근했습니다.",
+   "Amplitude Retention/Cohort와 raw log 계산을 병행했고, 반복 집계를 줄이기 위한 MongoDB→Python 리포트 구조를 설계·검토했습니다. production 배포 완료로 과장하지 않고 실제 수행 범위를 구분해 기록합니다."
+  ],
+  projects:[
+   ["Cat Hero · OCR 보상 기록/정산 도구","게임 보상 스크린샷에서 카드와 수량을 인식해 구조화된 기록으로 저장하는 도구를 만들었습니다. OCR 결과 확인·수정, 수기 등록, 익명 인원 분배, CSV 내보내기와 Supabase 연동을 구성하고 웹형/Windows형으로 사용할 수 있게 했습니다. AI 인식 결과를 그대로 쓰지 않고 사용자가 검수하고 다시 저장하는 흐름까지 설계한 프로젝트입니다.","https://github.com/ryemso/cat_hero_boss_reward"],
+   ["Port Problem Solving · 선박 식별 AI","서로 다른 표기의 선박 기록을 표준 ID에 연결하는 Entity Matching 문제를 Normalization → Candidate Retrieval → Reranking 구조로 나눴습니다. 문자열·발음·메타데이터·E5 embedding과 LightGBM/CatBoost·pairwise 실험을 적용하고 leakage-aware validation을 유지해 DACON Public 0.8011 → 0.9357까지 개선했습니다.","https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"],
+   ["Olist · 데이터 연결과 검증","고객·주문·품목·결제·리뷰·판매자 데이터를 결합하는 과정에서 n:n join으로 주문 행이 증식하는 문제를 확인했습니다. 분석 목적에 맞게 unique order/customer 기준을 다시 정하고 고객 유지·배송·Seller 문제를 분석했습니다. 자동화나 AI 기능 이전에 데이터 연결 구조를 먼저 검증하는 습관을 보여주는 프로젝트입니다.","https://github.com/ryemso/olist-ecommerce-analytics"]
+  ],
+  principle:"Observe work → Define the bottleneck → Build a small prototype → Connect data / API → Validate errors → Improve with feedback → Document & share"
+ },
  lotte:{
   label:"LOTTE AX Challenge · LOTTE Hotel",
   headline:"파편화된 고객 데이터를 하나의 고객 관점으로 연결하고, 맞춤 추천의 기반을 설계합니다.",
@@ -429,7 +459,7 @@ function render(mode){
  document.getElementById("projects").replaceChildren(...projectNodes());
  document.getElementById("projectsPrint").replaceChildren(...projectNodes());
  document.querySelectorAll("[data-mode]").forEach(x=>{
-   if(x.dataset.mode==="lotte") x.hidden=mode!=="lotte";
+   if(["lotte","mobidays"].includes(x.dataset.mode)) x.hidden=x.dataset.mode!==mode;
    x.setAttribute("aria-selected",String(x.dataset.mode===mode));
  });
  document.title="김동현 | "+d.label;
