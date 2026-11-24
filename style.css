@@ -843,3 +843,23 @@ body.theme-lotte .eyebrow {
   .timeline-item { min-height: 0; padding: 14px 14px 14px 42px; }
   .timeline-item::before { top: 18px; left: 16px; }
 }
+
+
+/* Forward Deployed Engineer · production-boundary-aware implementation view */
+body.theme-fde {
+  --accent: #047e73;
+  --accent-2: #28a99a;
+  --surface-blue: #e2f3f0;
+  --surface-blue-2: #cce9e4;
+  --line: rgba(4,126,115,.23);
+}
+body.theme-fde .hero-main {
+  background: radial-gradient(circle at top right, rgba(40,169,154,.18), transparent 34%), linear-gradient(180deg,#fff 0%,#eefaf7 100%);
+}
+body.theme-fde .section-blue .project-grid,
+body.theme-fde .section-blue .strength-grid,
+body.theme-fde .section-blue .contact-grid-simple {
+  background: linear-gradient(180deg,#ecf9f6,#d7f0e9);
+}
+body.theme-fde .main-result-box {background:linear-gradient(180deg,#ecf8f4,#d6eee8)}
+body.theme-fde .eyebrow {background:rgba(4,126,115,.085)}
