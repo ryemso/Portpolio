@@ -42,7 +42,7 @@ Data / Product Analytics, AI/ML, Forward Deployed Engineer(FDE) 경험을 직무
   - [실행 설계](https://github.com/ryemso/my_little_office/blob/main/docs/EXECUTION.md) · [검증 코드](https://github.com/ryemso/my_little_office/blob/main/scripts/tests/test_workspaces.py)
 - **[Cat Hero](https://github.com/ryemso/cat_hero_boss_reward)** · OCR 인식 → 사용자 확인·수정 → 보상 기록·분배/정산 → Excel 출력, Supabase·Vite·GitHub Actions
 - **[DARE 실무 로그 분석](https://github.com/ryemso/Ryemso/tree/main/case-studies/product-analytics-internship)** · 데이터 원천·연결 키 탐색 및 MongoDB 집계 검증. 분석용 자동 리포트는 검토 단계이며 배포 실적이 아님
-- **[Port Problem Solving](https://github.com/ryemso/Port-Problem-Solving)** · 선박 레코드 Entity Matching, 모델 검증·패키징 오류 추적. Public 최고 0.9357, 최종 Private 약 0.87/199위는 사용자 보고 기준이며 상용 실적 아님
+- **[Port Problem Solving](https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md)** · 선박 레코드 Entity Matching, 모델 검증·패키징 오류 추적. 공개된 Public 최고 0.9357을 기준으로 설명하며, Private/최종 순위는 공개 자료로 검증되지 않음. 상용 실적 아님
 - **[Olist Analytics](https://github.com/ryemso/olist-ecommerce-analytics)** · n:n JOIN 중복·분석 단위 검증, 현업 문제 정의
 
 FDE 웹 버전에서는 **Implemented / Verified in Tests / Not Yet Validated in Customer Production**의 범위를 분명히 합니다. 코드 작성에 AI 도구를 활용한 경우 독립 구현 경험으로 과장하지 않습니다.
