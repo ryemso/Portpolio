@@ -256,7 +256,7 @@ const profile = {
       {
         company: "잘큼",
         role: "데이터 분석 인턴",
-        period: "2024.09 — 2024.11",
+        period: "2024.05 — 2024.10",
         points: [
           "지점별 구매 데이터를 전처리하고 수요 집중일 분석을 지원했습니다.",
           "분석 보고서 자동화와 인구통계 기반 지역 수요 조사를 수행했습니다."
@@ -279,7 +279,7 @@ const profile = {
       {
         company: "Jalkum",
         role: "Data Analysis Intern",
-        period: "Sep 2024 — Nov 2024",
+        period: "May 2024 — Oct 2024",
         points: [
           "Preprocessed branch-level purchase data and supported peak-demand analysis.",
           "Automated analysis reports and conducted regional demand research using demographic data."
