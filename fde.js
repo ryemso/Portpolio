@@ -114,7 +114,7 @@ const fdeProjects = [
     title:"Port Problem Solving · Vessel Entity Matching",
     desc:"여러 표기의 항만 레코드를 표준 선박 ID에 연결하기 위해 검색·재순위·검증을 분리했습니다. 공개된 DACON Public 최고 0.9357을 기록했으며, 상용 데이터 통합이나 고객사 배포 경험이라고 주장하지 않습니다.",
     state:"공모전 · 모델·검증·패키징 기록",tags:["Python","Entity Matching","E5","LightGBM"],
-    links:[["Repository","https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"],["Public Case Study","https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"]]
+    links:[["Public Case Study","https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"]]
   },
   {
     title:"Olist · Data Joining & Business Mapping",
