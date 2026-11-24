@@ -72,8 +72,8 @@ function renderFDEEvidence() {
       <article class="case-card">
         <div class="mini-label">DATA MATCHING · PORT PROBLEM SOLVING</div>
         <h3>일치하지 않는 레코드를 표준 ID로 연결</h3>
-        <p>선박 기록의 문자열·발음·메타데이터·임베딩 정보를 결합해 후보 생성과 재순위를 검증했습니다. DACON Public 0.9357, 최종 Private 약 0.87 및 199/470위는 사용자 보고에 따른 기록이며 상용 서비스 성과는 아닙니다.</p>
-        <a class="project-source-link project-card-link" href="https://github.com/ryemso/Port-Problem-Solving/blob/main/docs/FINAL_20261101_PUBLIC_HANDOFF.md" target="_blank" rel="noopener noreferrer">Experiment Handoff ↗</a>
+        <p>선박 기록의 문자열·발음·메타데이터·임베딩 정보를 결합해 후보 생성과 재순위를 검증했습니다. DACON Public 최고 0.9357은 공개 Case Study에 남긴 기록입니다. Private 결과와 최종 순위는 공개 저장소에서 검증되지 않으며 상용 서비스 성과가 아닙니다.</p>
+        <a class="project-source-link project-card-link" href="https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md" target="_blank" rel="noopener noreferrer">Public Case Study ↗</a>
       </article>
     </div>
     <article class="case-card work-card">
@@ -112,9 +112,9 @@ const fdeProjects = [
   },
   {
     title:"Port Problem Solving · Vessel Entity Matching",
-    desc:"여러 표기의 항만 레코드를 표준 선박 ID에 연결하기 위해 검색·재순위·검증을 분리했습니다. Public 최고 0.9357, 최종 Private 약 0.87이라는 차이도 기록했고, 상용 데이터 통합 경험이라고 주장하지 않습니다.",
+    desc:"여러 표기의 항만 레코드를 표준 선박 ID에 연결하기 위해 검색·재순위·검증을 분리했습니다. 공개된 DACON Public 최고 0.9357을 기록했으며, 상용 데이터 통합이나 고객사 배포 경험이라고 주장하지 않습니다.",
     state:"공모전 · 모델·검증·패키징 기록",tags:["Python","Entity Matching","E5","LightGBM"],
-    links:[["Repository","https://github.com/ryemso/Port-Problem-Solving"],["Final Record","https://github.com/ryemso/Port-Problem-Solving/blob/main/docs/FINAL_20261101_PUBLIC_HANDOFF.md"]]
+    links:[["Repository","https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"],["Public Case Study","https://github.com/ryemso/Ryemso/blob/main/case-studies/port-vessel-matching/README.md"]]
   },
   {
     title:"Olist · Data Joining & Business Mapping",
