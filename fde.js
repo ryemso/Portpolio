@@ -142,7 +142,7 @@ renderProjects = function(lang,key){
 const fdeInternships=[
   {company:"동 주민센터 · 청년인턴",role:"사회복지 행정 및 민원 지원 · 고객 접점 경험",period:"2026.10.01 — 2026.12.11 (진행 중)",points:["민원 응대 보조, 마음곳간 반찬 전달, 물자 정리 등 지역 주민을 대면하는 현장 업무를 지원했습니다.","IT 구축 업무가 아닌 현장 운영·서비스 이용자 관점의 경험으로 구분합니다."],tags:["Field Operations","Communication"]},
   {company:"DARE",role:"데이터 분석 인턴 · 실제 서비스 로그",period:"2025.09",points:["Amplitude에서 분석 대상 이벤트를 탐색하고 MongoDB 원천 컬렉션의 사용자 연결 필드를 확인했습니다.","사용자 행동·결제·초대·추천 로그의 집계 기준을 정하고 운영 화면과 다른 값을 재검증했습니다.","MongoDB→Python 자동 보고 구조는 검토 단계였으며 실제 상용 배포 경험이라고 주장하지 않습니다."],tags:["MongoDB","Python","Product Data"]},
-  {company:"잘큼",role:"구매·수요 데이터 지원 인턴",period:"2024.05 — 2024.10",points:["지점별 구매 데이터 전처리와 수요 집중 기간 분석, 인구통계 기반 지역 조사 및 보고 업무를 지원했습니다."],tags:["Data Processing","Field Demand"]},
+  {company:"잘큼",role:"구매·수요 데이터 지원 인턴",period:"2024.09 — 2024.11",points:["지점별 구매 데이터 전처리와 수요 집중 기간 분석, 인구통계 기반 지역 조사 및 보고 업무를 지원했습니다."],tags:["Data Processing","Field Demand"]},
   {company:"올케팅",role:"퍼포먼스 마케팅 인턴 · 운영 설정 지원",period:"2023.12 — 2024.01",points:["담당자의 지시하에 Meta·카카오스타일의 소재·타깃·예산 설정 변경과 광고 집행 업무를 보조했습니다.","독립적인 광고 최적화·ROAS 분석 성과로 과장하지 않습니다."],tags:["Operations Support","Marketing Tools"]}
 ];
 const previousFDEExperience = renderExperience;
